@@ -1,0 +1,36 @@
+namespace = hrdegypt
+
+country_event = {
+	id = hrdegypt.1
+	title = "hrdegypt.1.t"
+	desc = "hrdegypt.1.d"
+	picture = POPE_PREACHING_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "hrdegypt.1.a"
+		add_stability = 2
+		}
+	
+	option = {
+		name = "hrdegypt.1.b"
+		change_religion = animism
+		361 = {
+				change_religion = animism
+			}
+		4317 = {
+				change_religion = animism
+			}
+		2316 = {
+				change_religion = animism
+			}
+		4316 = {
+				change_religion = animism
+			}
+		add_country_modifier = {
+			name = "the_old_gods"
+			duration = 5475
+		}
+	}	
+}

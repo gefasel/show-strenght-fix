@@ -1,0 +1,18 @@
+government = monarchy
+add_government_reform = HRD_warlord_state
+technology_group = chinese
+religion = confucianism
+primary_culture = shandong_culture
+add_accepted_culture = zhongyuan
+capital = 690	#Qingzhou
+
+1437.10.22 = {
+	monarch = {
+		name = "Changhao"
+		dynasty = "Qi"
+		birth_date = 1415.10.22
+		adm = 4
+		dip = 3
+		mil = 4
+	}
+}

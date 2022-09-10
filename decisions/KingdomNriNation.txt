@@ -1,0 +1,120 @@
+country_decisions = {
+	form_kingdom_of_nri_nation = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+
+			NOT = { has_country_flag = formed_kingdom_of_nri_flag }
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			NOT = { exists = NRI }
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 10
+				}
+			}
+			culture_group = west_african
+
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1147 # Benin
+				province_id = 1153 # Pindinga
+				province_id = 1140 # Abomey
+				
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			religion_group = christian
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+				
+			owns_core_province = 1147 # Benin
+			owns_core_province = 1153 # Pindinga
+			owns_core_province = 1140 # Abomey
+		
+		}
+
+		effect = {
+			1147 = { #Benin
+				add_base_tax = 2
+				move_capital_effect = yes
+			}
+			change_tag = NRI
+			swap_non_generic_missions = yes
+			restore_country_name_effect = yes
+			
+			atacora_oueme_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = NRI
+			}
+			benin_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = NRI
+			}
+			lower_niger_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = NRI
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+
+			add_prestige = 25
+
+			
+			#can't have more than one elective monarchy in the game
+			if = {
+				limit = {
+					is_tribal = yes #Desert tribes settling down.
+				}
+				change_government_to_monarchy = yes
+			}
+			
+			
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			set_country_flag = formed_kingdom_of_nri_flag
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+}

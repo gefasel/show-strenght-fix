@@ -1,0 +1,674 @@
+carthage_missions_A = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = CTH
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	carthageA1 = {
+		icon = mission_pacify_the_berbers
+		required_missions = { }
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4567
+				province_id = 2449
+				province_id = 2448
+				area = north_saharan_area
+				area = ouled_nail_area
+				area = tripolitania_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = tun_tribes_tooltip
+				fezzan_area = {
+					type = all
+					OR = {
+						country_or_non_sovereign_subject_holds = ROOT
+						is_empty = yes
+					}
+				}
+			}
+			north_saharan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			ouled_nail_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tripolitania_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "tun_berbers_pacified"
+				duration = 7300
+			}
+		}
+	}
+	carthageA2 = {
+		icon = mission_traverse_the_sahara
+		required_missions = { carthageA1 }
+		
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					province_id = 341
+					NOT = { is_strongest_trade_power = ROOT }
+				}
+				AND = {
+					province_id = 354
+					OR = {
+						NOT = {	owned_by = ROOT }
+						NOT = { has_building = marketplace }
+					}
+				}
+				AND = {
+					province_id = 2448
+					NOT = {
+						owned_by = ROOT
+						is_core = ROOT
+					}
+				}
+			}
+		}
+		
+		trigger = {
+			354 = {
+				has_building = marketplace
+				owned_by = ROOT
+			}
+			owns_core_province = 2448
+			341 = {
+				is_strongest_trade_power = ROOT
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					2474 = {
+						is_empty = yes
+					}
+				}
+				2474 = {
+					add_core = ROOT
+					cede_province = ROOT
+				}
+			}
+			if = {
+				limit = {
+					2475 = {
+						is_empty = yes
+					}
+				}
+				2475 = {
+					add_core = ROOT
+					cede_province = ROOT
+				}
+			}
+			azbin_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				discover_country = ROOT	
+				add_permanent_claim = ROOT
+			}
+			east_azbin_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				discover_country = ROOT
+				add_permanent_claim = ROOT				
+			}
+			katsina_area = {
+				discover_country = ROOT
+			}
+		}
+	}
+	carthageA3 = {
+		icon = mission_conquer_air
+		required_missions = { carthageA2 }
+		
+		provinces_to_highlight = {
+			OR = {
+				area = azbin_area
+				area = east_azbin_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			has_discovered = ROOT
+		}
+		
+		trigger = {
+			azbin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			east_azbin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "conquest_of_air"
+				duration = 7300
+			}
+			katsina_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kanem_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				discover_country = ROOT
+				add_permanent_claim = ROOT
+			}
+			bornu_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				discover_country = ROOT
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	carthageA4 = {
+		icon = mission_conquer_kanem_bornu
+		required_missions = { carthageA3 }
+		
+		provinces_to_highlight = {
+			OR = {
+				area = katsina_area
+				area = kanem_area
+				area = bornu_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			has_discovered = ROOT
+		}
+		
+		trigger = {
+			katsina_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kanem_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			bornu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "tun_conquest_of_kanem"
+				duration = 7300
+			}
+		}
+	}
+}
+
+carthage_missions_B = {
+	slot = 2
+	generic = no
+	ai = yes
+
+	potential = {
+		tag = CTH
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	carthageB1 = {
+		icon = mission_raid_on_genoa
+		required_missions = { }
+
+		
+		provinces_to_highlight = {
+			province_id = 341
+		}
+		
+		trigger = {
+			341 = { development = 20 }
+	
+		}
+		
+		effect = {
+			
+			add_country_modifier = {
+				name = "cth_production"
+				duration = 7300 #20 years
+				}
+			
+			341 = {
+			move_capital_effect = yes
+			change_province_name = "Carthage"
+			rename_capital = "Carthage"
+			}
+			2455 = {
+			change_province_name = "Utica"
+			}
+			2454 = {
+			change_province_name = "Zama"
+			}
+		}
+	}	
+	carthageB2 = {
+		icon = mission_raid_on_valencia
+		required_missions = { carthageB1 }
+		
+		provinces_to_highlight = {
+			province_id = 341
+		}
+		
+		trigger = {
+			341 = { 
+				owned_by = ROOT 
+				OR = {
+					has_building = shipyard
+					has_building = grand_shipyard
+					}
+				OR = {
+					has_building = workshop
+					has_building = counting_house
+				}
+			province_has_center_of_trade_of_level = 2	
+			}
+		}
+		effect = {
+			341 = {
+				add_unit_construction = {
+					type = galley
+					amount = 5
+					speed = 0.5
+					cost = 0
+				}
+			}
+		}
+	}
+
+	carthageB3 = {
+		icon = mission_raid_on_valencia
+		required_missions = { carthageB2 }
+		
+		
+		trigger = {
+			num_of_galley = 50
+		}
+		effect = {
+			add_yearly_sailors = 3
+		add_country_modifier = {
+				name = "cth_galleycombat"
+				duration = 7300 #20 years
+				}	
+		}
+	}
+
+	carthageB4 = {
+		icon = mission_raid_on_valencia
+		required_missions = { carthageB3 }
+		
+		
+		trigger = {
+			if = {
+				limit = {
+					exists = TUR
+				}
+				num_of_galley = TUR
+			}
+			if = {
+				limit = {
+					exists = VEN
+				}
+				num_of_galley = VEN
+			}
+			if = {
+				limit = {
+					exists = GEN
+				}
+				num_of_galley = GEN
+			}
+			if = {
+				limit = {
+					exists = ARA
+				}
+				num_of_galley = ARA
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+					name = "cth_navy_tradition"
+					duration = -1
+			}	
+		}
+	}
+}
+
+
+carthage_missions_C = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = CTH
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	carthageC1 = {
+		icon = mission_construct_a_corsair_fleet
+		required_missions = { }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 333
+				province_id = 4559
+				province_id = 4560
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			333 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			4559 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			4560 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = { 
+			upper_andalucia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			lower_andalucia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}	
+	
+	carthageC2 = {
+		icon = mission_construct_a_corsair_fleet
+		required_missions = { carthageC1 }
+		provinces_to_highlight = {
+			OR = {
+				area = upper_andalucia_area
+				area = lower_andalucia_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			upper_andalucia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			lower_andalucia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = { 
+			alentejo_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		
+		
+		}
+	}		
+
+	carthageC3 = {
+		icon = mission_construct_a_corsair_fleet
+		required_missions = { carthageC2 }
+		provinces_to_highlight = {
+				area = alentejo_area
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			alentejo_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = { 
+			valencia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			toledo_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			extremadura_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	carthageC4 = {
+		icon = mission_construct_a_corsair_fleet
+		required_missions = { carthageC3 }
+		provinces_to_highlight = {
+				OR = {
+				area = toledo_area
+				area = valencia_area
+				area = extremadura_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			toledo_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			valencia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			extremadura_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = { 
+			118 = {
+				add_permanent_claim = ROOT
+			}
+		
+		
+		}
+	}
+	carthageC5 = {
+		icon = mission_construct_a_corsair_fleet
+		required_missions = { carthageB4 carthageC4 carthageD3 }
+		provinces_to_highlight = {
+			province_id = 118
+		}
+		
+		trigger = {
+			118 = {
+				owned_by = ROOT
+			}
+		}
+		
+		effect = { 
+			add_country_modifier = {
+				name = "cth_supremacy_over_rome"
+				duration = 7300 # 20 years
+			}	
+			country_event = { id = hrd_cth.1 }
+		}
+	}	
+}
+
+carthage_missions_D = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = CTH
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	carthageD1 = {
+		icon = mission_construct_a_corsair_fleet
+		required_missions = { carthageC1 }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				province_id = 226
+				province_id = 1751
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			226 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1751 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			barbary_coast_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			4562 = {
+				add_permanent_claim = ROOT
+			}
+			northern_morocco_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}	
+	
+	carthageD2 = {
+		icon = mission_construct_a_corsair_fleet
+		required_missions = { carthageD1 }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4562
+				area = barbary_coast_area
+				area = northern_morocco_area
+			}
+		}
+		
+		trigger = {
+			4562 ={
+			owned_by = ROOT
+			}
+			barbary_coast_area ={
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			northern_morocco_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			336 = {
+				add_permanent_claim = ROOT
+			}
+			342 = {
+				add_permanent_claim = ROOT
+			}
+			1110 = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}	
+	carthageD3 = {
+		icon = mission_construct_a_corsair_fleet
+		required_missions = { carthageD2 }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 336
+				province_id = 342
+				province_id = 1110
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			336 ={
+			owned_by = ROOT
+			}
+			342 ={
+			owned_by = ROOT
+			}
+			1110 ={
+			owned_by = ROOT
+			}
+		}
+		
+		effect = { 
+			add_country_modifier = {
+				name = "cth_trade_eff"
+				duration = 7300 # 20 years
+			}
+		}
+	}	
+}
+
+

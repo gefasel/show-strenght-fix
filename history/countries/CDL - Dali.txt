@@ -1,0 +1,18 @@
+government = monarchy
+add_government_reform = HRD_warlord_state
+primary_culture = bai
+add_accepted_culture = yi
+religion = buddhism
+technology_group = chinese
+capital = 662
+
+1437.10.22 = {
+	monarch = {
+		name = "Youyuan"
+		dynasty = "Dali"
+		birth_date = 1412.10.22
+		adm = 3
+		dip = 3
+		mil = 5
+	}
+}

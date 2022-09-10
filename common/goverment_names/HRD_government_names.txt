@@ -1,0 +1,72 @@
+warlord_state = {
+    rank = {
+        1 = WARLORD_STATE
+        2 = WARLORD_STATE
+        3 = WARLORD_STATE
+    }
+    
+    ruler_male = {
+        1 = WARLORD
+        2 = WARLORD
+        3 = WARLORD
+    }
+    
+    ruler_female = {
+        1 = WARLORD
+        2 = WARLORD
+        3 = WARLORD
+    }
+    
+	
+    trigger = {
+        has_reform = HRD_warlord_state
+    }
+}
+
+RELIGIOUS_STATE = {
+    rank = {
+        1 = RELIGIOUS_STATE
+        2 = RELIGIOUS_STATE
+        3 = RELIGIOUS_STATE
+    }
+    
+    ruler_male = {
+        1 = HIGH_PRIEST
+        2 = HIGH_PRIEST
+        3 = HIGH_PRIEST
+    }
+    
+    ruler_female = {
+        1 = HIGH_PRIESTESS
+        2 = HIGH_PRIESTESS
+        3 = HIGH_PRIESTESS
+    }
+    
+    trigger = {
+        has_reform = HRD_warlord_state
+    }
+}
+
+ARAB_SULTANATE = {
+    rank = {
+        1 = ARAB_SULTANATE
+        2 = ARAB_SULTANATE
+        3 = ARAB_SULTANATE
+    }
+    
+    ruler_male = {
+        1 = SULTAN_ARABIA
+        2 = SULTAN_ARABIA
+        3 = SULTAN_ARABIA
+    }
+    
+    ruler_female = {
+        1 = SULTANA_ARABIA
+        2 = SULTANA_ARABIA
+        3 = SULTANA_ARABIA
+    }
+    
+    trigger = {
+        has_reform = KoP_arabian_sultanate
+    }
+}

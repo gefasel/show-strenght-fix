@@ -1,0 +1,26 @@
+# China
+CHN = "countries/China.txt"
+
+#Europe
+AHH = "countries/Austrohungary.txt"
+ANG = "countries/Angevin.txt"
+YUG = "countries/Balkan.txt"
+GGO = "countries/GreaterGeorgia.txt"
+NGC = "countries/NorthGermanConfederation.txt"
+SGC = "countries/SouthGermanConfederation.txt"
+BAT = "countries/Banat.txt"
+
+# East Africa
+MDG = "countries/Madagascar.txt"
+LES = "countries/Lesotho.txt"
+AKZ = "countries/Akzum.txt"
+
+#West Africa
+NRI = "countries/Nri.txt"
+SGN = "countries/Senegal.txt"
+
+#North Africa
+CTH = "countries/Carthage.txt"
+
+#all Africa
+UAC = "countries/Africa.txt"

@@ -1,0 +1,537 @@
+akzum_missions_A = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		tag = AKZ
+	}
+	has_country_shield = yes
+	
+	akzumA.1 = {
+		icon = prosperity_for_all
+		required_missions = {  }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1213
+				province_id = 1224
+				province_id = 2764
+				province_id = 1212
+			}
+		}
+		trigger = {
+			1213 = {
+				owned_by = ROOT
+				is_prosperous = yes
+			}
+			1224 = {
+				owned_by = ROOT
+				is_prosperous = yes
+			}
+			2764 = {
+				owned_by = ROOT
+				is_prosperous = yes
+			}
+			1212 = {
+				owned_by = ROOT
+				is_prosperous = yes
+			}
+		}	
+		effect = {
+			define_advisor = {
+				type = natural_scientist
+				skill = 2
+				cost_multiplier = 0.5
+			}
+		}
+	}
+	
+	akzumA.2 = {
+		icon = mission_rb_conquer_bengal
+		required_missions = { akzumA.1 }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2761
+				province_id = 1218
+			}
+		}
+		trigger = {
+			2761 = {
+				owned_by = ROOT
+				has_building = workshop
+				NOT = { local_autonomy = 25 }
+			}
+			1218 = {
+				owned_by = ROOT
+				has_building = workshop
+				NOT = { local_autonomy = 25 }
+			}
+		}
+		effect = {
+			2761 = {
+				change_trade_goods = gems	
+				add_province_modifier = {
+					name = "akzum_gems"
+					duration = -1
+				}
+			}
+			1218 = {
+				change_trade_goods = gems
+				add_province_modifier = {
+					name = "akzum_gems"
+					duration = -1
+				}
+			}
+		}
+	}	
+	
+	akzumA.3 = {
+		icon = mission_conquer_aden
+		required_missions = { akzumA.2 }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1205	# Mogadishu
+				province_id = 1219	# Darfur
+				province_id = 4283	# Shihr
+			}
+		}
+		trigger = {
+			1205 = {
+				owned_by = ROOT
+				has_building = marketplace
+			}
+			1219 = {
+				owned_by = ROOT
+				has_building = marketplace
+			}
+			4283 = {
+				owned_by = ROOT
+				has_building = marketplace
+			}
+		}
+		effect = {
+			mombasa_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			northern_swahili_coast_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			central_swahili_coast_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			1207 = {
+				create_colony = 999
+			}
+			2779 = {
+				create_colony = 999
+			}
+		}	
+	}
+}
+
+akzum_missions_B = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		tag = AKZ
+	}
+	has_country_shield = yes
+	
+	akzumB.1 = {
+		icon = mission_subjugate_saurashtra
+		required_missions = {  }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				province_id = 387	# Mukha
+				province_id = 4280	# Taiz
+			}
+		}
+		trigger = {
+			OR = {
+				387 = {
+					owned_by = ROOT
+					OR = {
+						has_building = fort_15th
+						has_building = fort_16th
+						has_building = fort_17th
+						has_building = fort_18th
+					}
+				}
+				4280 = {
+					owned_by = ROOT
+					OR = {
+						has_building = fort_15th
+						has_building = fort_16th
+						has_building = fort_17th
+						has_building = fort_18th
+					}
+				}
+			}	
+		}
+		effect = {
+			387 ={
+				add_province_modifier = {
+					name = "akzum_fort"
+					duration = -1
+				}
+			}
+			4280 ={	
+				add_province_modifier = {
+					name = "akzum_fort"
+					duration = -1
+				}
+			}
+			hadramut_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			yemen_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tihama_al_yemen_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			mahra_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			upper_yemen_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}	
+}
+
+akzum_missions_C = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		tag = AKZ
+	}
+	has_country_shield = yes	
+	
+	akzumC.1 = {
+		icon = mission_empire
+		required_missions = {  }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				region = horn_of_africa_region
+				area = lower_nubia_area
+			}
+		}
+		trigger = {
+			AND = {
+				capital_scope = {
+					region_for_scope_province = {
+						type = all
+						country_or_non_sovereign_subject_holds = root
+					}
+				}
+				lower_nubia_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = root
+				}
+			}			
+		}
+		effect = {
+			add_country_modifier = {
+				name = "akzum_morale"
+				duration = 3650 #10 years
+			}
+		}
+	}
+	
+	akzumC.2 = {
+		icon = mission_egyptian_mamluk_soldier
+		required_missions = { akzumB.1 akzumC.1 }
+		trigger = {
+			military_strength = {
+				who = MAM
+				value = 0.5
+			}
+		}
+		effect = {
+			custom_tooltip = hrd_mamluks_egypt
+			hidden_effect = {
+				egypt_region = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+						owned_by = MAM
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	
+	akzumC.3 = {
+		icon = mission_conquer_benin
+		required_missions = { akzumC.2 }
+		provinces_to_highlight = {
+			OR = {
+				area = mombasa_area
+				area = northern_swahili_coast_area
+				area = central_swahili_coast_area
+			}
+		}
+		trigger = {
+			mombasa_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			northern_swahili_coast_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			central_swahili_coast_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+		effect = {
+			mozambique_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			quelimane_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			zimbabwe_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			butua_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			central_swahili_coast_area = {
+				add_prosperity = 100
+			}
+		}
+	}
+	
+	akzumC.4 = {
+		icon = mission_african_gold
+		required_missions = { akzumC.3 }
+		provinces_to_highlight = {
+			OR = {
+				area = mozambique_area
+				area = quelimane_area
+				area = zimbabwe_area
+				area = butua_area
+			}
+		}
+		trigger = {
+			mozambique_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			quelimane_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			zimbabwe_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			butua_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+		effect = {
+			define_advisor = {
+				type = trader
+				skill = 3
+				cost_multiplier = 0.5
+			}
+			
+		}
+	}			
+}
+
+akzum_missions_D = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		tag = AKZ
+	}
+	has_country_shield = yes
+	
+	akzumD.1 = {
+		icon = mission_conquer_andhra_bah
+		required_missions = {  }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				region = west_india_region
+				region = deccan_region
+			has_discovered = ROOT
+			}
+		}
+		trigger = {
+			OR = {
+				any_known_country = {
+					capital_scope = {
+						region = west_india_region
+					}
+					has_opinion = {
+						who = ROOT
+						value = 100
+					}
+				}
+				any_known_country = {
+					capital_scope = {
+						region = deccan_region
+					}
+					has_opinion = {
+						who = ROOT
+						value = 100
+					}
+				}
+			}
+		}
+		effect = {
+			add_treasury = 100
+			west_india_region = {
+				discover_country = ROOT
+			}
+			deccan_region = {
+				discover_country = ROOT
+			}
+		}
+	}
+	
+	akzumD.2 = {
+		icon = mission_dominate_trade_in_aden
+		required_missions = { akzumD.1 }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1340	# Coromandel
+				province_id = 504	# Gujurat
+			}
+		}
+		trigger = {
+			OR = {
+				1340 = {
+					trade_share = {
+						country = ROOT
+						share = 10
+					}
+				}
+				504 = {
+					trade_share = {
+						country = ROOT
+						share = 10
+					}
+				}
+			}
+		}
+		effect = {
+			south_lanka_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			lanka_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			1248 {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	akzumD.3 = {
+		icon = mission_conquer_lanka
+		required_missions = { akzumD.2 }
+		provinces_to_highlight = {
+			OR = {
+				area = south_lanka_area
+				area = lanka_area
+				province_id = 1248	
+			}
+		}
+		trigger = {
+			south_lanka_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			lanka_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			1248 {
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "akzum_trade"
+				duration = 3650
+			}
+			572 = {
+				add_center_of_trade_level = 1
+			}
+		}
+	}
+}

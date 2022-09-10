@@ -1,0 +1,21 @@
+# Province Triggered modifiers are here.
+# These are added to provinces through the add_province_triggered_modifier effect
+#
+# Effects are fully scriptable here.
+
+####HRD####
+
+imperial_capital = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+	trigger = {
+		owner = {
+			capital_scope = {
+				superregion = china_superregion
+			}
+		}
+	}
+	local_development_cost = -0.25	
+}
+

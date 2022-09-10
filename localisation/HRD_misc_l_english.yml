@@ -1,0 +1,40 @@
+﻿l_english:
+ new_world_player_nerf:0 "New World Nation"
+ 
+
+ 
+ ##HRD MONUMENTS##
+ the_rock:0 "The Rock"
+ venetian_arsenal:0 "Venetian Arsenal"
+ florence_duomo:0 "Basilica di Santa Maria del Fiore"
+ holsten_gate:0 "Holsten Gate"
+ castello_sforzesco:0 "Castello Sforzesco"
+ charles_bridge:0 "Charles Bridge"
+ brans_castle:0 "Bran's Castle"
+ mont_st_michel:0 "Mont-Saint-Michel"
+ tre_kronor:0 "Tre Kronor"
+ kronborg:0 "Kronborgs Castle"
+ malbork:0 "Ordensburg Marienburg"
+ rynek:0 "Kraków Cloth Hall"
+ ulm_minister:0 "Ulm Minister"
+ dubrovnik:0 "Dubrovnik Harbour"
+ hermitage:0 "Hermitage"
+ leaning_tower:0 "Leaning Tower of Pisa"
+ riga:0 "Riga Old Town"
+ binnenhof:0 "Binnenhof"
+ porcelain_tower:0 "The Porcelain Tower"
+ gyeongbokgung:0 "Gyeongbokgung Palace"
+ samarra:0 "Great Mosque of Samarra"
+ kilwa:0 "Kilwa Kisiwani"
+ sankore:0 "Sankore Madrasah"
+ obelisk_aksum:0 "Obelisk of Aksum"
+ el_jem:0 "El Jem Amphiteather"
+ theodoro:0 "Theodoro"
+ victoria_falls:0 "Victoria Falls"
+ 
+ 
+ ##Estates##
+ estate_cossacks_cavalry_supremacy:0 "Cavalry Supremacy"
+ estate_cossacks_cavalry_supremacy_desc:0 "We will follow the Cossacks and focus our army on the cavalry!"
+ estate_church_piety_privilege:0 "A Mystic Church"
+ estate_church_piety_privilege_desc:0 "Our clerical advisors recommend we go down a more mystic path with the religion, and we must listen to them!"

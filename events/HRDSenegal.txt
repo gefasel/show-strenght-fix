@@ -1,0 +1,128 @@
+########################################
+#  HRD event
+#  Events for Senegal
+#
+# 
+########################################
+
+namespace = hrd_sgn
+
+country_event = {
+	id = hrd_sgn.3
+	title = hrd_sgn.3.t
+	desc = hrd_sgn.3.d
+	picture = COLONIZATION_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		1114 = {
+			owned_by = ROOT
+			is_core = ROOT
+		}
+		1116 = {
+			owned_by = ROOT
+			is_core = ROOT
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = hrd_sgn.3.a
+		home_trade_node_effect_scope = {
+			random_trade_node_member_province = {
+				limit = {
+					owned_by = ROOT
+				}
+				change_religion = ibadi
+			}
+		}
+	}
+}
+	
+# Africa for the Africans? 
+country_event = {
+	id = hrd_sgn.1
+	title = hrd_sgn.1.t
+	desc = hrd_sgn.1.d
+	picture = POPE_PREACHING_eventPicture
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = { # secure independence
+		name = "hrd_sgn.1.a"
+
+		add_country_modifier = {
+				name = "sgn_secure_independence"
+				duration = 7300 #20 years
+		}
+		define_admiral = {
+				name = "Boatman"
+				fire = 5
+				shock = 5
+				manuever = 5
+		}
+	}
+	option = { # work with europeans
+		name = "hrd_sgn.1.b"
+		add_country_modifier = {
+				name = "sgn_work_with_euros"
+				duration = 7300 #20 years
+			}
+		add_mercantilism = 5	
+	}
+}	
+	
+country_event = { #slave trade
+	id = hrd_sgn.2
+	title = hrd_sgn.2.t
+	desc = hrd_sgn.2.d
+	picture = POPE_PREACHING_eventPicture
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = { # secure independence
+		name = "hrd_sgn.2.a"
+		1113 = {
+			add_province_modifier = {
+				name = "sgn_local_goods"
+				duration = -1
+			}
+		}
+		1116 = {
+			add_province_modifier = {
+				name = "sgn_local_goods"
+				duration = -1
+			}
+		}
+		2239 = {
+			add_province_modifier = {
+				name = "sgn_local_goods"
+				duration = -1
+			}
+		}
+	}
+	
+	option = { # work with europeans
+		name = "hrd_sgn.2.b"
+		1113 = {
+			change_trade_goods = ivory
+			}
+		1116 = {
+			change_trade_goods = ivory
+			}
+		2239 = {
+			change_trade_goods = ivory
+			}
+			
+	}
+}	

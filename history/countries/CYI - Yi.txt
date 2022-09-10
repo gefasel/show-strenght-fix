@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = HRD_warlord_state
+primary_culture = yi
+add_accepted_culture = miao
+add_accepted_culture = zhuang
+religion = confucianism 
+technology_group = chinese
+capital = 2163	#Liuzhou
+
+1437.10.22 = {
+	monarch = {
+		name = "Zi"
+		dynasty = "Yi"
+		birth_date = 1419.10.22
+		adm = 4
+		dip = 6
+		mil = 5
+	}
+}

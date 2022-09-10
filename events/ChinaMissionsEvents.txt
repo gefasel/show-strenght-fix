@@ -1,0 +1,57 @@
+##################################################################################################
+# KoP event 
+#
+# By Lukas
+##################################################################################################
+
+namespace = kopalexandria
+
+#A new Identity
+country_event = {
+	id = kop_dali.1
+	title = kop_dali1.t
+	desc = kop_dali1.d
+	picture = ANGRY_MOB_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = kop_dali.1.a
+		add_stability = 1
+	}
+	option = {
+		name = kop_dali.1.b
+		change_primary_culture = sichuanese
+	}
+}
+
+#Forging our new culture
+country_event = {
+	id = kop_dali.2
+	title = kop_dali.2.t
+	desc = kop_dali.2.d
+	picture = BATTLE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "kop_dali.2.a" 
+		ai_chance = { factor = 50 }
+		change_religion = buddhism
+		add_stability = 1
+		}
+
+	option = {
+		name = "kop_dali.2.b" 
+		ai_chance = { factor = 50 }
+		change_religion = vajrayana
+		add_stability = -2
+		}
+		
+	option = {
+		name = "kop_dali.2.c" 
+		ai_chance = { factor = 80 }
+		change_religion = mahayana
+		add_stability = -2
+		}
+}

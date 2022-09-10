@@ -1,0 +1,18 @@
+government = monarchy
+add_government_reform = HRD_warlord_state
+technology_group = chinese
+religion = confucianism
+primary_culture = chimin
+add_accepted_culture = hakka
+capital = 669	#Fuzhou
+
+1437.10.22 = {
+	monarch = {
+		name = "Youdun"
+		dynasty = "Min"
+		birth_date = 1409.10.22
+		adm = 4
+		dip = 4
+		mil = 2
+	}
+}

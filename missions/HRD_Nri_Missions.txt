@@ -1,0 +1,402 @@
+nri_missions_A = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		tag = NRI
+	}
+	has_country_shield = yes
+	
+	nriA1 = {
+		icon = mission_expel_the_moriscos
+		required_missions = { nriB1 }
+		position = 2
+		provinces_to_highlight = {
+			region = niger_region
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 40
+				region = niger_region
+			}
+		}
+		effect = {
+			sahel_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	nriA2 = {
+		icon = mission_african_gold
+		required_missions = { nriA1 }
+		trigger = {
+			gold = 3
+		}
+		effect = {
+			manding_area = {
+				add_prosperity = 100
+			}
+		}
+	}
+	
+	nriA3= {
+		icon = mission_saharan_route
+		required_missions = { nriA2 }
+		provinces_to_highlight = {
+			province_id = 1128
+			province_id = 2275
+		}
+		trigger = {
+			owns_core_province = 1128
+			owns_core_province = 2275
+		}
+		effect = {
+			define_advisor = {
+				type = theologian
+				skill = 2
+				cost_multiplier = 0.5
+			}
+			define_advisor = {
+				type = statesman
+				skill = 2
+				cost_multiplier = 0.5
+			}
+		}
+	}
+}
+
+
+nri_missions_B = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		tag = NRI
+	}
+	has_country_shield = yes
+	
+	nriB1= {
+		icon = mission_rb_control_state_religion
+		required_missions = {  }
+		trigger = {
+			religious_unity = 0.8
+		}
+		effect = {
+			niger_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			guinea_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	nriB2 = {
+		icon = mission_iberian_conquistador
+		required_missions = { nriB1 }
+		provinces_to_highlight = {
+			province_id = 1164
+			province_id = 1165
+		}
+		trigger = {
+			owns_core_province = 1164
+			owns_core_province = 1165
+		}
+		effect = {
+			coastal_kongo = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kongo_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	nriB3 = {
+		icon = mission_colonial
+		required_missions = { nriB2 }
+		provinces_to_highlight = {
+			area = coastal_kongo
+			area = kongo_area
+		}
+		trigger = {
+			coastal_kongo = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			kongo_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+		effect = {
+			kongo_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			define_advisor = {
+				type = inquisitor
+				skill = 2
+				cost_multiplier = 0.5
+			}
+		}
+	}
+	
+	nriB4 = {
+		icon = crush_heretic_strongholds
+		required_missions = { nriB3 }
+		provinces_to_highlight = {
+			region = kongo_region
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 20
+				region = kongo_region
+			}
+		}
+		effect = { 
+			4087 = {
+				change_trade_goods = gold
+				add_province_modifier = {
+					name = "nri_dev"
+					duration = 7300
+				}
+			}
+		}
+	}
+}
+
+nri_missions_C = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		tag = NRI
+	}
+	has_country_shield = yes
+	
+	nriC1 = {
+		icon = mission_early_game_buildings
+		required_missions = {  }
+		trigger = {
+			development_in_provinces = {
+				value = 45
+				area = benin_area
+			}
+		}
+		effect = {
+			benin_area = {
+				add_province_modifier = {
+					name = "nri_capital"
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	nriC2 = {
+		icon = found_batavia
+		required_missions = { nriC1 }
+		provinces_to_highlight = {
+			province_id = 1146
+		}
+		trigger = {
+			1146 = {
+				development = 15
+				has_building = workshop
+			}
+			lower_niger_area = {
+				is_prosperous = yes
+			}
+		}
+		effect = {
+			
+
+		}
+		effect = {
+			lower_niger_area = {
+				add_province_modifier = {
+					name = "nri_lowerniger"
+					duration = -1
+				}
+			}
+			1153 = { 
+				change_trade_goods = paper 
+			}
+		}
+	}
+	
+	nriC3 = {
+		icon = invest_in_the_rich_trades
+		required_missions = { nriC2 }
+		trigger = {
+			calc_true_if = {
+				all_owned_province = {
+					OR = {
+						province_has_center_of_trade_of_level = 1
+						province_has_center_of_trade_of_level = 2
+						province_has_center_of_trade_of_level = 3
+					}
+					controlled_by = owner
+					is_core = ROOT
+					}
+				amount = 8
+			}
+		}
+		effect = {
+			define_advisor = {
+				type = trader
+				skill = 3
+				cost_multiplier = 0.5
+			}
+		}
+	}
+	
+	nriC4 = {
+		icon = mission_empire
+		required_missions = { nriC3 }
+		provinces_to_highlight = {
+			province_id = 1132
+			province_id = 1158
+		}
+		trigger = {
+			owns_core_province = 1132
+			owns_core_province = 1158
+			stability = 3
+		}
+		effect = {
+			add_country_modifier = {
+				name = "nri_empire"
+				duration = -1
+			}
+			set_government_rank = 3	
+		}
+	}
+	
+	nriC5 = {
+		icon = the_holy_league
+		required_missions = { nriB4 nriC4 nriD3 }
+		provinces_to_highlight = {
+			province_id = 358
+			province_id = 341
+		}
+		trigger = {
+			358 = {
+				religion_group = christian
+			}
+			341 = {
+				religion_group = christian
+			}
+			full_idea_group = religious_ideas
+		}
+		effect = {
+			add_country_modifier = {
+				name = "nri_morale"
+				duration = -1
+			}
+		}
+	}	
+}			
+
+
+nri_missions_D = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		tag = NRI
+	}
+	has_country_shield = yes
+	
+	nriD1 = {
+		icon = prester_john
+		required_missions = {  }
+		position = 2
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = hrd_nri_coptic
+				any_known_country = {
+					religion = coptic
+					alliance_with = ROOT
+				}
+			}
+		}
+		effect = {
+			add_prestige = 15
+			define_advisor = {
+				type = inquisitor
+				skill = 1
+				cost_multiplier = 0.5
+			}
+		}
+	}
+	
+	nriD2 = {
+		icon = mission_conquer_alexandria
+		required_missions = { nriD1 }
+		trigger = {
+			calc_true_if = {
+				amount = 100
+				all_province = {
+					continent = africa
+					owner = {
+						religion_group = christian
+					}
+				}
+			}
+		}
+		effect = {
+			benin_area = {
+				add_base_tax = 3
+				add_base_production = 3	
+				add_base_manpower = 3
+			}
+		}
+	}
+	
+	nriD3 = {
+		icon = support_the_orders
+		required_missions = { nriD2 }
+		provinces_to_highlight = {
+			province_id = 2932
+			province_id = 774
+		}
+		trigger = {
+			owns_core_province = 2932
+			owns_core_province = 774
+			2932 = {religion_group = christian }
+			774 = {religion_group = christian }
+		}
+		effect = {
+			add_stability = 1
+			add_dip_power = 100	
+		}
+	}
+}

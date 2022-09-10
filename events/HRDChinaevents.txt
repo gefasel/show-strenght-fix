@@ -1,0 +1,139 @@
+##################################################################################################
+# HRD event 
+#
+# By Muerten
+##################################################################################################
+
+namespace = hrdchina
+
+# Ming mandate start
+country_event = {
+	id = hrdchina.1
+	title = hrdchina.1.t
+	desc = hrdchina.1.d
+	picture = SUFFERING_CHINESE_VILLAGE_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = MNG
+		is_emperor_of_china = yes
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = hrdchina.1.a # mandate lowered
+		add_stability = -2
+		add_mandate = -40
+	}
+}
+
+# China Capital
+country_event = {
+	id = hrdchina.2
+	title = hrdchina.2.t
+	desc = hrdchina.2.d
+	picture = CITY_VIEW_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "hrdchina.2.a"
+		1816 = {
+			if = {
+				limit = {
+					NOT = {
+						is_capital = yes
+					}
+				}
+				move_capital_effect = yes
+			}
+			add_base_tax = 3
+			add_base_production = 3
+			add_base_manpower = 3
+			add_province_triggered_modifier = imperial_capital
+		}
+		add_stability = 1
+	}
+	option = {
+		name = "hrdchina.2.b"
+		1821 = {
+			if = {
+				limit = {
+					NOT = {
+						is_capital = yes
+					}
+				}
+				move_capital_effect = yes
+			}
+			add_base_tax = 3
+			add_base_production = 3
+			add_base_manpower = 3
+			add_province_triggered_modifier = imperial_capital
+		}
+		add_stability = 1
+	}
+	option = {
+		name = "hrdchina.2.c"
+		700 = {
+			if = {
+				limit = {
+					NOT = {
+						is_capital = yes
+					}
+				}
+				move_capital_effect = yes
+			}
+			add_base_tax = 3
+			add_base_production = 3
+			add_base_manpower = 3
+			add_province_triggered_modifier = imperial_capital
+		}
+		add_stability = 1
+	}
+	option = {
+		name = "hrdchina.2.e"
+		679 = {
+			if = {
+				limit = {
+					NOT = {
+						is_capital = yes
+					}
+				}
+				move_capital_effect = yes
+			}
+			add_base_tax = 3
+			add_base_production = 3
+			add_base_manpower = 3
+			add_province_triggered_modifier = imperial_capital
+		}
+		add_stability = 1	
+	}
+}
+
+#Gov-Reform
+country_event = {
+	id = hrdchina.3
+	title = hrdchina.3.t
+	desc = hrdchina.3.d
+	picture = POPE_PREACHING_eventPicture
+	fire_only_once = yes
+	
+	trigger = {
+		AND = {
+			tag = CHN
+			government = monarchy
+		}
+	}
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	option = {
+		name = hrdchina.3.a			
+		ai_chance = { factor = 100 }
+		add_government_reform = HRD_chinese_empire
+	}
+}

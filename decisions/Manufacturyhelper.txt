@@ -1,0 +1,97 @@
+country_decisions = {
+	
+	state_house_good = {
+		major = yes
+		potential = {
+			dip_tech = 12
+		}
+		provinces_to_highlight = {
+			owned_by = ROOT
+			NOT = {
+				OR = {
+					any_province_in_state = {
+						has_building = state_house
+					}
+					any_province_in_state = {
+						has_building = ramparts
+					}
+					any_province_in_state = {
+						has_building = furnace
+					}
+					any_province_in_state = {
+						has_building = impressment_offices
+					}
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+		effect = {}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}
+
+country_decisions = {			
+	
+	furniceable_land = {
+		major = yes
+		potential = {
+			adm_tech = 20
+		}
+		provinces_to_highlight = {
+			owned_by = ROOT
+			trade_goods = coal
+			NOT = {
+				has_building = furnace
+			}
+		}
+		allow = {
+			always = no
+		}
+		effect = {}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}
+
+country_decisions = {		
+	
+	ramparts_gud = {
+		major = yes
+		potential = {
+			adm_tech = 6
+		}
+		provinces_to_highlight = {
+			owned_by = ROOT
+			AND = {
+				OR = {
+					has_terrain = mountain
+					has_terrain = hills
+					has_terrain = marsh
+					has_terrain = forest
+					has_terrain = woods
+					}
+				OR = {
+					has_building = fort_15th
+					has_building = fort_16th
+					has_building = fort_17th
+					has_building = fort_18th
+					}
+				}
+		}
+			NOT = {
+				has_building = ramparts
+			}
+		allow = {
+			always = no
+		}
+		effect = {}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

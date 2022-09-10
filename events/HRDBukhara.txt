@@ -1,0 +1,48 @@
+########################################
+#  HRD event
+#  Events for Bukhara
+#
+# 
+########################################
+
+namespace = hrd_buk
+	
+# horde or monarchy
+country_event = {
+	id = hrd_buk.1
+	title = hrd_buk.1.t
+	desc = hrd_buk.1.d
+	picture = POPE_PREACHING_eventPicture
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	trigger= {
+		tag = BUK
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = { # buk_monarchy
+		name = "hrd_buk.1.a"
+			change_technology_group = muslim
+			change_unit_type = muslim
+		if = {
+			limit = { 
+				NOT = { government = monarchy }
+				is_revolutionary = no
+			}
+			change_government_to_monarchy = yes
+				
+			}
+		if = {
+			limit = { is_revolutionary = no }
+				add_government_reform = iqta
+		}
+	}
+	
+	option = { # stay horde
+		name = "hrd_buk.1.b"
+		add_prestige = 25
+		
+	}
+}

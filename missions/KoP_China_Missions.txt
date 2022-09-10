@@ -1,0 +1,534 @@
+##BranchStart 0
+chn_missions_2 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = CHN
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	##Mission Start
+	CHN_2.1 = {
+		icon = mission_galleys_in_port
+		required_missions {
+			CHN_1
+		}
+		position = 3
+		provinces_to_highlight = {
+			##PROVINCESHIGHLIGHTCODE
+		}
+		trigger = {
+			OR = {
+				num_of_heavy_ship = 35 
+				num_of_galley = 100
+			}
+		}
+		effect = {
+			kyushu_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			northern_kyushu = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			korea_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	##Mission End
+	##Mission Start
+	CHN_2.2 = {
+		icon = mission_invade_island
+		required_missions {
+			CHN_2.1
+		}
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = northern_kyushu
+				area = kyushu_area
+				region = korea_region
+			}
+		}
+		trigger = {
+			kyushu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			northern_kyushu = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			korea_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_yearly_sailors = 20
+			add_country_modifier = {
+				name = "china_conquest_korea"
+				duration = 7300
+			}
+		}
+	}
+	##Mission End
+	##
+	
+}
+##BranchEnd 0
+##BranchStart 1
+chn_missions_3 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = CHN
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	##Mission Start
+	CHN_3.1 = {
+		icon = mission_mnd_dai_control_the_army
+		required_missions {
+			CHN_1
+		}
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2164
+				province_id = 663
+			}
+		}
+		trigger = {
+			OR = {
+				2164 = {
+					owned_by = ROOT
+					OR = {
+						has_building = fort_15th
+						has_building = fort_16th
+						has_building = fort_17th
+						has_building = fort_18th
+					}
+				}
+				663 = {
+					owned_by = ROOT
+					OR = {
+						has_building = fort_15th
+						has_building = fort_16th
+						has_building = fort_17th
+						has_building = fort_18th
+					}
+				}
+			}
+		}
+		effect = {
+			red_river_delta_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			vietnam_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	##Mission End
+	##Mission Start
+	CHN_3.2 = {
+		icon = mission_chinese_general_riding
+		required_missions {
+			CHN_3.1
+		}
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = red_river_delta_area
+				area = vietnam_area
+			}
+		}
+		trigger = {
+			red_river_delta_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			vietnam_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			define_advisor = {
+				type = trader
+				skill = 3
+				cost_multiplier = 0.25
+			}
+			if = {
+				limit = {
+					NOT = { accepted_culture = vietnamese }
+					NOT = { primary_culture = vietnamese }
+				}
+				add_accepted_culture = vietnamese
+			}
+		}
+	}
+	##Mission End
+	##
+	
+}
+##BranchEnd 1
+##BranchStart 2
+chn_missions_4 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = CHN
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	##Mission Start
+	CHN_1 = {
+		icon = mission_scholar_officials
+		required_missions {
+			
+		}
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				region = xinan_region
+				region = north_china_region
+				region = south_china_region
+			}
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+			is_core = ROOT
+			china_superregion:0 "China"
+			value = 125
+			}
+		}
+		effect = {
+			add_stability = 1
+			add_prestige = 100	
+			1821 = {
+			 	add_base_tax = 3
+				add_base_production = 3
+			 	add_base_manpower = 3
+			}
+		}
+	}
+	##Mission End
+	##Mission Start
+	CHN_4.1 = {
+		icon = mission_kowtow
+		required_missions {
+			CHN_1
+		}
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = kham_area
+			}
+		}
+		trigger = {
+			kham_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			tibet_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	##Mission End
+	##Mission Start
+	CHN_4.2 = {
+		icon = mission_buddhist_monk_praying
+		required_missions {
+			CHN_4.1
+		}
+		position = 4
+		provinces_to_highlight = {
+			region = tibet_region
+		}
+		trigger = {
+			tibet_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "china_conquest_tibet"
+				duration = 7300
+			}
+		}
+	}
+	##Mission End
+	##Mission Start
+	CHN_7 = {
+		icon = mission_scholar_officials
+		required_missions {
+			CHN_2.2 CHN_3.2 CHN_4.2 CHN_5.2 CHN_6.2
+		}
+		position = 5
+		provinces_to_highlight = {
+
+		}
+		trigger = {
+		}
+		effect = {
+			add_stability = 3
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+		}
+	}
+	##Mission End
+	##
+	
+}
+##BranchEnd 2
+##BranchStart 3
+chn_missions_5 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = CHN
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	##Mission Start
+	CHN_5.1 = {
+		icon = mission_asian_city
+		required_missions {
+			CHN_1
+		}
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				province_id = 707
+			}
+		}
+		trigger = {
+			707 = {
+				owned_by = ROOT
+				development = 25
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+				OR = {
+					has_building = marketplace
+					has_building = trade_depot
+					has_building = stock_exchange
+				}	
+				OR = {
+					has_building = workshop
+					has_building = counting_house
+				}
+			}
+		}
+		effect = {
+			shanshan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tarim_basin_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kashgaria_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			turpan_kumul_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	##Mission End
+	##Mission Start
+	CHN_5.2 = {
+		icon = mission_chinese_general_riding
+		required_missions {
+			CHN_5.1
+		}
+		position = 4
+		provinces_to_highlight = {
+			OR = { 
+				area = shanshan_area
+				area = tarim_basin_area
+				area = kashgaria_area
+				area = turpan_kumul_area
+			}
+		}
+		trigger = {
+			shanshan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tarim_basin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kashgaria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			turpan_kumul_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "china_conquest_sinkiang"
+				duration = 7300
+			}
+		}
+	}
+	##Mission End
+	##
+	
+}
+##BranchEnd 3
+##BranchStart 4
+chn_missions_6 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = CHN
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	##Mission Start
+	CHN_6.1 = {
+		icon = mission_manchu_warrior
+		required_missions {
+			CHN_1
+		}
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2111
+				province_id = 726
+			}
+		}
+		trigger = {
+				2111 = {
+					owned_by = ROOT
+					OR = {
+						has_building = fort_15th
+						has_building = fort_16th
+						has_building = fort_17th
+						has_building = fort_18th
+					}
+				}
+				726 = {
+					owned_by = ROOT
+					OR = {
+						has_building = fort_15th
+						has_building = fort_16th
+						has_building = fort_17th
+						has_building = fort_18th
+					}
+				}
+		}
+		effect = {
+			manchuria_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	##Mission End
+	##Mission Start
+	CHN_6.2 = {
+		icon = mission_steppe_warriors
+		required_missions {
+			CHN_6.1
+		}
+		position = 4
+		provinces_to_highlight = {
+			region = manchuria_region
+		}
+		trigger = {
+			manchuria_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+				if = {
+					limit = {
+						NOT = { accepted_culture = manchu }
+						NOT = { primary_culture = manchu }
+					}
+					add_accepted_culture = manchu
+				}
+				if = {
+					limit = {
+						NOT = { accepted_culture = manchu_new }
+						NOT = { primary_culture = manchu_new }
+					}
+					add_accepted_culture = manchu_new
+				}
+			add_yearly_manpower = 5
+			add_dip_power = 10
+		}
+	}
+	##Mission End
+	##
+	
+}
+##BranchEnd 4

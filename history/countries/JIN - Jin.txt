@@ -1,0 +1,18 @@
+government = monarchy
+add_government_reform = HRD_warlord_state
+technology_group = chinese
+religion = confucianism
+primary_culture = jin
+add_accepted_culture = chihan
+capital = 697
+
+1437.10.22 = {
+	monarch = {
+		name = "Zailung"
+		dynasty = "Jin"
+		birth_date = 1420.10.22
+		adm = 3
+		dip = 4
+		mil = 5
+	}
+}

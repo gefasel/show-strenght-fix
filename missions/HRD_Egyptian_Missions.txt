@@ -1,0 +1,1041 @@
+egypt_missions_A = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		tag = EGY
+	}
+	has_country_shield = yes
+	
+	egyptA1 = {
+		icon = mission_early_game_buildings
+		required_missions = {  }
+		position = 1
+		provinces_to_highlight = {
+			province_id = 361
+		}
+		trigger = {
+			361 = {
+				owned_by = ROOT
+				development = 30
+				OR = {
+					has_building = temple
+					has_building = cathedral
+					}
+			}
+		}
+		
+		effect = {
+			361 = {
+				add_province_modifier = {
+					name = "memphis_restored"
+					duration = -1
+				}
+			361 = {
+				change_province_name = "Memphis"	
+
+				}
+			}
+		}
+	}	
+	
+	egyptA2 = { 
+		icon = mission_occupy_alexandria
+		required_missions = { egyptA1 }
+		provinces_to_highlight = {
+			province_id = 358
+		}
+		trigger = {
+			358 = {
+				owned_by = ROOT
+				development = 25
+				OR = {
+					has_building = shipyard
+					has_building = grand_shipyard
+					}
+				OR = {
+					has_building = marketplace
+					has_building = trade_depot
+					has_building = stock_exchange
+					}	
+			}
+		}
+		
+		effect = {
+			358 = {
+				add_province_modifier = {
+					name = "greek_influences"
+					duration = -1
+					}
+				add_mercantilism = 3
+				change_province_name = "Alexandria"
+				}
+			}
+		}
+		
+	egyptA3 = { 
+		icon = prosperity_for_all
+		required_missions = { egyptA2 }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 362
+				province_id = 363
+				province_id = 2316
+				province_id = 4316
+			}
+			OR = {
+				NOT = {
+					has_building = workshop
+					has_building = counting_house
+					development = 20
+				}
+			}
+		}
+		
+		trigger = {
+			362 = {
+				owned_by = ROOT
+				development = 20
+				OR = {
+					has_building = workshop
+					has_building = counting_house
+				}
+			}	
+			363 = {
+				owned_by = ROOT
+				development = 20
+				OR = {
+					has_building = workshop
+					has_building = counting_house
+				}
+			}	
+			2316 = {
+				owned_by = ROOT
+				development = 20
+				OR = {
+					has_building = workshop
+					has_building = counting_house
+				}
+			}	
+			4316 = {
+				owned_by = ROOT
+				development = 20
+				OR = {
+					has_building = workshop
+					has_building = counting_house
+				}
+			}	
+		}	
+		effect = {	
+			add_country_modifier = {
+				name = "mediterranean_breadbasket"
+				duration = 3650
+				}
+			362 = {
+				change_province_name = "Khito"
+			}
+			363 = {
+				change_province_name = "Tamiat"		
+			}
+			2316 = {
+				change_province_name = "Tanaso"		
+			}			
+			4316 = {
+				change_province_name = "Pelusium"	
+			}
+		}
+	}	
+
+	egyptA4 = {
+		icon = mission_saharan_route
+		required_missions = { egyptA3 }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2325
+				province_id = 2326
+				province_id = 357
+				province_id = 356
+			}
+			NOT = {
+				OR = {
+					has_building = temple
+					has_building = cathedral
+					development = 10
+				}
+			}
+		}
+		
+		trigger = {
+			2325 = {
+				owned_by = ROOT
+				development = 10
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}	
+			2326 = {
+				owned_by = ROOT
+				development = 10
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}	
+			357 = {
+				owned_by = ROOT
+				development = 10
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}	
+			356 = {
+				owned_by = ROOT
+				development = 10
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}	
+		}	
+		effect = {	
+			add_mercantilism = 3
+			2325 = {
+				change_province_name = "Amunia"
+			}
+		}
+	}
+}	
+	
+egypt_missions_B = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		tag = EGY
+	}
+	has_country_shield = yes
+	
+	egyptB1 = {	
+	icon = mission_develop_alhambra
+		required_missions = { }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2318
+				province_id = 4323
+				province_id = 1233
+			}
+			NOT = {
+				OR = {
+					has_building = temple
+					has_building = cathedral
+					development = 10
+				}
+			}
+		}
+		
+		trigger = {
+			2318 = {
+				owned_by = ROOT
+				development = 10
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}	
+			4323 = {
+				owned_by = ROOT
+				development = 10
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}	
+			1233 = {
+				owned_by = ROOT
+				development = 10
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}	
+		}	
+		effect = {	
+			2318 = {
+				add_province_modifier = {
+					name = "oasis_city"
+					duration = -1
+				}
+			4323 = {
+				add_province_modifier = {
+					name = "oasis_city"
+					duration = -1
+				}
+			1233 = {
+				add_province_modifier = {
+					name = "oasis_city"
+					duration = -1
+				}
+					
+			2318 = {
+				change_province_name = "Bahiriya Oasis"
+			}
+			4323 = {
+				change_province_name = "Dakhla Oasis"		
+			}			
+			1233 = {
+				change_province_name = "Kharga Oasis"	
+						}
+					}
+				}
+			}
+		}
+	}
+	egyptB2 = {	
+	icon = toulon_dockyards
+		required_missions = { egyptB1 }
+		provinces_to_highlight = {
+			OR= {
+				province_id = 4317
+				area = vostani_area
+				area = said_area
+			}
+		}
+		trigger = {
+			4317 = {
+				owned_by = ROOT
+				development = 15
+			}
+			359 = {
+				owned_by = ROOT
+				development = 15
+			}
+			4318 = {
+				owned_by = ROOT
+				development = 15
+			}
+			2317 = {
+				owned_by = ROOT
+				development = 15
+			}
+			2319 = {
+				owned_by = ROOT
+				development = 15
+			}
+			4320 = {
+				owned_by = ROOT
+				development = 15
+			}
+			360 = {
+				owned_by = ROOT
+				development = 15
+			}
+			4319 = {
+				owned_by = ROOT
+				development = 15
+			}
+			1231 = {
+				owned_by = ROOT
+				development = 15
+			}
+		}
+		
+		effect = {	
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			4317 = {
+				change_province_name = "Timinhor"
+			}
+			359 = {
+				change_province_name = "Shedet"		
+			}
+			4318 = {
+				change_province_name = "Tayu-djayet"		
+			}			
+			2317 = {
+				change_province_name = "Men'at Khufu"	
+			}
+			2319 = {
+				change_province_name = "Kis"	
+			}
+			4320 = {
+				change_province_name = "Thinis"	
+			}
+			360 = {
+				change_province_name = "Thebes"	
+			}
+			4319 = {
+				change_province_name = "Luxor"	
+			}
+			1231 = {
+				change_province_name = "Swenett"	
+			}
+		}
+	}
+	egyptB3 = {	
+		icon = mission_have_manufactories
+		required_missions = { egyptB2 }
+		provinces_to_highlight = {
+			OR= {
+			province_id = 358
+			province_id = 4317
+			province_id = 361
+			province_id = 359
+			province_id = 4318
+			province_id = 2317
+			province_id = 2319
+			}
+		NOT = {
+			OR = {
+				has_building = mills
+				has_building = farm_estate
+				has_building = tradecompany
+				has_building = plantations
+				has_building = textile
+				has_building = weapons
+				has_building = wharf
+				has_building = furnace
+				}
+			}
+		}
+		trigger = {		
+			358 = {
+				owned_by = ROOT
+				OR = {
+				has_building = mills
+				has_building = farm_estate
+				has_building = tradecompany
+				has_building = plantations
+				has_building = textile
+				has_building = weapons
+				has_building = wharf
+				has_building = furnace
+				}
+			}
+			4317 = {
+				owned_by = ROOT
+				OR = {
+				has_building = mills
+				has_building = farm_estate
+				has_building = tradecompany
+				has_building = plantations
+				has_building = textile
+				has_building = weapons
+				has_building = wharf
+				has_building = furnace
+				}
+			}
+			361 = {
+				owned_by = ROOT
+				OR = {
+				has_building = mills
+				has_building = farm_estate
+				has_building = tradecompany
+				has_building = plantations
+				has_building = textile
+				has_building = weapons
+				has_building = wharf
+				has_building = furnace
+				}
+			}
+			359 = {
+				owned_by = ROOT
+				OR = {
+				has_building = mills
+				has_building = farm_estate
+				has_building = tradecompany
+				has_building = plantations
+				has_building = textile
+				has_building = weapons
+				has_building = wharf
+				has_building = furnace
+				}
+			}
+			4318 = {
+				owned_by = ROOT
+				OR = {
+				has_building = mills
+				has_building = farm_estate
+				has_building = tradecompany
+				has_building = plantations
+				has_building = textile
+				has_building = weapons
+				has_building = wharf
+				has_building = furnace
+				}
+			}
+			2317 = {
+				owned_by = ROOT
+				OR = {
+				has_building = mills
+				has_building = farm_estate
+				has_building = tradecompany
+				has_building = plantations
+				has_building = textile
+				has_building = weapons
+				has_building = wharf
+				has_building = furnace
+				}
+			}
+			2319 = {
+				owned_by = ROOT
+				OR = {
+				has_building = mills
+				has_building = farm_estate
+				has_building = tradecompany
+				has_building = plantations
+				has_building = textile
+				has_building = weapons
+				has_building = wharf
+				has_building = furnace
+				}
+			}
+		}	
+		effect = {	
+			add_country_modifier = {
+				name = "industrialisation"
+				duration = 3650
+				}
+			}
+		}
+	egyptB4 = {	
+		icon = mission_rb_inland_india
+		required_missions = {
+		egyptB3
+		egyptA3
+		}
+		provinces_to_highlight = {
+		province_id = 4319
+			}
+		trigger = {
+			4319 = {
+				owned_by = ROOT
+				development = 30
+			}
+		}	
+		effect = {	
+			4319 = {
+				add_province_modifier = {
+					name = "valley_of_the_kings"
+					duration = -1
+				}
+			4319 = {
+				change_trade_goods = gems
+				}
+			}		
+		}
+	}
+	egyptB5 = {	
+		icon = mission_african_gold
+		required_missions = {
+		egyptA4
+		egyptB4
+		}
+		provinces_to_highlight = {
+			}
+		trigger = {
+			OR = {
+				temple = 30
+				cathedral = 30
+				}
+		}
+		effect = {
+		add_country_modifier = {
+				name = "reformed_economy"
+				duration = -1	
+				
+			}
+		}
+	}
+}	
+		
+egypt_missions_C = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		tag = EGY
+	}
+	has_country_shield = yes
+	
+	egyptC1 = {	
+		icon = take_the_bishoprics
+		required_missions = { }
+		provinces_to_highlight = {
+		province_id = 365
+		}
+		trigger = {		
+			365 = {
+				owned_by = ROOT
+				OR = {
+				fort_level = 1
+				}
+			}
+		}
+		effect = {	
+			365= {
+				add_province_modifier = {
+					name = "the_sinai_pass"
+					duration = -1
+				}
+			}
+		}
+	}
+	egyptC2 = {	
+		icon = mission_subjugate_saurashtra
+		required_missions = { egyptC1 }
+		provinces_to_highlight = {
+		province_id = 2315
+		province_id = 2321
+		province_id = 2320
+		}
+		trigger = {
+			2315 = {
+				owned_by = ROOT
+				development = 10
+				OR = {
+					has_building = shipyard
+					has_building = grand_shipyard
+				}
+			}
+			2321 = {
+				owned_by = ROOT
+				development = 10
+				OR = {
+					has_building = shipyard
+					has_building = grand_shipyard
+				}
+			}	
+			2320 = {
+				owned_by = ROOT
+				development = 15
+				OR = {
+					has_building = shipyard
+					has_building = grand_shipyard
+				}
+			}	
+		}
+		effect = {
+		2320 = {
+					center_of_trade = 1
+				}
+			}
+		}
+	egyptC3 = {	
+		icon = alpine_defenses
+		required_missions = {
+		egyptC2
+		egyptD2
+		}
+		provinces_to_highlight = {
+		province_id = 1234
+		}
+		trigger = {		
+			1234 = {
+				owned_by = ROOT
+				OR = {
+				fort_level = 1
+				}
+			}
+		}
+		effect = {	
+			1234 = {
+				add_province_modifier = {
+					name = "the_ibrim_fort"
+					duration = -1
+					}
+				}
+			}
+		}
+	egyptC4 = {	
+		icon = mission_el_badi_palace
+		required_missions = { egyptC3 }
+		provinces_to_highlight = {
+		province_id = 2326
+		province_id = 356
+		}
+		trigger = {		
+			2326 = {
+				owned_by = ROOT
+				OR = {
+				fort_level = 1
+				}
+			}
+			356 = {
+				owned_by = ROOT
+				OR = {
+				fort_level = 1
+				}
+			}
+		}
+		effect = {	
+			2326= {
+				add_province_modifier = {
+					name = "the_western_border"
+					duration = -1
+					}
+			356= {
+				add_province_modifier = {
+					name = "the_western_border"
+					duration = -1
+					}
+				}
+			}
+		}
+	}
+	egyptC5 = {	
+		icon = mission_egyptian_mamluk_soldier
+		required_missions = {
+		egyptC4
+		egyptD4
+		}
+		provinces_to_highlight = {
+		}
+		trigger = {
+			army_size_percentage = 1
+		}
+		effect = {
+			add_army_professionalism = 0.1
+			define_advisor = {
+				type = army_reformer
+				skill = 3
+				cost_multiplier = 0.5
+			}
+		}
+	}	
+}
+egypt_missions_D = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		tag = EGY
+	}
+	has_country_shield = yes
+	
+	egyptD1 = {	
+		icon = mission_egyptian_mamluk_soldier
+		required_missions = { }
+		provinces_to_highlight = {
+		}
+		trigger = {
+			army_size_percentage = 1
+			manpower_percentage = 0.6
+			num_of_generals = 1
+		}
+		effect = {
+			lower_nubia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+				}
+			}
+		}
+	egyptD2 = {	
+		icon = mission_conquer_timbuktu
+		required_missions = { egyptD1 }
+		provinces_to_highlight = {
+		province_id = 1234
+		province_id = 2322
+		province_id = 2323
+		}
+		trigger = { 
+			lower_nubia_area = {
+				type = all
+				owned_by = ROOT
+				}
+			}
+		effect = {
+			dongola_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			upper_nubia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			1234 = {
+				change_province_name = "Ibrim"
+			}
+			2322 = {
+				change_province_name = "Buhen"
+					}
+				}
+			}
+		}
+	}
+	egyptD3 = {	
+		icon = mission_launch_a_flagship
+		required_missions = { egyptD2 }
+		provinces_to_highlight = {
+		province_id = 1228
+		province_id = 1229
+		province_id = 1220
+		province_id = 1222
+		province_id = 1225
+		province_id = 1226
+		province_id = 2797
+		province_id = 2798
+		}
+		trigger = { 
+			dongola_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+				}
+			upper_nubia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+				}	
+			}
+		effect = {
+			2787 = {
+				add_permanent_claim = ROOT
+			}
+			1230 = {
+				add_permanent_claim = ROOT
+			}
+			1228 = {
+				change_province_name = "Napata"
+			}
+			1229 = {
+				change_province_name = "Meroe"
+			}
+		}
+	}
+	egyptD4 = {	
+		icon = mission_assemble_an_army
+		required_missions = { egyptD3 }
+		provinces_to_highlight = {
+		}
+		trigger = {
+		army_professionalism = 0.50
+		army_size_percentage = 1
+		num_of_generals = 2
+		}
+		effect = {
+		add_country_modifier = {
+			name = "a_professional_army"
+			duration = -1
+			}
+		}
+	}
+}
+
+egypt_missions_E = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		tag = EGY
+	}
+	has_country_shield = yes
+	
+	egyptE1 = {	
+		icon = mission_ottoman_diplomacy
+		required_missions = {}
+		provinces_to_highlight = {
+		}
+		trigger = {
+			if = {
+				limit = {
+					exists = TUR
+					TUR = {
+						NOT = {
+							is_subject = yes
+						}
+					}
+				}
+					AND = {
+						is_rival = TUR
+						TUR = {
+							custom_trigger_tooltip = {
+								tooltip = has_been_insulted_by_root
+								OR = {
+									has_opinion_modifier = {
+										who = ROOT
+										modifier = insulted
+									}
+									has_opinion_modifier = {
+										who = ROOT
+										modifier = scornfully_insulted
+									}
+								}
+							}
+						}
+					}
+				}
+				else = {
+					num_of_allies = 2
+				}
+			}
+		effect = {
+			add_country_modifier = {
+				name = "turkish_relations" 
+				duration = 3650
+			}
+		}
+	}
+		
+	egyptE2 = {	
+		icon = mission_have_two_subjects
+		required_missions = {}
+		provinces_to_highlight = {
+		}
+		trigger = { 
+		num_of_non_tributary_subjects = 2 
+		}
+		effect = {
+		add_country_modifier = {
+				name = "auxiliary_soldiers"
+				duration = 3650
+				}
+			}
+		}
+		
+	egyptE3 = {	
+		icon = mission_control_the_barbary_coast
+		required_missions = {}
+		provinces_to_highlight = {
+		}
+		trigger = {
+			if = {
+				limit = {
+					exists = TUN
+					NOT = { is_rival = TUN }
+				}
+				OR = {
+					alliance_with = TUN
+					TUN = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+			else = {
+				if = {
+				limit = {
+					exists = CTH
+					NOT = { is_rival = CTH }
+				}
+				OR = {
+					alliance_with = CTH
+					CTH = {
+						is_subject_of = ROOT
+						}
+					}
+				}
+			}
+		}
+		effect = {
+		add_yearly_sailors = 2
+		add_country_modifier = {
+				name = "improved_reputation"
+				duration = 3650
+				}
+			}
+		}
+	
+	egyptE4 = {	
+		icon = reclaim_the_aegean
+		required_missions = {}
+		provinces_to_highlight = {
+		}
+		trigger = {
+			has_flagship = yes
+			if = {
+				limit = {
+					exists = TUR
+				}
+				navy_size = TUR
+			}
+			else_if = {
+				limit = {
+					exists = TUR
+				}
+				num_of_galley = TUR
+			}
+			else = {
+				navy_size_percentage = 1
+			}
+		}		
+		effect = {
+			add_country_modifier = {
+				name = "med_fleet"
+				duration = 7300
+			}
+		}
+	}
+	
+	egyptE5 = {	
+		icon = mission_conquer_alexandria
+		required_missions = {
+		egyptB4
+		egyptC4
+		}
+		provinces_to_highlight = {
+		}
+		trigger = {
+			}
+		effect = {
+			add_country_modifier = {
+				name = "propogate_culture"
+				duration = -1
+				}
+			}
+		}
+		
+	egyptE6 = {	
+		icon = mission_rb_seize_alexandria
+		required_missions = {
+		egyptB5
+		egyptE5
+		egyptC5
+		}
+		provinces_to_highlight = {
+		}
+		trigger = {
+		}
+		effect = {
+			country_event = {
+				id = hrdegypt.1
+			}
+		palestine_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			syria_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			aleppo_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			
+			add_prestige = 50
+
+					}
+				}
+			}
+		}
+	}
+}
+		

@@ -1,0 +1,186 @@
+﻿l_english:
+
+ 
+ #China events
+ hrdchina.1.t:0 "Collapse of Ming"
+ hrdchina.1.d:0 "The Ming dynasty as been growing weaker and weaker and is no longer seen in the high esteme as it once was."
+ hrdchina.1.a:0 "Collapse of the dynasty"
+ ming_subjugation:0 "Subjugation of Ming"
+ lost_control_of_xian:0 "Emperor does not own and control Xi'an"
+ lost_control_of_chengdu:0 "Emperor does not own and control Chengdu"
+ hrdchina.2.t:0 "The New Imperial Capital"
+ hrdchina.2.d:0 "Throughout it's history, several of our great cities have had the honor of being the capital. Now it's time to choose where we will be conducting our work from!"
+ hrdchina.2.a:0 "Beijing shall be our capital!"
+ hrdchina.2.b:0 "Nanjing shall be our capital!"
+ hrdchina.2.c:0 "Xi'an shall be our capital!"
+ hrdchina.2.e:0 "Chengdu shall be our capital!"
+ hrdchina.3.t:0 "Reform the Goverment!"
+ hrdchina.3.d:0 "With China united it's time to establish a new way of governing the country."
+ hrdchina.3.a:0 "A Chinese Empire!"
+ 
+ #Middle East Events
+ hrd_buk.1.t:0 "Should be keep are pillaging ways?"
+ hrd_buk.1.d:0 "Our tribes have united and have come to crucial point in our administration.  Should we keep to what we know best with rape and pillage or try something different?"
+ hrd_buk.1.a:0 "Long live the King!"
+ hrd_buk.1.b:0 "Boom Boom Boom,  lets raze the world"
+ 
+ hrdegypt.1.t:0 "A Step too Far?"
+ hrdegypt.1.d:0 "So far, our people have embraced the culture and history of the Pharaoh’s, but one realm remains untouched. Should we continue following the teachings of Allah, or embrace the ways of Oris and Amun-Ra?"
+ hrdegypt.1.a:0 "Our people have embraced Islam, let the old gods sleep"
+ hrdegypt.1.b:0 "We must embrace the ancient gods!"
+ 
+ kopalexandria1.t:0 "The occupation of Alexandria"
+ kopalexandria1.d:0 "After having annexed Alexandria after our last war with the Egyptian Sultanate the people are putting up great resistance and we need to deal with the issue"
+ kopalexandria1.a:0 "Give up the city, it's not worth it" 
+ kopalexandria1.b:0 "We'll supress any local resistance!"
+ occupation_of_alexandria:0 "Ottoman Occupation of Alexandria"
+ egyptians_trade_embargo:0 "Egyptian Trade Embargo"
+ kopalexandria2.t:0 "War with Egypt"
+ kopalexandria2.d:0 "After years of supressing the Alexandrian revolts our troops are now suffering from low morale against the Egyptians"
+ kopalexandria2.a:0 "So be it."
+ war_with_egypt:0 "Low morale against the Egyptian's armies"
+ #custom tooltip
+ kopalexandria.c.tt:0 "During the next war with Egypt the Ottomans will suffer from -10% Land and Naval Morale" 
+ #Iceland
+ iceland_norse_title:0 "Iceland go viking mens"
+ iceland_norse_desc:0 "We have decided we now worship the bloodgods of old"
+ 
+ #Africa events
+ tooltip_westfeud_development_15:0 "West African development provinces" 
+ tooltip_feud_development_15:0 "African 15 development province"
+ hrd_nri.1.t:0 "Western Explorers"
+ hrd_nri.1.d:0 "Strangers approach us on the sea wearing weird garments and inappropriate face paint"
+ hrd_nri.1.a:0 "Embrace the traveller's belief's"
+ hrd_nri.1.b:0 "Our ways are better and your face paint is seriously subpar!"
+ hrd_nri.2.t:0 "Wise Men theological discussion"
+ hrd_nri.2.d:0 "Wise Men from following different faiths worshipping the same god, our god.  We should listen to them and decide what to do in our religious adventures"
+ hrd_nri.2.a:0 "Embrace the Coptic Faith"
+ hrd_nri.2.b:0 "Embrace the Reformed Faith"
+ hrd_nri.2.c:0 "Embrace the Protestant Faith"
+ hrd_nri.2.dd:0 "Embrace the Anglican Faith"
+ hrd_nri.2.e:0 "Embrace the Hussite Faith"
+ hrd_nri.2.f:0 "Stay Catholic"
+ hrd_nri.4.t:0 "Time for a New Goverment"
+ hrd_nri.4.d:0 "With our new Christian country we need a new way to govern the country, and we have found the perfect way!"
+ hrd_nri.4.a:0 "We should elect a high priest"
+ hrd_nri.5.t:0 "Human interation has made shiny stuff be available"
+ hrd_nri.5.d:0 "for the larp"
+ hrd_nri.5.a:0 "Now you don't need to instantly int"
+ 
+ nri_conversion:0 "Spread the word"
+ 
+ hrd_cth.1.t:0 "‘Roma delenda est’"
+ hrd_cth.1.d:0 "We have built ourselves up from nothing and have now surpassed even the greatest of our ancestors. With the capture of the so-called eternal city, we brought total humiliation on the once great empire. Only one question remains, what to do with Rome?"
+ hrd_cth.1.a:0 "An eye for an eye"
+ hrd_cth.1.b:0 "Take the spoils and leave them be"
+ 
+ hrd_sgn.1.t:0 "‘Africa for the Africans?’"
+ hrd_sgn.1.d:0 "Should we drive any remsemblance of Africa from our lands or should we work with them and join forces to better our economy?"
+ hrd_sgn.1.a:0 "We must secure our independence further"
+ hrd_sgn.1.b:0 "We should ease tensions and work with the Europeans"
+ hrd_sgn.2.t:0 "Slave Trade"
+ hrd_sgn.2.d:0 "One of our most profitable commodities is our people much to our shame.  Do we continues exploiting this resource or turn to other means"
+ hrd_sgn.2.a:0 "Sell sell sell!"
+ hrd_sgn.2.b:0 "No point hurting our own, lets hurt the wildlife instead"
+ hrd_sgn.3.t:0 "Spread of Ibadi to West Africa"
+ hrd_sgn.3.d:0 "Discussion has been made about a seafaring nation wanting some hardened sailors.  the best Muslim sailors are of a heathen sect but we need them"
+ hrd_sgn.3.a:0 "Ibadi time"
+ 
+ 
+ sgn_secure_independence:0 "Secure our Independence further"
+ sgn_work_with_euros:0 "We should east tensions and work with the Europeans"
+ 
+
+ 
+ 
+ #nation missions event/modifiers
+ akzum_gems:0 "Akzum Gems"
+ akzum_fort:0 "Akzum Fort"
+ akzum_morale:0 "Akzum Morale"
+ akzum_trade:0 "Akzum Trade"
+ kitara_dev:0 "Kitara Development"
+ kitara_morale:0 "Kitara Morale"
+ kitara_settler:0 "Kitara Increased Settlers"
+ kitara_kongotrade:0 "Kitara-Kongo Trade"
+ madag_dev:0 "Madagascar Development"
+ madag_sakalava:0 "Sakalava Development"
+ madag_betsim:0 "Betsim Sailors"
+ madag_fort:0 "Madagascar Forts"
+ madag_navalcomb:0 "Madagascar Naval Combat"
+ kongo_manpower:0 "Kongo Manpower"
+ kongo_diprep:0 "Kongo Diplomatic Reputation"
+ kongo_capital:0 "Kongo Capital"
+ kongo_goods:0 "Kongo Goods Produced"
+ lesotho_fort:0 "Lesotho Forts"
+ lesotho_sakalava:0 "Sakalavan Manpower"
+ lesotho_saplatue:0 "Lesotho Plateu"
+ lesotho_expansion:0 "Lesotho Expansion"
+ nri_dev:0 "Nri Development"
+ nri_capital:0 "Nri Capital"
+ nri_lowerniger:0 "Lower Niger Goods"
+ nri_empire:0 "Nri Empire"
+ nri_morale:0 "Nri Morale"
+ senegal_colonist:0 "Senegal Colonist"
+ senegal_baby_boomers:0 "Senegal Baby Boomers"
+ senegal_baby_boomers2:0 "Senegal Baby Boomers"
+ senegal_prod:0 "Senegal Elephant Hunting"
+ senegal_tradeeff:0 "Senegal West African Trade Dominance"
+ senegal_world_port:0 "Senegal World Port"
+ senegal_vassals:0 "Senegal Vassals"
+ senegal_merchant:0 "Senegal Merchant"
+ senegal_ivory:0 "Senegal Ivory"
+ cth_production:0 "Carthaginian Production"
+ cth_galleycombat:0 "Galley Combat"
+ cth_supremacy_over_rome:0 "Supremacy over Roman Scum"
+ cth_trade_eff:0 "North African Coast secured"
+ cth_navy_tradition:0 "Navy traditionMoar"
+ #egypt
+ memphis_restored:0 "Memphis Restored"
+ greek_influences:0 "Greek Influences"
+ mediterranean_breadbasket:0 "Mediterranean Breadbasket"
+ oasis_city:0 "Oasis City"
+ industrialisation:0 "Industrialisation"
+ valley_of_the_kings:0 "Valley of The Kings"
+ the_sinai_pass:0 "The Sinai Pass"
+ the_ibrim_fort:0 "The Ibrim Fort"
+ the_western_border:0 "The Western Border Forts"
+ a_professional_army:0 "A Professional Army"
+ reformed_economy:0 "Reformed Economy"
+ turkish_relations:0 "Turkish Relations"
+ auxiliary_soldiers:0 "Auxiliary Soldiers"
+ improved_reputation:0 "Improved Reputation"
+ med_fleet:0 "Mediterranean Fleet"
+ propogate_culture:0 "Promote Egyptian Culture"
+ the_old_gods:0 "Return of The Old Gods"
+ china_conquest_korea:0 "Conquest of Japan"         #united china missions
+ china_conquest_tibet:0 "Conquest of Tibet"         #united china missions
+ china_conquest_sinkiang:0 "Conquest of Sinkiang"   #united china missions
+ yun_gui_kop:0 "More taxes, less autonomy"          #dali missions
+ kop_dali_grown:0 "Dali Expansion"                  #dali missions
+ kop_buddhist_space_monks:0 "Buddhist Space Monks"  #dali missions
+ 
+ 
+ #china nation missions
+ imperial_capital:0 "Imperial Capital of China"
+ chinese_wars:0 "Chinese Wars of Unification"
+ china_west:0 "Control of Western cities"
+ china_south:0 "Control of Southern cities"
+ china_north:0 "Control of Northern cities"
+ china_cities_north:0 "Control of Northern cities"
+ china_cities_south:0 "Control of Southern cities"
+ china_cities_west:0 "Control of Western cities"
+ 
+
+ #religions
+ hrdnorse.1:0 "Return of Norse people"
+ hrdnorse.1.t:0 "The Return of the Norse Religion"
+ hrdnorse.1.d:0 "The Scandinavian who once worshiped the Norse religion settled Greenland and now that we have done the same a lot of their people have decided to return back to Europe and settle in our lands. With their settlement they have started to preach their forgotten religion, let's hope our people don't listen to them"
+ hrdnorse.1.a:0 "The Return of the Norse Religion"
+ estate_church_piety_privilege:0 "A Mystic Church"
+ estate_church_piety_privilege_desc:0 "Our clerical advisors recommend we go down a more mystic path with the religion, and we must listen to them!"
+ Bless_Expedition:0 "Bless Expedition"
+ papal_monopoly:0 "Papal Monopoly"
+ mpr_anglican_tech:0 "Expanded Universtities"
+ mpr_anglican_settler:0 "Deport Heretics"
+ mpr_anglican_trade:0 "Grant Monopoly"
+

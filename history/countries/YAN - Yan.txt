@@ -1,0 +1,18 @@
+government = monarchy
+add_government_reform = HRD_warlord_state
+technology_group = chinese
+religion = confucianism
+primary_culture = chihan
+add_accepted_culture = shandong_culture
+capital = 1816	#Beijing
+
+1437.10.22 = {
+	monarch = {
+		name = "Ciran"
+		dynasty = "Yan"
+		birth_date = 1401.10.22
+		adm = 4
+		dip = 2
+		mil = 4
+	}
+}

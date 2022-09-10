@@ -1,0 +1,154 @@
+#######Advisors
+
+###default###
+kop_advisor_philosopher_delayed = {
+}
+
+kop_advisor_n_scientist_delayed = {
+}
+
+kop_advisor_army_reformer_delayed = {
+}
+
+kop_advisor_naval_reformer_delayed = {
+}
+
+kop_advisor_artist_delayed = {
+}
+
+kop_advisor_treasurer_delayed = {
+}
+
+kop_advisor_theologian_delayed = {
+}
+
+kop_advisor_statesman_delayed = {
+}
+
+kop_advisor_colonial_governor_delayed = {
+}
+
+kop_advisor_spymaster_delayed = {
+}
+
+kop_advisor_diplomat_delayed = {
+}
+
+kop_advisor_trader_delayed = {
+}
+
+kop_advisor_master_of_mint_delayed = {
+}
+
+kop_advisor_navigator_delayed = {
+}
+
+kop_advisor_grand_captain_delayed = {
+}
+
+kop_advisor_army_organiser_delayed = {
+}
+
+kop_advisor_commandant_delayed = {
+}
+
+kop_advisor_quartermaster_delayed = {
+}
+
+kop_advisor_recruitmaster_delayed = {
+}
+
+kop_advisor_fortification_expert_delayed = {
+}
+
+kop_advisor_inquisitor_delayed = {
+}
+
+### new advisors###
+
+kop_splendor_herald_lvl3 = {
+monthly_splendor = 1
+add_splendor = 200
+}
+
+kop_splendor_herald_lvl3_delayed = {
+}
+
+kop_gov_reformer_lvl3 = {
+monthly_reform_progress_modifier = 0.8
+}
+
+kop_gov_reformer_lvl3_delayed = {
+}
+
+#kop_kop_spin_doctor_lvl3 = {
+#governing_capacity = 100
+#}
+
+#kop_spin_doctor_lvl3_delayed = {
+#}
+
+kop_land_overseer_lvl3 = {
+add_local_autonomy = -25
+}
+
+kop_land_overseer_lvl3_delayed  = {
+}
+
+kop_re_education_enforcer_lvl3 = {
+culture_conversion_cost = -0.2
+}
+
+kop_re_education_enforcer_lvl3_delayed  = {
+}
+
+kop_workshop_manager_lvl3 = {
+global_trade_goods_size_modifier = 0.1
+}
+
+kop_workshop_manager_lvl3_delayed  = {
+}
+
+kop_reproduction_factory_lvl3 = {
+global_colonial_growth = 20
+colonist_placement_chance = 0.05
+}
+
+kop_reproduction_factory_lvl3_delayed  = {
+}
+
+
+kop_guerilla_lvl3 = {
+defensiveness = 0.20
+}
+
+kop_guerilla_lvl3_delayed  = {
+}
+
+kop_logistical_specialist_lvl3 = {
+land_attrition = -0.20
+}
+
+kop_logistical_specialist_lvl3_delayed  = {
+}
+
+kop_war_guru_lvl3_1 = {
+infantry_power = 0.10
+}
+kop_war_guru_lvl3_2 = {
+cavalry_power = 0.10
+}
+kop_war_guru_lvl3_3 = {
+artillery_power = 0.10
+}
+
+kop_war_guru_lvl3_delayed  = {
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,613 @@
+senegal_missions_A = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		tag = SGN
+	}
+	has_country_shield = yes
+	
+	senegalA1 = {
+		icon = mission_colonial
+		required_missions = {  }
+		provinces_to_highlight = {
+			OR = {
+			province_id = 1113
+			province_id = 1112
+			province_id = 1116
+			}
+		}
+		
+		trigger = {
+			1113 = {development = 10}
+			1112 = {development = 10}
+			1116 = {development = 10}
+		}
+		effect = {
+			2241 = {
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "senegal_colonist"
+				duration = 7300 # 20 years
+			}
+		}
+	}
+	
+	senegalA2 = {
+		icon = return_visby_to_the_league
+		required_missions = { senegalA1 }
+		provinces_to_highlight = {
+			province_id = 2241
+		}
+		trigger = {
+			2241 = {
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			guinea_coast_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+				}
+				add_country_modifier = {
+					name = "senegal_baby_boomers"
+					duration = 3650 #10 years
+				}
+		}
+	}
+	
+	senegalA3 = {
+		icon = mission_african_gold
+		required_missions = { senegalA2 }
+		provinces_to_highlight = {
+			area = guinea_coast_area 
+		}
+		trigger = {
+			guinea_coast_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			pernambuco_area = { discover_country  = ROOT }
+			create_explorer = {
+				tradition = 30
+			}
+			
+		}
+	}
+
+	senegalA4 = {
+		icon = mission_african_gold
+		required_missions = { senegalA3 }
+		provinces_to_highlight = {
+			colonial_region = colonial_brazil
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+						colonial_region = colonial_brazil
+						value = 10
+					}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "senegal_baby_boomers2"
+				duration = 7300 #20 years
+				}
+		}
+	}
+}
+
+
+senegal_missions_B = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		tag = SGN
+	}
+	has_country_shield = yes
+	
+	senegalB1 = {
+		icon = mission_invade_island
+		required_missions = { senegalA1 senegalC1 }
+		position = 2
+		provinces_to_highlight = {
+			area = tekrur_area
+		}
+		trigger = {
+			1113 = {development = 10}
+			1112 = {development = 10}
+			1116 = {development = 10}
+		}
+		effect = {
+			
+			if = {
+				limit = { 
+					tekrur_area = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					is_empty = no
+					}	
+				}
+				add_permanent_claim = ROOT
+				}
+			if = {
+				limit = {
+					1115 = {
+						is_empty = yes
+					}
+				}
+				1115 = {
+					add_core = ROOT
+					cede_province = ROOT
+				}
+			}
+			if = {
+				limit = {
+					2237 = {
+						is_empty = yes
+					}
+				}
+				2237 = {
+					add_core = ROOT
+					cede_province = ROOT
+				}
+			}	
+			if = {
+				limit = {
+					2240 = {
+						is_empty = yes
+					}
+				}
+				2240 = {
+					add_core = ROOT
+					cede_province = ROOT
+				}
+			}
+			if = {
+				limit = {
+					2244 = {
+						is_empty = yes
+					}
+				}
+				2240 = {
+					add_core = ROOT
+					cede_province = ROOT
+				}
+			}
+		}
+	}
+	
+	senegalB2 = {
+		icon = mission_conquer_benin
+		required_missions = { senegalB1 }
+		provinces_to_highlight = {
+			area = tekrur_area
+		}
+		trigger = {
+			tekrur_area = {
+				type = all
+				owned_by = ROOT
+				}	
+			jolof_area	 = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = { 
+			futa_jallon_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		country_event = { id = hrd_sgn.2 }	
+		}
+	}
+	
+	senegalB3 = {
+		icon = mission_aragonese_navy
+		required_missions = { senegalB2 }
+		provinces_to_highlight = {
+			area = futa_jallon_area
+		}
+		trigger = {
+			futa_jallon_area = {
+				type = all
+				owned_by = ROOT
+				}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = "senegal_prod"
+				duration = 7300 #20 years
+				}
+		}
+		
+	}
+
+	senegalB4 = {
+		icon = mission_aragonese_navy
+		required_missions = { senegalB3 }
+		provinces_to_highlight = {
+			trade_goods = ivory
+			NOT = { owned_by = ROOT }
+			NOT = {
+				OR = {
+					has_building = workshop
+					has_building = counting_house
+				}
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			trading_bonus = {
+				trade_goods = ivory
+				value = yes
+			}
+		}
+		
+		effect = {
+			futa_jallon_area = {
+				add_province_modifier = {
+					name = "senegal_ivory"
+					duration = -1
+				}
+			}
+			add_mercantilism = 2	
+		}
+		
+	}
+}
+
+senegal_missions_C = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		tag = SGN
+	}
+	has_country_shield = yes
+	
+	senegalC1 = {
+		icon = mission_envoy_to_ethiopia
+		required_missions = { }
+		provinces_to_highlight = {
+				province_id = 1113
+		
+		}
+		trigger = {
+			1113 = {
+				owned_by = ROOT
+				development = 15
+			}
+		}
+		effect = {
+			1113= {
+			center_of_trade = 1
+			change_province_name = "Dakar"
+			rename_capital = "Dakar"
+			}
+		}	
+	}
+
+	senegalC2 = {
+		icon = mission_aragonese_navy
+		required_missions = { senegalC1 }
+
+		
+		trigger = {
+			1113 = {
+				trade_share = {
+					country = ROOT
+					share = 30
+				}
+			}
+		}
+	
+		effect = {
+			add_mercantilism = 2
+			2258 = {
+				add_permanent_claim = ROOT
+			}
+			1139 = {
+				add_permanent_claim = ROOT
+			}
+			1147 = {
+				add_permanent_claim = ROOT
+			}
+			1163 = {
+				add_permanent_claim = ROOT
+			}
+			1171 = {
+				add_permanent_claim = ROOT
+			}
+			1172 = {
+				add_permanent_claim = ROOT
+			}
+		}
+		
+	}
+
+	senegalC3 = {
+		icon = mission_aragonese_navy
+		required_missions = { senegalC2 }
+		provinces_to_highlight = {
+			OR = {	
+				province_id = 2258
+				province_id = 1139
+				province_id = 1147
+				province_id = 1163
+				province_id = 1171
+				province_id = 1172
+			}	
+		}
+		
+		trigger = {
+			2258 = {
+				owned_by = ROOT
+			}
+			1139 = {
+				owned_by = ROOT
+			}
+			1147 = {
+				owned_by = ROOT
+			}
+			1163 = {
+				owned_by = ROOT
+			}
+			1171 = {
+				owned_by = ROOT
+			}
+			1172 = {
+				owned_by = ROOT
+			}
+		}
+	
+		effect = {
+			add_country_modifier = {
+				name = "senegal_tradeeff"
+				duration = 7300 #20 years
+				}
+		}
+		
+	}
+
+	senegalC4 = {
+		icon = mission_aragonese_navy
+		required_missions = { senegalC3 }
+
+		
+		trigger = {
+			1113 = {
+				trade_share = {
+					country = ROOT
+					share = 75
+				}
+			}
+		}
+	
+		effect = {
+			1113 = {	
+				add_province_modifier = {
+					name = "senegal_world_port"
+					duration = -1
+				}
+			add_mercantilism = 2	
+			}
+		}
+		
+	}
+
+	senegalC5 = {
+		icon = mission_aragonese_navy
+		required_missions = { senegalB4 senegalC4 senegalD5 }
+		position = 6
+
+		
+		trigger = {
+			is_subject = no
+		}	
+				
+		effect = {
+			add_prestige = 50
+			country_event = { id = hrd_sgn.1 }
+		}
+		
+	}
+}
+
+
+
+senegal_missions_D = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		tag = SGN
+	}
+	has_country_shield = yes
+	
+	senegalD1 = {
+		icon = mission_conquer_benin
+		required_missions = {  }
+
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 5
+				OR = {
+					has_building = shipyard
+					has_building = grand_shipyard
+				}
+			}
+		}
+		effect = {
+			1120 = {
+				add_permanent_claim = ROOT
+			}
+			1121 = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	senegalD2 = {
+		icon = colonize_the_cape
+		required_missions = { senegalD1 }
+
+		trigger = {
+			1120 = {
+				owned_by = ROOT
+			}
+			1121 = {
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			 1124 = {
+				add_permanent_claim = ROOT
+			}
+			1134 = {
+				add_permanent_claim = ROOT
+			}
+			define_advisor = {
+				type = master_of_mint
+				skill = 3
+				cost_multiplier = 0.5
+			}
+			
+		}
+	}
+	senegalD3 = {
+		icon = colonize_the_cape
+		required_missions = { senegalD2 }
+		provinces_to_highlight = {
+			OR = {	
+				province_id = 1124
+				province_id = 1134
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			1124 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1134 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					exists = SON
+				}
+				add_casus_belli = {
+					type = cb_vassalize_mission
+					months = 300
+					target = SON
+				}
+			}
+			else = {
+				niger_bend_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			if = {
+				limit = {
+					exists = TMB
+				}
+				add_casus_belli = {
+					type = cb_vassalize_mission
+					months = 300
+					target = TMB
+				}
+			}
+			else = {	
+				niger_bend_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}	
+		}
+	}
+	
+	senegalD4 = {
+		icon = colonize_the_cape
+		required_missions = { senegalD3 }
+
+		trigger = {
+			1132 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1133 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			num_of_non_tributary_subjects = 2
+		}
+		effect = {
+			 1098 = {
+				add_permanent_claim = ROOT
+			}
+			sao_tome_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			1096 = {
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+					name = "senegal_vassals"
+					duration = -1
+			}
+			
+		}
+	}
+	
+	senegalD5 = {
+		icon = colonize_the_cape
+		required_missions = { senegalD4 }
+
+		trigger = {
+			1096 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1098 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			sao_tome_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+					name = "senegal_merchant"
+					duration = -1
+			}
+			
+		}
+	}	
+}
+

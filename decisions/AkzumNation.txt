@@ -1,0 +1,91 @@
+country_decisions = {
+
+    form_akzum_nation = {
+        major = yes
+        potential = {
+            normal_or_historical_nations = yes
+			NOT = { has_country_flag = formed_akzum_flag }
+          	NOT = { tag = PAP }
+			NOT = { tag = HLR }
+			NOT = { exists = AKZ }
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 15
+				}
+			}
+			OR = {
+				culture_group = cushitic
+				culture_group = sudanese
+				
+			}
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+        }
+        provinces_to_highlight = {
+            OR = {
+                province_id = 1227 #Aksum
+                province_id = 2798 #Soba
+                province_id = 2757 #Kaffa
+				province_id = 1211 #Harer
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+        }
+        allow = {
+			NOT = { exists = AKZ }
+			adm_tech = 6
+            is_at_war = no
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			owns_core_province = 1227 #Aksum
+            owns_core_province = 2798 #Soba
+            owns_core_province = 2757 #Kaffa
+			owns_core_province = 1211 #Harer
+        }
+        effect = {
+			change_tag = AKZ
+			swap_non_generic_missions = yes
+			remove_non_electors_emperors_from_empire_effect = yes
+			if = {
+				limit = {
+					NOT = { government_rank = 3 }
+				}
+				set_government_rank = 3
+			}
+			add_prestige = 20
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+            horn_of_africa_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = AKZ
+			}
+			set_country_flag = formed_akzum_flag
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+        }
+        ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400 #High Priority
+    }
+}

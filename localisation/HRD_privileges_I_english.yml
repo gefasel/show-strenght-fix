@@ -1,0 +1,19 @@
+﻿l_english:
+
+
+#Arabia privilege
+ estate_burghers_desert_rights:0 "desert dev"
+ estate_burghers_desert_rights_desc:0 " "
+ estate_burghers_desert_rights_desert:0 "desert"
+ estate_burghers_desert_rights_desert_desc:0 ""
+ estate_burghers_desert_rights_coastal_desert:0 "coast desert"
+ estate_burghers_desert_rights_coastal_desert_desc:0 ""
+ estate_burghers_desert_rights_mountain:0 "mountain"
+ estate_burghers_desert_rights_mountain_desc:0 ""
+ estate_burghers_desert_rights_drylands:0 "drylands"
+ estate_burghers_desert_rights_drylands_desc:0 ""
+ 
+ 
+ #Nri
+ #GreaterGeorgia
+ #

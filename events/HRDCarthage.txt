@@ -1,0 +1,53 @@
+########################################
+#  HRD event
+#  Events for Carthage
+#
+# 
+########################################
+
+namespace = hrd_cth
+
+	
+# Roma delenda est
+country_event = {
+	id = hrd_cth.1
+	title = hrd_cth.1.t
+	desc = hrd_cth.1.d
+	picture = POPE_PREACHING_eventPicture
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+
+
+	option = { # cth_eyeforeye
+		name = "hrd_cth.1.a"
+		118 = {
+		add_base_tax = -3
+		add_base_production = -3
+		add_base_manpower = -3
+		add_devastation = 100
+		}
+		
+		341 = {
+		add_base_tax = 3
+		add_base_production = 3
+		add_base_manpower = 3
+		}
+		
+		add_years_of_income = 1.5
+	}
+	
+	option = { # cth_leave_them_be
+		name = "hrd_cth.1.b"
+		add_years_of_income = 2.5
+	}
+}	
+
+	
+	
+	
+	
+	
+	
+	
+	

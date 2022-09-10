@@ -1,0 +1,127 @@
+#anycountry
+KoP_insult1 = {
+	trigger = {
+		always = yes
+	}
+}
+
+KoP_insult2 = {
+	trigger = {
+		always = yes
+	}
+}
+
+KoP_insult3 = {
+	trigger = {
+		always = yes
+	}
+}
+
+KoP_insult4 = {
+	trigger = {
+		always = yes
+	}
+}
+
+KoP_insult5 = {
+	trigger = {
+		always = yes
+	}
+}
+
+KoP_insult6 = {
+	trigger = {
+		always = yes
+	}
+}
+
+KoP_insult7 = {
+	trigger = {
+		always = yes
+	}
+}
+
+KoP_insult8 = {
+	trigger = {
+		always = yes
+	}
+}
+
+KoP_insult9 = {
+	trigger = {
+		always = yes
+	}
+}
+
+KoP_insult10 = {
+	trigger = {
+		always = yes
+	}
+}
+
+KoP_insult11 = {
+	trigger = {
+		always = yes
+	}
+}
+
+KoP_insult12 = {
+	trigger = {
+		always = yes
+	}
+}
+
+#tag(s) specific
+KoP_insult_Pope1 = {
+	trigger = {
+		tag = PAP
+	}
+}
+
+KoP_insult_France1 = {
+	trigger = {
+		tag = FRA
+	}
+}
+
+KoP_insult_Tur1 = {
+	trigger = {
+		tag = TUR 
+		tag = RUM 
+	}
+}
+
+KoP_insult_English1 = {
+	trigger = {
+		tag = ENG 
+		tag = GBR 
+		tag = ANG 
+	}
+}
+
+KoP_insult_Austria1 = {
+	trigger = {
+		tag = HAB 
+		tag = AHH 
+	}
+}
+
+KoP_insult_Austria2 = {
+	trigger = {
+		tag = HAB 
+		tag = AHH 
+	}
+}
+
+#other triggers
+KoP_insult_tax_meta = {
+	trigger = {
+		tax_income_percentage = 0.4
+	}
+}
+
+KoP_insult_horde = {
+	trigger = {
+		government = horde
+	}
+}

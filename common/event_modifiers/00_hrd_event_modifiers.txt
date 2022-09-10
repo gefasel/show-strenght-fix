@@ -1,0 +1,461 @@
+##################################################################################################
+# HRD event modifiers
+##################################################################################################
+
+### Anglican Church Aspects modifiers
+
+mpr_anglican_tech = {
+	technology_cost = -0.1	
+}
+
+mpr_anglican_settler = {
+	global_colonial_growth = 15	
+}
+
+mpr_anglican_trade = {
+	global_ship_trade_power = 0.10
+}
+
+chinese_wars = {
+	manpower_recovery_speed = 0.15	
+	land_morale = 0.05
+	land_maintenance_modifier = -0.05
+}
+
+china_north = {
+	global_manpower_modifier = 0.10	
+}
+	
+china_south = {
+	naval_morale = 0.1	
+}
+
+china_west = {
+	production_efficiency = 0.1
+}	
+
+papal_sanction_for_church_taxes = {
+	global_tax_modifier = 0.20
+	religion = yes
+}
+
+papal_indulgence = {
+	legitimacy = 2
+	prestige = 1.5
+	religion = yes
+}
+
+usury_forgiven = {
+	interest = -0.5
+	inflation_reduction = 0.15
+	yearly_corruption = -0.1	
+	religion = yes
+}
+
+papal_sanction_for_holy_war = {
+	manpower_recovery_speed = 0.15
+	infantry_power = 0.1
+	religion = yes
+}
+
+papal_legate = {
+	diplomatic_reputation = 1
+	diplomatic_annexation_cost = -0.15
+	religion = yes
+}
+
+papal_monopoly = {
+	trade_efficiency = 0.1	
+	religion = yes
+}
+
+counter_reformation = {
+	global_heretic_missionary_strength = 0.03
+	papal_influence = 1
+	missionaries = 1
+	tolerance_heretic = -4	
+				 
+	religion = yes
+}
+
+
+##Africa event modifiers
+
+akzum_fort = {
+	local_defensiveness = 0.1
+}
+
+akzum_morale = {
+	land_morale = 0.1
+}
+
+akzum_trade = {
+	trade_efficiency = 0.1
+}
+
+akzum_gems = {
+	trade_goods_size_modifier = 0.05	
+}
+
+cth_production = {
+	production_efficiency = 0.1
+}
+
+cth_galleycombat = {
+	galley_power = 0.1
+}
+
+cth_supremacy_over_rome = {
+	prestige = 0.5
+	army_tradition = 0.5
+}
+
+cth_navy_tradition = {
+	navy_tradition = 1
+}
+
+cth_trade_eff = {
+	trade_efficiency = 0.1
+}
+
+
+kitara_dev = {
+	local_development_cost = -0.2	
+}	
+
+kitara_morale = {
+	land_morale = 0.05
+}
+
+kitara_settler = {
+	global_colonial_growth = 20
+}
+
+kitara_kongotrade = {
+	local_development_cost = -0.1	
+	local_tax_modifier = 0.15
+	local_manpower_modifier = 0.1
+}
+
+kongo_diprep = {
+	diplomatic_reputation = 1
+}
+
+kongo_capital = {
+	local_development_cost = -0.1	
+	local_manpower_modifier = 0.1
+}
+
+kongo_manpower = {
+	global_manpower_modifier = 0.15
+}
+
+kongo_goods = {
+	trade_goods_size_modifier = 0.075
+}
+
+madag_dev = {
+	local_development_cost = -0.1
+}
+
+madag_sakalava = {
+	local_development_cost = -0.1
+	local_sailors_modifier = 0.15
+}
+
+madag_betsim = {
+	local_sailors_modifier = 0.1
+}
+
+madag_navalcomb = {
+	own_coast_naval_combat_bonus = 1.0
+}
+
+madag_fort = {
+	local_defensiveness = 0.1
+}
+
+senegal_colonist = {
+	colonists = 1
+}
+
+senegal_baby_boomers = {
+	global_colonial_growth = 30
+}
+
+senegal_baby_boomers2 = {
+	global_colonial_growth = 15
+}
+
+senegal_prod = {
+	production_efficiency = 0.2
+}
+
+senegal_tradeeff = {
+	trade_efficiency = 0.1
+}
+
+senegal_world_port = {
+	local_development_cost = -0.1
+	local_institution_spread = 0.5
+	province_trade_power_value = 0.25
+}
+
+senegal_vassals = {
+	vassal_forcelimit_bonus = 0.5
+}
+
+senegal_merchant = {
+	merchants = 1
+}
+
+senegal_ivory = {
+	trade_goods_size = 1
+}
+
+##senegal events
+sgn_secure_independence = {
+	naval_morale = 0.1
+}
+
+sgn_work_with_euros = {
+	global_trade_goods_size_modifier = 0.1
+}
+
+sgn_local_goods = {
+	trade_goods_size = 2
+}
+
+
+
+
+lesotho_fort = {
+	local_defensiveness = 0.15
+}
+
+lesotho_sakalava = {
+	local_manpower_modifier = 0.1
+}
+
+lesotho_saplatue = {
+	local_development_cost = -0.2
+	local_manpower_modifier = 0.15
+}
+
+lesotho_expansion = {
+	infantry_power = 0.05	
+	num_accepted_cultures = 1	
+}
+
+#Nri Mission
+nri_dev = {
+	local_development_cost = -0.2
+}
+
+nri_capital = {
+	local_manpower_modifier = 0.15
+	local_build_cost = -0.1
+	allowed_num_of_buildings = 1	
+}
+
+nri_lowerniger = {
+	trade_goods_size_modifier = 0.02
+}
+
+nri_empire = {
+	stability_cost_modifier = -0.15
+	num_accepted_cultures = 1
+}
+
+nri_morale = {
+	land_morale = 0.05
+}
+
+#Nri Events
+nri_conversion = {
+	global_missionary_strength = 0.01
+}
+
+#Egypt
+memphis_restored = {
+	local_manpower_modifier = 0.50	
+	trade_value_modifier = 0.1	
+}
+greek_influences = {
+	local_development_cost = -0.1
+	local_institution_spread = 0.5
+}
+mediterranean_breadbasket = {
+	production_efficiency = 0.2	
+}
+oasis_city = {
+	local_development_cost = -0.1
+	local_tax_modifier = 0.2
+	local_manpower_modifier = 0.20	
+}
+industrialisation = {
+	production_efficiency = 0.1	
+}
+valley_of_the_kings = {
+	local_unrest = -3
+	prestige = 0.5	
+}
+the_sinai_pass = {
+	local_defensiveness = 0.25
+}
+the_ibrim_fort = {
+	local_defensiveness = 0.2
+}
+the_western_border = {
+	local_defensiveness = 0.2
+}
+a_professional_army = {
+	discipline = 0.05
+}
+reformed_economy = {
+	global_tax_modifier = 0.2
+}
+turkish_relations  = {
+	land_morale = 0.10
+}
+auxiliary_soldiers  = {
+	vassal_forcelimit_bonus = 0.5
+}
+
+improved_reputation = {
+	diplomatic_reputation = 1
+}
+med_fleet = {
+	galley_power = 0.10
+}
+propogate_culture = {
+	culture_conversion_cost = -0.15
+	same_culture_advisor_cost = -0.10
+}
+the_old_gods = {
+	global_missionary_strength = 0.05
+}
+
+##Colonists##
+
+african_colonist = {
+	global_tax_modifier = -0.25	
+	global_manpower_modifier = -0.1
+	land_forcelimit_modifier = -0.1	
+	naval_forcelimit_modifier = -0.1	
+	colonists = 1	
+	global_colonial_growth = -5
+	range = -0.95
+}
+
+colonization_allowed = {
+	range = 0.5
+}
+
+settle_the_new_world = {
+	colonists = 1
+	global_manpower_modifier = -0.075
+	global_colonial_growth = 25
+}
+
+expand_new_world_effort = {
+	colonists = 1
+	global_manpower_modifier = -0.075
+	colonist_placement_chance = 0.1
+	native_assimilation = 0.1
+}
+
+settle_the_islands = {
+	colonists = 1
+	global_manpower_modifier = -0.075
+	global_colonial_growth = 25
+}
+
+expand_settlement_effort = {
+	colonists = 1
+	global_manpower_modifier = -0.075
+	colonist_placement_chance = 0.1
+	native_assimilation = 0.1
+}
+
+expand_our_realm = {
+	colonists = 2
+	global_colonial_growth = 25
+	global_manpower_modifier = -0.15
+	colonist_placement_chance = 0.1
+	native_assimilation = 0.1
+}
+
+rebelious_colonies = {
+	reduced_liberty_desire = -50
+}
+
+##
+
+nri_morale_reli = {
+	land_morale = 0.1
+}
+
+
+
+occupation_of_alexandria = {
+	local_autonomy = 0.075
+	local_production_efficiency = -0.1
+	local_unrest = 15
+}
+
+egyptians_trade_embargo = {
+	trade_efficiency = -0.1
+}
+
+war_with_egypt = {
+	land_morale = -0.1
+	naval_morale = -0.1
+}
+
+china_conquest_korea = {
+	naval_morale = 0.15
+	naval_maintenance_modifier = -0.1
+}
+
+china_conquest_tibet = {
+	defensiveness = 0.1
+}
+
+china_conquest_sinkiang = {
+	trade_steering = 0.1
+}
+
+yun_gui_kop = {
+	local_autonomy = -0.1
+	global_tax_modifier = 0.075
+}
+
+kop_dali_grown = { 
+	development_cost = -0.1
+}
+
+kop_buddhist_space_monks = {
+	land_morale = 0.15
+	global_manpower_modifier = 0.420
+	discipline = 0.069
+	mil_tech_cost_modifier = -0.15
+}
+
+###
+
+estate_burghers_desert_rights_desert = {
+	local_development_cost = -0.25
+}
+
+estate_burghers_desert_rights_coastal_desert = {
+	local_development_cost = -0.175
+}
+
+estate_burghers_desert_rights_mountain = {
+	local_development_cost = -0.1
+}
+
+estate_burghers_desert_rights_drylands = {
+	local_development_cost = -0.075
+}

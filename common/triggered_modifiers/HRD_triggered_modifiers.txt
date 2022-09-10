@@ -1,0 +1,180 @@
+
+############# HRD ###################
+
+# Player in new world nerf
+new_world_player_nerf = {
+	potential = {
+		OR = {
+			capital_scope = {
+				continent = north_america
+			}
+			capital_scope = {
+				continent = south_america
+			}	
+			is_former_colonial_nation = yes
+			has_country_flag = changed_from_colonial_nation
+		}
+	}
+
+	trigger = {
+		was_player = yes
+		OR = {
+			technology_group = western
+			technology_group = eastern
+			technology_group = ottoman
+			technology_group = muslim
+			technology_group = indian
+			technology_group = east_african
+			technology_group = chinese
+			technology_group = sub_saharan
+			technology_group = central_african
+			technology_group = nomad_group
+			technology_group = aboriginal_tech
+			technology_group = polynesian_tech
+			}
+	}
+
+	development_cost = 0.25
+	global_manpower_modifier = -0.25
+	global_sailors_modifier = -0.30
+	naval_forcelimit_modifier = -0.25
+	land_forcelimit_modifier = -0.25
+	global_colonial_growth = -15	
+}
+
+ming_subjugation = {
+	potential = {
+		NOT = { tag = MNG }
+		has_discovered = 1821	# Nanjing
+		exists = MNG
+	}
+
+	trigger = {	
+		was_player = yes
+		overlord_of = MNG
+	}
+
+	global_unrest = 10
+	global_autonomy = 1
+	global_tax_modifier = -0.5
+	production_efficiency = -0.5
+	trade_efficiency = -0.5
+	global_manpower_modifier = -0.5
+	land_morale = -0.5
+	diplomatic_reputation = -5
+	#icon = 9
+}
+
+ming_subject = {
+	potential = {
+		tag = MNG
+		has_discovered = 1821	# Nanjing
+		exists = MNG
+	}
+
+	trigger = {	
+		was_player = yes
+		is_vassal = yes
+	}
+
+	global_unrest = 10
+	global_autonomy = 100
+	global_tax_modifier = -1
+	production_efficiency = -1
+	trade_efficiency = -1
+	global_manpower_modifier = -1
+	land_morale = -1
+	land_forcelimit_modifier = -1
+	mercenary_manpower = -1
+	mercenary_cost = 100
+	diplomatic_reputation = -5
+	#icon = 9
+}
+
+lost_control_of_xian = {
+	potential = {
+		has_reform = celestial_empire
+		has_dlc = "Mandate of Heaven"
+	}
+
+	trigger = {
+		OR = {
+			NOT = { owns = 700 }
+			NOT = { controls = 700 }
+		}
+	}
+
+	imperial_mandate = -0.05
+}
+
+lost_control_of_chengdu = {
+	potential = {
+		has_reform = celestial_empire
+		has_dlc = "Mandate of Heaven"
+	}
+
+	trigger = {
+		OR = {
+			NOT = { owns = 679 }
+			NOT = { controls = 679 }
+		}
+	}
+
+	imperial_mandate = -0.05
+}
+
+china_cities_north = {
+	potential = {
+		capital_scope = {
+			superregion = china_superregion
+		}
+		religion = confucianism
+	}
+
+	trigger = {
+		is_free_or_tributary_trigger = yes
+		owns_core_province = 1816 # Beijing
+		owns_core_province = 700 # Xi'an
+		owns_core_province = 688 # Kaifeng
+		owns_core_province = 2139 # Laizhou
+	}
+
+	global_manpower_modifier = 0.10	
+}
+
+china_cities_south = {
+	potential = {
+		capital_scope = {
+			superregion = china_superregion
+		}
+		religion = confucianism
+	}
+
+	trigger = {
+		is_free_or_tributary_trigger = yes
+		owns_core_province = 667
+		owns_core_province = 1821
+		owns_core_province = 682
+		owns_core_province = 669
+	}
+
+	naval_morale = 0.1	
+}
+
+china_cities_west = {
+	potential = {
+		capital_scope = {
+			superregion = china_superregion
+		}
+		religion = confucianism
+	}
+
+	trigger = {
+		is_free_or_tributary_trigger = yes
+		owns_core_province = 679
+		owns_core_province = 680
+		owns_core_province = 662
+	}
+
+	production_efficiency = 0.1	
+}

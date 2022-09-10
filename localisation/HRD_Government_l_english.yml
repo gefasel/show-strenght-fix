@@ -1,0 +1,21 @@
+﻿l_english:
+ HRD_warlord_state:0 "Warlord State"
+ HRD_warlord_state_desc:0 "With the emperors control dwindeling in China the regions have been taken over by warlords who seek to unite China under one banner"
+ WARLORD_STATE:0 "Warlord State"
+ WARLORD:0 "Warlord"
+ 
+ HRD_chinese_empire:0 "Empire of China"
+ HRD_chinese_empire_desc:0 "China has been unified under one nation"
+ 
+ 
+ HRD_kingdom_nri_religious_state:0 "Religious Uber State"
+ HRD_kingdom_nri_religious_state_desc:0 "With the correct propaganda from our friendly visitors,  our fervor has increased and our main aim is to spread the word!"
+ RELIGIOUS_STATE:0 "Religious Uber State"
+ HIGH_PRIEST:0 "High Priest"
+ HIGH_PRIESTESS:0 "High Priestess"
+ 
+ KoP_arabian_sultanate:0 "Arabian Desert Peeps"
+ KoP_arabian_sultanate_desc:0 "We nuked our lands now we have desert"
+ ARAB_SULTANATE:0 "Arabian Sultanate"
+ SULTAN:0 "Desert Sultan"
+ SULTANA:0 "Desert Sultana"

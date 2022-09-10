@@ -1,0 +1,34 @@
+country_decisions = {
+	iceland_norse = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			tag = ICE
+			is_colonial_nation = no
+			
+			OR = {
+				culture_group = icelandic
+			}
+		}
+
+		allow = {
+
+			adm_tech = 5
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+
+		}
+		effect = {
+			change_religion = norse_pagan_reformed
+
+			add_prestige = 10
+
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		ai_importance = 400 #
+	}
+	
+}

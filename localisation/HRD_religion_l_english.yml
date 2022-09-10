@@ -1,0 +1,17 @@
+﻿l_english:
+ 
+ #religions
+ hrdnorse.1:0 "Return of Norse people"
+ hrdnorse.1.t:0 "The Return of the Norse Religion"
+ hrdnorse.1.d:0 "The Scandinavian who once worshiped the Norse religion settled Greenland and now that we have done the same a lot of their people have decided to return back to Europe and settle in our lands. With their settlement they have started to preach their forgotten religion, let's hope our people don't listen to them"
+ hrdnorse.1.a:0 "The Return of the Norse Religion"
+ estate_church_piety_privilege:0 "A Mystic Church"
+ estate_church_piety_privilege_desc:0 "Our clerical advisors recommend we go down a more mystic path with the religion, and we must listen to them!"
+ Bless_Expedition:0 "Bless Expedition"
+ papal_monopoly:0 "Papal Monopoly"
+ mpr_anglican_tech:0 "Expanded Universtities"
+ mpr_anglican_settler:0 "Deport Heretics"
+ mpr_anglican_trade:0 "Grant Monopoly"
+ #protestant
+ well_administered_aspect:0 "Well Administered"
+ desc_well_administered_aspect:0 "Well Administered"

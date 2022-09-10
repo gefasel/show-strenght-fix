@@ -1,0 +1,251 @@
+#Country Name: Please see filename.
+
+graphical_culture = easterngfx
+
+color = { 152  85  92 }
+
+revolutionary_colors = { 5  0  10 }
+
+historical_score = 250
+
+historical_idea_groups = {
+	economic_ideas
+	defensive_ideas
+	diplomatic_ideas
+	offensive_ideas
+	trade_ideas
+	innovativeness_ideas
+	religious_ideas
+	spy_ideas	
+}
+
+historical_units = {
+	bardiche_infantry
+	eastern_knights
+	slavic_stradioti
+	eastern_militia
+	hungarian_hussar
+	germanized_pike
+	polish_musketeer
+	polish_hussar
+	polish_tercio
+	polish_winged_hussar
+	eastern_skirmisher
+	eastern_uhlan
+	eastern_carabinier
+}
+
+monarch_names = {
+	"István #5" = 40
+	"MONARCH_NAME_LASZLO" = 40
+	"Lajos #1" = 20
+	"Albert #1" = 20
+	"János #0" = 20
+	"MONARCH_NAME_ULASZLO" = 20
+	"Mátyás #1" = 20
+	"András #3" = 15
+	"Károly #2" = 15
+	"Zsigmond #1" = 10
+	"Béla #4" = 5
+	"Anasztáz #0" = 0
+	"Barnabás #0" = 0
+	"Bertalan #0" = 0
+	"Boldizsár #0" = 0
+	"Dávid #0" = 0
+	"Dömötör #0" = 0
+	"Edvárd #0" = 0
+	"Ernö #0" = 0
+	"Ferenc #0" = 0
+	"Gábor #0" = 0
+	"György #0" = 0
+	"Izsák #0" = 0
+	"Jenö #0" = 0
+	"MONARCH_NAME_JOZSEF" = 0
+	"Kálmán #1" = 0
+	"Kázmér #0" = 0
+	"Lörinc #0" = 0
+	"Lukács #0" = 0
+	"Márk #0" = 0
+	"MONARCH_NAME_MIKLOS" = 0
+	"Oszkár #0" = 0
+	"MONARCH_NAME_OTTO" = 0
+	"Patrik #0" = 0
+	"Péter #0" = 0
+	"Simon #0" = 0
+	"Tamás #0" = 0
+	"Vencel #0" = 0
+	"Anna #0" = -10
+	"Erzsébet #0" = -5
+	"Agnes #0" = -1
+	"Katalin #0" = -1
+	"Stefan #2" = 60
+	"Lazar #1" = 20
+	"Djorde #0" = 20
+	"Djuradj #0" = 20
+	"Milosh #0" = 20
+	"Djordje #0" = 20
+	"Alexa #0" = 15
+	"Grgur #0" = 15
+	"Petrija #0" = 15
+	"Todor #0" = 15
+	"Aleksandar #0" = 10
+	"Mihailo #0" = 10
+	"Milan #0" = 10
+	"Bogdan #0" = 0
+	"Branko #0" = 0
+	"Bratislav #0" = 0
+	"Darko #0" = 0
+	"Dragan #0" = 0
+	"Dubravko #0" = 0
+	"Dusan #0" = 0
+	"Filip #0" = 0
+	"Goran #0" = 0
+	"Ivan #0" = 0
+	"Josif #0" = 0
+	"Konstantin #0" = 0
+	"Luka #0" = 0
+	"Marko #0" = 0
+	"Mateja #0" = 0
+	"Miroslav #0" = 0
+	"Mladen #0" = 0
+	"Nebojsa #0" = 0
+	"Nemanja #0" = 0
+	"Nenad #0" = 0
+	"Nikola #0" = 0
+	"Pedrag #0" = 0
+	"Stanko #0" = 0
+	"Toma #0" = 0
+	"Vinko #0" = 0
+	"Vjekoslav #0" = 0
+	"Zdravko #0" = 0
+	"Zvonimir #0" = 0
+	
+	"Branka #0" = -1
+	"Jagoda #0" = -1
+	"Mirna #0" = -1
+	"Jelena #0" = -1
+	"Ljubica #0" = -1
+	"Alexandru #0" = 20
+	"Radu #0" = 20
+	"Vlad #0" = 20
+	"Constantin #0" = 20
+	"Mihail #0" = 20
+	"Mircea #0" = 20
+	"George #0" = 20
+	"Grigore #0" = 20
+	"Mihnea #0" = 20
+	"Nicolae #0" = 20
+	"Besarab #0" = 20
+	"Vladislav #0" = 20
+	"Mattia #0" = 20
+	"Petru #0" = 20
+	"Radu Ilias #0" = 20
+	"Scarlat #0" = 20
+	"Stefan #0" = 20
+	"Dan #0" = 20
+	"Alexandru Ilias #0" = 20
+	"Gabriel #0" = 20
+	"Ioan George #0" = 20
+	"Leon #0" = 20
+	"Moise #0" = 20
+	"Neagoie Besarab #0" = 20
+	"Petrascu #0" = 20
+	"Radu Leon #0" = 20
+	"Radu Mihnea #0" = 20
+	"Serban #0" = 20
+	"Simeon #0" = 20
+	"Teodosiu #0" = 20
+	"Vintila #0" = 20
+	"Vladut #0" = 20
+	"Milos #0" = 10
+	"Corneliu #0" = 0
+	"Flaviu #0" = 0
+	"Iuliu #0" = 0
+	"Octavian #0" = 0
+	"Sergiu #0" = 0
+	"Teodor #0" = 0
+	"Valeriu #0" = 0
+	
+	"Adelina #0" = -1
+	"Georgeta #0" = -1
+	"Mirela #0" = -1
+}
+
+leader_names = {
+	Andrássy Alvinczy
+	Dessewffy
+	Esterházy
+	Festetics Frangepán
+	Garay
+	Hunyadi Hadik Horthy
+	Lackovic' Losonci
+	Nadasdy
+	Ozoray
+	Zrinski Zápolya Zichy
+	Bojovic
+	Drascovic
+	Gingic
+	Hracovec Jovanovic
+	Lazarevic
+	Marcovic
+	Obilic Obrenovic
+	Pertrovic Postek Putnik
+	Basarab Brâncoveanu
+	Cantacuzino Caragea Craiovescu
+	Dracul Duca
+	Ghica Golescu
+	Ilias Ipsilanti
+	Mavrocordat Mircea Moruzi
+	Racovita
+	Sutu 
+	Tepelus Tolmay
+	Vacarescu Voda
+	Callimachi Campineanu Cantemir
+	Lupu
+	Moruzi Movila Musatin
+	Norocea 
+	Racovita Ruset                         
+	Sturdza
+}
+
+ship_names = {
+	Aranybulla 
+	Arpad
+	Magyar
+	Sigismund
+	"Szent Istvan kiraly"
+	"Hunyadi Matyas"
+	"Karoly Robert"
+	"Nagy Lajos"
+	Laszlo
+	Kalman
+	Raska
+	Bosnia
+	Duklja
+	Zahumlje
+	Travunia
+	Pagania
+	"Stefan Nemanja"
+	"Stefan Prvovencani"
+	"Stefan Dusan"
+	Milutin
+	Dracul
+	Viteazul
+	Putera mari
+	Sperietoaria
+	"Frumuseatsa valurilor"
+	Posada
+	Calugareni
+	Rovine
+	Sirmium
+	"Atacul de noapte"
+	Litovoi
+	"Athleta Christi"
+	Baia "Bogdan I"
+	Iuga
+	Moldova
+	"Râul Prut"
+	"Stefan cel Mare" Suceava
+	Vaslui
+	Romania
+}

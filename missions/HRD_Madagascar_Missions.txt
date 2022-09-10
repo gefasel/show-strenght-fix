@@ -1,0 +1,391 @@
+madag_missions_A = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		tag = MDG
+	}
+	has_country_shield = yes
+	
+	madagA1 = {
+		icon = mission_conquer_benin
+		required_missions = {  }
+		position = 2
+		provinces_to_highlight = {
+			area = madagascar_highlands_area
+			area = southern_madagascar
+			area = betsimasaraka_area
+			area = sakalava_area
+		}
+		trigger = {
+			madagascar_highlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			southern_madagascar = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			betsimasaraka_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			sakalava_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+		effect = {
+			add_stability = 1	
+			quelimane_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			mozambique_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	madagA2 = {
+		icon = mission_invade_kanem
+		required_missions = { madagA1 }
+		provinces_to_highlight = {
+			area = quelimane_area
+			area = mozambique_area
+		}
+		trigger = {
+			quelimane_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			mozambique_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+		effect = {
+			sakalava_area = {
+				add_province_modifier = {
+					name = "madag_dev"
+					duration = 5475
+				}
+			}
+		}
+	}
+	
+	madagA3 = {
+		icon = mission_galleys_in_port
+		required_missions = { madagA2 }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1100 #Mahe
+				province_id = 1102 #Mauritius
+				province_id = 1201 #Zanzibar
+				province_id = 1103 #Île de Bourbon
+			}
+		}
+		trigger = {
+			owns_core_province = 1100
+			owns_core_province = 1102
+			owns_core_province = 1201
+			owns_core_province = 1103
+		}
+		effect = {
+			1100 = {
+				add_base_production = 5	
+				change_trade_goods = fish
+			}
+			1999 = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	madagA4 = {
+		icon = mission_junk_boat
+		required_missions = { madagA3 }
+		provinces_to_highlight = {
+			province_id = 1999 #Cocos Island
+		}
+		trigger = {
+			owns_core_province = 1999
+		}
+		effect = {	
+			west_java_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}	
+}
+
+madag_missions_B = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		tag = MDG
+	}
+	has_country_shield = yes
+	
+	madagB1 = {
+		icon = found_batavia
+		required_missions = {  }
+		trigger = {
+			development_in_provinces = {
+				value = 200
+			}
+		}
+		effect = {
+			sakalava_area = {
+				add_province_modifier = {
+					name = "madag_sakalava"
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	madagB2 = {
+		icon = mission_hanseatic_city
+		required_missions = { madagB1 }
+		trigger = {
+			dock = 8
+		}
+		effect = {
+			define_advisor = {
+				type = naval_reformer
+				skill = 2
+				cost_multiplier = 0.5
+			}
+		}
+	}
+	
+	madagB3 = {
+		icon = mission_rb_grow_the_channel
+		required_missions = { madagB2 }
+		trigger = {
+			num_of_heavy_ship = 15
+		}
+		effect = {
+			sakalava_area = {
+				add_province_modifier = {
+					name = "madag_betsim"
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	madagB4 = {
+		icon = mission_south_indian_trade
+		required_missions = { madagB3 }
+		trigger = {
+			estate_loyalty = {
+				estate = estate_burghers
+				loyalty = 60
+			}
+			has_estate_privilege = estate_burghers_admirals
+		}
+		effect = {
+			4026 = {
+				add_building = coastal_defence	
+			}
+			4021 = {
+				add_building = coastal_defence	
+			}
+			4028 = {
+				add_building = coastal_defence	
+			}
+		}
+	}
+	
+	madagB5 = {
+		icon = mission_great_trading_houses
+		required_missions = { madagB4 }
+		trigger = {
+			calc_true_if = {
+				all_owned_province = {
+					OR = {
+						province_has_center_of_trade_of_level = 1
+						province_has_center_of_trade_of_level = 2
+						province_has_center_of_trade_of_level = 3
+					}
+					controlled_by = owner
+					is_core = ROOT
+					}
+				amount = 13
+			}
+		}
+		effect= {
+			betsimasaraka_area = {
+				change_trade_goods = fish
+			}
+		}
+	}
+	
+	madagB6 = {
+		icon = mission_empire
+		required_missions = { madagA4 madagB5 madagC2 }
+		provinces_to_highlight = {
+			province_id = 1177 #Cape
+		}
+		trigger = {
+			owns_core_province = 1177	
+		}
+		effect = {
+			add_stability = 1
+			add_adm_power = 100	
+			add_dip_power = 100	
+			add_mil_power = 100	
+			set_government_rank = 3
+		}
+	}
+}
+
+
+madag_missions_C = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		tag = MDG
+	}
+	has_country_shield = yes
+	
+	
+	madagC1 = {
+		icon = mission_african_gold
+		required_missions = { madagD2 }
+		position = 4
+		trigger = {
+			gold = 4
+		}
+		effect = {
+			define_advisor = {
+				type = master_of_mint
+				skill = 3
+				cost_multiplier = 0.5
+			}
+		}
+	}
+	
+	madagC2 = {
+		icon = mission_south_african_bases
+		required_missions = { madagC1 }
+		provinces_to_highlight = {
+			region = south_africa_region
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 20
+				region = south_africa_region
+			}
+		}
+		effect = {
+			4783 = {
+				add_building = fort_15th
+				add_province_modifier = {
+					name = "madag_fort"
+					duration = -1
+				}
+			}
+		}
+	}
+}
+			
+			
+madag_missions_D = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		tag = MDG
+	}
+	has_country_shield = yes
+	
+	madagD1 = {
+		icon = mission_colonial
+		required_missions = {  }
+		position = 2
+		provinces_to_highlight = {
+			owned_by = root
+			is_capital = yes
+		}
+		trigger = {
+			capital_scope = {
+				development = 20
+				NOT = { num_free_building_slots = 1 }
+			}
+		}
+		effect = {
+			capital_scope = {
+				add_base_production = 2
+				add_base_manpower = 2
+			}
+			1102 = {
+				create_colony = 999
+			}
+		}
+	}
+	
+	madagD2 = {
+		icon = mission_junk_boat
+		required_missions = { madagD1 }
+		provinces_to_highlight = {
+			province_id = 1448
+		}
+		trigger = {
+			1448 = {
+				trade_share = {
+					country = ROOT
+					share = 80
+				}
+			}
+		}
+		effect= {
+			define_advisor = {
+				type = trader
+				skill = 2
+				cost_multiplier = 0.75
+			}
+		}
+	}
+	
+	madagD3 = {
+		icon = mission_dominate_trade_in_aden
+		required_missions = { madagB5 }
+		position = 6
+		trigger = {
+			calc_true_if = {
+				all_owned_province = {
+					province_is_on_an_island = yes
+					controlled_by = owner
+					is_core = ROOT
+				}
+			amount = 25
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "madag_navalcomb"
+				duration = -1
+			}
+		}
+	}
+}			

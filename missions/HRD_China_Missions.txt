@@ -1,0 +1,302 @@
+reestablish_china_missions_1 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = YAN
+			tag = JIN
+			tag = QIN
+			tag = CSH
+			tag = CXI
+			tag = LNG
+			tag = QIC
+			tag = CGS
+			tag = WUU
+			tag = NNG
+			tag = CHC
+			tag = MIN
+			tag = YUE
+			tag = CYI
+			tag = CMI
+			tag = HUA
+			tag = SHU
+			tag = TNG		
+			tag = MNG	
+		}
+	}
+	has_country_shield = yes
+	
+	western_expansion_mission = {
+		icon = mission_unite_home_region
+		required_missions = { prepare_for_war_mission }
+		position = 7
+		provinces_to_highlight = {
+			region = xinan_region
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				region = xinan_region
+				
+			}
+		}
+		effect = { 
+			xinan_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	secure_western_cities_mission = {
+		icon = mission_asian_city
+		required_missions = { western_expansion_mission }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 679
+				province_id = 680
+				province_id = 662
+			}
+		}
+		trigger = {
+			AND = { 
+				owns_core_province = 679
+				owns_core_province = 680
+				owns_core_province = 662
+			}
+		}
+		effect = { 
+			add_country_modifier = {
+				name = "china_west"
+				duration = 9125
+			}
+		}
+	}	
+}
+
+reestablish_china_missions_2 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = YAN
+			tag = JIN
+			tag = QIN
+			tag = CSH
+			tag = CXI
+			tag = LNG
+			tag = QIC
+			tag = CGS
+			tag = WUU
+			tag = NNG
+			tag = CHC
+			tag = MIN
+			tag = YUE
+			tag = CYI
+			tag = CMI
+			tag = HUA
+			tag = SHU
+			tag = TNG
+			tag = MNG	
+		}
+	}
+	has_country_shield = yes
+	
+	prepare_for_war_mission = {
+		icon = mission_build_up_to_force_limit
+		required_missions = {  }
+		position = 6
+		trigger = {
+			army_size_percentage = 1
+			}
+		effect = { 
+			add_country_modifier = {
+				name = "chinese_wars"
+				duration = 5474 #15 years
+			}
+		}
+	}
+	
+	southern_expansion_mission = {
+		icon = mission_unite_home_region
+		required_missions = { prepare_for_war_mission }
+		provinces_to_highlight = {
+			region = south_china_region
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				region = south_china_region
+			}	
+		}
+		effect = { 
+			south_china_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	secure_southern_cities_mission = {
+		icon = mission_asian_city
+		required_missions = { southern_expansion_mission }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 667
+				province_id = 1821
+				province_id = 682
+				province_id = 669
+			}
+		}
+		trigger = {
+			AND = { 
+				owns_core_province = 667
+				owns_core_province = 1821
+				owns_core_province = 682
+				owns_core_province = 669
+			}
+		}
+		effect = { 
+				add_country_modifier = {
+				name = "china_south"
+				duration = 9125
+			}
+		}
+	}	
+	
+	reestablish_the_middle_kingdom = {
+		icon = mission_empire
+		required_missions = { secure_western_cities_mission secure_southern_cities_mission secure_northern_cities_mission }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 667
+				province_id = 1821
+				province_id = 682
+				province_id = 669
+				province_id = 679
+				province_id = 680
+				province_id = 662
+				province_id = 1816
+				province_id = 700
+				province_id = 688
+			}
+		}
+		trigger = {
+			total_development = 1000
+			AND = { 
+				owns_core_province = 667
+				owns_core_province = 1821
+				owns_core_province = 682
+				owns_core_province = 669
+				owns_core_province = 679
+				owns_core_province = 680
+				owns_core_province = 662
+				owns_core_province = 1816
+				owns_core_province = 700
+				owns_core_province = 688
+			}
+		}
+		effect = { 
+			country_event = {
+				id = hrdchina.2
+			}	
+		}
+	}	
+}
+
+reestablish_china_missions_3 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = YAN
+			tag = JIN
+			tag = QIN
+			tag = CSH
+			tag = CXI
+			tag = LNG
+			tag = QIC
+			tag = CGS
+			tag = WUU
+			tag = NNG
+			tag = CHC
+			tag = MIN
+			tag = YUE
+			tag = CYI
+			tag = CMI
+			tag = HUA
+			tag = SHU
+			tag = TNG
+			tag = MNG	
+		}
+	}
+	has_country_shield = yes
+	
+	northern_expansion_mission = {
+		icon = mission_unite_home_region
+		required_missions = { prepare_for_war_mission }
+		position = 7
+		provinces_to_highlight = {
+			region = north_china_region
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				region = north_china_region
+				
+			}
+		}
+		effect = { 
+			north_china_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			liaoning_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	secure_northern_cities_mission = {
+		icon = mission_asian_city
+		required_missions = { northern_expansion_mission }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1816
+				province_id = 700
+				province_id = 688
+				province_id = 2139
+			}
+		}
+		trigger = {
+			AND = { 
+				owns_core_province = 1816
+				owns_core_province = 700
+				owns_core_province = 688
+				owns_core_province = 2139 # Laizhou
+			}
+		}
+		effect = { 
+			add_country_modifier = {
+				name = "china_north"
+				duration = 9125
+			}	
+		}
+	}		
+}

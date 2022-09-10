@@ -1,0 +1,18 @@
+government = monarchy
+add_government_reform = HRD_warlord_state
+technology_group = chinese
+religion = confucianism
+primary_culture = xibei
+add_accepted_culture = jin
+capital = 700	#Xi'an
+
+1437.10.22 = {
+	monarch = {
+		name = "Youyi"
+		dynasty = "Qin"
+		birth_date = 1414.10.22
+		adm = 3
+		dip = 6
+		mil = 4
+	}
+}

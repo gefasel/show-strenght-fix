@@ -1,0 +1,206 @@
+namespace = HRD
+#Start
+country_event = {
+	id = HRD.1
+	title = "HRD_title"
+	desc = "HRD_start_desc"
+	picture = WESTERNISATION_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "HRD_raid_coast"
+		trigger = {
+			any_owned_province = {
+				has_port = yes
+			}
+		}
+		country_event = {
+			id = HRD.3
+			days = 3650
+		}
+	}
+	option = {
+		name = "HRD_agenda"
+		country_event = {
+			id = HRD.5
+			days = 1825
+		}
+	}
+	option = {
+		name = "HRD_insult"
+		country_event = {
+			id = HRD.6
+			days = 3650
+		}
+	}
+	option = {
+		name = "HRD_estate_land"
+		country_event = {
+			id = HRD.7
+			days = 1825
+		}
+	}
+	option = {
+		name = "HRD_other"
+		country_event = {
+			id = HRD.2
+		}
+	}
+	option = {
+		name = "HRD_nevermind"
+	}
+}
+
+#Other 
+country_event = {
+	id = HRD.2
+	title = "HRD_title"
+	desc = "RMM_other_desc"
+	picture = WESTERNISATION_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "HRD_1_year"
+		country_event = {
+			id = HRD.8
+			days = 365
+		}
+	}
+	option = {
+		name = "HRD_4_years"
+		country_event = {
+			id = HRD.9
+			days = 1460
+		}
+	}
+	option = {
+		name = "HRD_5_years"
+		country_event = {
+			id = HRD.10
+			days = 1825
+		}
+	}
+	option = {
+		name = "HRD_10_years"
+		country_event = {
+			id = HRD.11
+			days = 3650
+		}
+	}
+	option = {
+		name = "HRD_20_years"
+		country_event = {
+			id = HRD.12
+			days = 7300
+		}
+	}
+	option = {
+		name = "HRD_nevermind"
+	}
+}
+
+#Raid Coast
+country_event = {
+	id = HRD.3
+	title = "HRD_title"
+	desc = "HRD_raid_coast_desc"
+	picture = WESTERNISATION_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "HRD_thanks"
+	}
+}
+
+#Agenda
+country_event = {
+	id = HRD.5
+	title = "HRD_title"
+	desc = "HRD_agenda_desc"
+	picture = WESTERNISATION_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "HRD_thanks"
+	}
+}
+
+#Insult
+country_event = {
+	id = HRD.6
+	title = "HRD_title"
+	desc = "HRD_insult_desc"
+	picture = WESTERNISATION_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "HRD_thanks"
+	}
+}
+
+#Estate Land
+country_event = {
+	id = HRD.7
+	title = "HRD_title"
+	desc = "HRD_estate_land_desc"
+	picture = WESTERNISATION_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "HRD_thanks"
+	}
+}
+
+#1 year
+country_event = {
+	id = HRD.8
+	title = "HRD_title"
+	desc = "HRD_1_desc"
+	picture = WESTERNISATION_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "HRD_thanks"
+	}
+}
+
+#4 years
+country_event = {
+	id = HRD.9
+	title = "HRD_title"
+	desc = "HRD_4_desc"
+	picture = WESTERNISATION_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "HRD_thanks"
+	}
+}
+
+#5 years
+country_event = {
+	id = HRD.10
+	title = "HRD_title"
+	desc = "HRD_5_desc"
+	picture = WESTERNISATION_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "HRD_thanks"
+	}
+}
+
+#10 years
+country_event = {
+	id = HRD.11
+	title = "HRD_title"
+	desc = "HRD_10_desc"
+	picture = WESTERNISATION_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "HRD_thanks"
+	}
+}
+
+#20 years
+country_event = {
+	id = HRD.12
+	title = "HRD_title"
+	desc = "HRD_20_desc"
+	picture = WESTERNISATION_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "HRD_thanks"
+	}
+}

@@ -1,0 +1,360 @@
+country_decisions = {
+	colonization_allowed = {
+		major = yes
+		potential = {
+			NOT = { has_country_modifier = colonization_allowed }
+			is_bankrupt = no
+		}
+		allow = {
+			adm_tech = 5
+			num_of_total_ports = 1
+		}
+		effect = {
+			add_years_of_income = -1
+			add_country_modifier = {
+				name = "colonization_allowed"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				AND = { 
+					NOT = { has_idea_group = exploration_ideas }
+					NOT = { has_idea_group = expansion_ideas }
+				}
+			}
+		}
+	}
+	
+	fund_exploration = {
+		potential = {
+			has_country_modifier = colonization_allowed
+			is_bankrupt = no
+		}
+		allow = {
+			dip_power = 50
+			years_of_income = 0.25
+		}
+		effect = {
+			add_years_of_income = -0.25
+			create_explorer = { tradition = 40 }	
+			add_dip_power = -50	
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				num_of_explorers = 1
+			}
+		}
+	}
+	
+	fund_expedition = {
+		potential = {
+			has_country_modifier = colonization_allowed
+			is_bankrupt = no
+		}
+		allow = {
+			mil_power = 50
+			years_of_income = 0.25
+		}
+		effect = {
+			add_years_of_income = -0.25
+			create_conquistador = { tradition = 40 }	
+			add_mil_power = -50	
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				num_of_conquistadors = 1
+			}
+		}
+	}
+	
+	settle_the_new_world = {
+		major = yes
+		potential = {
+			is_bankrupt = no
+			has_country_modifier = colonization_allowed
+			NOT = { has_country_modifier = settle_the_new_world }
+			OR = {
+				technology_group = western
+				technology_group = eastern
+				technology_group = ottoman
+				technology_group = muslim
+				technology_group = sub_saharan
+			}
+		}
+		allow = {
+			num_of_total_ports = 1
+			custom_trigger_tooltip = {
+				tooltip = obj_discover_america_tooltip
+					OR = {
+						north_america = { has_discovered = PREV }§
+						south_america = { has_discovered = PREV }
+						new_world = { has_discovered = PREV }
+					}
+			}
+		}
+		effect = {
+			add_years_of_income = -2
+			add_country_modifier = {
+				name = "settle_the_new_world"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	expand_new_world_effort = {
+		major = yes
+		potential = {
+			is_bankrupt = no
+			num_of_total_ports = 1
+			has_country_modifier = settle_the_new_world
+			NOT = { has_country_modifier = expand_new_world_effort }
+			OR = {
+				technology_group = western
+				technology_group = eastern
+				technology_group = ottoman
+				technology_group = muslim
+				technology_group = sub_saharan
+			}
+		}
+		allow = {
+			OR = {
+				adm_tech = 7
+				dip_tech = 7
+			}
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				OR = {
+					continent = south_america
+					continent = north_america
+					continent = new_world
+				}
+				value = 1
+			}
+		}
+		effect = {
+			add_years_of_income = -2
+			add_country_modifier = {
+				name = "expand_new_world_effort"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	settle_the_islands = {
+		major = yes
+		potential = {
+			is_bankrupt = no
+			has_country_modifier = colonization_allowed
+			NOT = { has_country_modifier = settle_the_islands }
+			OR = {
+				technology_group = indian
+				technology_group = east_african
+				technology_group = central_african
+				technology_group = chinese
+				technology_group = nomad_group
+				technology_group = aboriginal_tech
+				technology_group = polynesian_tech
+			}
+		}
+		allow = {
+			adm_tech = 6
+			num_of_total_ports = 1
+			has_country_modifier = colonization_allowed
+		}
+		effect = {
+			add_years_of_income = -2
+			add_country_modifier = {
+				name = "settle_the_islands"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	expand_settlement_effort = {
+		major = yes
+		potential = {	
+			is_bankrupt = no
+			NOT = { has_country_modifier = expand_settlement_effort }
+			has_country_modifier = settle_the_islands
+			OR = {
+				technology_group = indian
+				technology_group = east_african
+				technology_group = central_african
+				technology_group = chinese
+				technology_group = nomad_group
+				technology_group = aboriginal_tech
+				technology_group = polynesian_tech
+			}
+		}
+		allow = {
+			num_of_total_ports = 1
+			OR = {
+				adm_tech = 8
+				dip_tech = 8
+			}
+		}
+		effect = {
+			add_years_of_income = -2
+			add_country_modifier = {
+				name = "expand_settlement_effort"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	expand_our_realm = {
+		major = yes
+		potential = {	
+			is_bankrupt = no
+			NOT = { has_country_modifier = expand_our_realm }
+			OR = {
+				technology_group = north_american
+				technology_group = mesoamerican
+				technology_group = south_american
+				technology_group = andean
+				technology_group = high_american
+			}
+		}
+		allow = {
+			OR = {
+				adm_tech = 8
+				dip_tech = 8
+			}
+		}
+		effect = {
+			add_years_of_income = -4
+			add_country_modifier = {
+				name = "expand_our_realm"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+			
+	abandon_colonial_effort = {
+		major = yes
+		potential = {
+			OR = {
+				has_country_modifier = colonization_allowed
+				has_country_modifier = settle_the_new_world
+				has_country_modifier = expand_new_world_effort
+				has_country_modifier = settle_the_islands
+				has_country_modifier = expand_settlement_effort
+				has_country_modifier = expand_our_realm
+			}
+		}
+		allow = {
+			stability = 0
+		}
+		effect = {
+			add_stability = -3
+			remove_country_modifier = colonization_allowed
+			remove_country_modifier = settle_the_new_world
+			remove_country_modifier = expand_new_world_effort
+			remove_country_modifier = settle_the_islands
+			remove_country_modifier = expand_settlement_effort
+			remove_country_modifier = expand_our_realm
+			add_country_modifier = {
+				name =  "rebelious_colonies"
+				duration = 9125
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	##OLD AFRICA##
+	
+	african_colonist = {
+		potential = {
+			NOT = { has_country_modifier = african_colonist }
+			OR = {
+				culture_group = kongo_group
+				culture_group = southern_african
+				culture_group = african
+				culture_group = great_lakes_group
+				culture_group = cushitic
+				culture_group = sudanese
+			}
+		}
+		allow = {
+			adm_tech = 6
+		}
+		effect = {
+			custom_tooltip = explain_state_firearm_regiments
+			add_country_modifier = {
+				name = "african_colonist"
+				duration = -1
+			}
+			set_country_flag = african_colonist_activated
+		}
+		ai_will_do = {
+			factor = 0 #Plays it safer with cash
+		}
+	}
+	
+	abolish_african_colonist = {
+		potential = {
+			has_country_modifier = african_colonist
+		}
+		allow = {
+			has_country_modifier = african_colonist
+			is_at_war = no
+		}
+		effect = {
+			add_years_of_income = -1
+			remove_country_modifier = african_colonist
+			clr_country_flag = african_colonist_activated
+		}
+		ai_will_do = {
+			factor = 0 #Plays it safer with cash
+		}
+	}
+	
+	african_colonist_west = {
+		potential = {
+			NOT = { has_country_modifier = african_colonist }
+			OR = {
+				culture_group = sahelian
+				culture_group = mande
+				culture_group = west_african
+			}
+		}
+		allow = {
+			adm_tech = 12
+		}
+		effect = {
+			custom_tooltip = explain_state_firearm_regiments
+			add_country_modifier = {
+				name = "african_colonist"
+				duration = -1
+			}
+			set_country_flag = african_colonist_activated
+		}
+		ai_will_do = {
+			factor = 0 #Plays it safer with cash
+		}
+	}
+}

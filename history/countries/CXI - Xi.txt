@@ -1,0 +1,18 @@
+government = monarchy
+add_government_reform = HRD_warlord_state
+technology_group = chinese
+religion = confucianism
+primary_culture = hubei
+add_accepted_culture = sichuanese
+capital = 679
+
+1437.10.22 = {
+	monarch = {
+		name = "Jianjun"
+		dynasty = "Xi"
+		birth_date = 1411.10.22
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}

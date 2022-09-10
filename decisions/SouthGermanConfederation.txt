@@ -1,0 +1,121 @@
+country_decisions = {
+
+	form_south_german_confederation_nation_title = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_south_german_confederation_flag }
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			NOT = { exists = SGC }
+			NOT = { tag = KOL }
+			NOT = { tag = HES }
+			NOT = { tag = AAC }
+			NOT = { tag = BRG }
+			NOT = { tag = KLE }
+			NOT = { tag = NSA}
+			NOT = { tag = TRI }
+			NOT = { tag = FRN }
+			NOT = { tag = NGC }
+			OR = {
+				primary_culture = bavarian
+				primary_culture = swiss
+				primary_culture = hessian
+				primary_culture = swabian
+				primary_culture = hannoverian
+				primary_culture = franconian
+				primary_culture = austrian
+				}
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 10
+					adm_tech = 12
+				}
+			}
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 78 	#Mainz
+				province_id = 74 	#Baden
+				province_id = 1880 	#Sundgau
+				province_id = 70 	#Stuttgart
+				province_id = 65 	#München
+				province_id = 76 	#Salzburg
+				province_id = 67 	#Nürnberg
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 15
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+
+				owns_core_province = 78 	#Mainz
+				owns_core_province = 74 	#Baden
+				owns_core_province = 1880 	#Sundgau
+				owns_core_province = 70 	#Stuttgart
+				owns_core_province = 65 	#München
+				owns_core_province = 76 	#Salzburg
+				owns_core_province = 67 	#Nürnberg
+				
+			AND = {
+				num_of_owned_provinces_with = {
+				is_core = ROOT
+				region = south_german_region
+					NOT = { area = austria_proper_area }
+					NOT = { area = inner_austria_area }
+					NOT = { area = switzerland_area }
+					NOT = { area = romandie_area }
+				value = 20
+				}
+			}
+		}
+		effect = {
+			change_tag = SGC
+			remove_non_electors_emperors_from_empire_effect = yes
+			if = {
+				limit = { NOT = { government_rank = 2 } }
+				set_government_rank = 2
+			}
+			
+			south_german_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = SGC
+			}
+			
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 50
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			set_country_flag = formed_south_german_confederation_flag
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+}

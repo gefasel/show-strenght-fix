@@ -1,0 +1,80 @@
+##################################################################################################
+# KoP event 
+#
+# By Lukas
+##################################################################################################
+
+namespace = kopalexandria
+
+# Alexandria Occupation
+country_event = {
+	id = kopalexandria.1
+	title = kopalexandria1.t
+	desc = kopalexandria1.d
+	picture = ANGRY_MOB_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		358 = {
+			owned_by = TUR
+			is_core = TUR
+		}
+		tag = TUR
+		exists = EGY
+		NOT = { is_year = 1550 }
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = kopalexandria1.a
+		358 = {
+				cede_province = EGY
+				remove_core = TUR
+			}
+
+	}
+	option = {
+		name = kopalexandria1.b
+		358 = {
+			add_province_modifier = {
+				name = "occupation_of_alexandria"
+				duration = 3600
+			}
+		}
+		add_country_modifier = {
+				name = "egyptians_trade_embargo"
+				duration = 5400
+		}
+		custom_tooltip = kopalexandria.c.tt
+		hidden_effect = { set_country_flag = alexandria_future_war }
+	}
+}
+
+# Alexandria War
+country_event = {
+	id = kopalexandria.2
+	title = kopalexandria2.t
+	desc = kopalexandria2.d
+	picture = BATTLE_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		has_country_flag = alexandria_future_war
+		tag = TUR
+		exists = EGY
+		war_with = EGY
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = kopalexandria2.a
+		add_country_modifier = {
+			name = "war_with_egypt"
+			duration = 3600
+			}
+	}
+}

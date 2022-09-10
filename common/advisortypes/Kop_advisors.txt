@@ -1,0 +1,227 @@
+ #construction, ica, cca, siege ability, monthly splendor, galley/heavy combat ability/hull strength, engagement width (?), monthly reform progress, culture conversion cost, legitimacy/rep tradition/devotion/horde unity
+ #Actual.  Splendor, gov reform,  legitimacy, autonomy reduction.  culture conversion cost, goods produced,  settler growth.  hostile attrition,  movement speed.  
+###ADM
+
+kop_splendor_herald = {
+	monarch_power = ADM
+	
+	monthly_splendor = 0.5
+	
+	
+	skill_scaled_modifier = { meritocracy = 0.25 }
+	
+	chance = {
+		factor = 0.5
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+kop_gov_reformer = {
+
+	monarch_power = ADM
+	
+	monthly_reform_progress = 0.2
+	
+	skill_scaled_modifier = { meritocracy = 0.25 }
+	
+	chance = {
+		factor = 1
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+#kop_spin_doctor = {
+#
+#	monarch_power = ADM
+#	
+#		legitimacy = 1
+#		republican_tradition = 0.5
+#		devotion = 1
+#		meritocracy = 0.5
+#		horde_unity = 0.5
+#
+#	
+#	skill_scaled_modifier = { meritocracy = 0.25 }
+#	
+#	chance = {
+#		factor = 1
+#	}
+#	
+#	ai_will_do = {
+#		factor = 1
+#	}
+#}
+
+kop_land_overseer = {
+
+	monarch_power = ADM
+	
+	global_autonomy = -0.05
+
+	
+	skill_scaled_modifier = { meritocracy = 0.25 }
+	
+	chance = {
+		factor = 0.75
+		modifier = {	
+		factor = 0.25
+		is_year = 1550
+		}
+	}
+	
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+
+######DIP
+
+kop_re_education_enforcer = {
+
+	monarch_power = DIP
+	
+	culture_conversion_cost = -0.1
+	
+	skill_scaled_modifier = { meritocracy = 0.25 }
+	
+	chance = {
+		factor = 1
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+kop_workshop_manager = {
+
+	monarch_power = DIP
+	
+	global_trade_goods_size_modifier = 0.02
+
+	
+	skill_scaled_modifier = { meritocracy = 0.25 }
+	
+	chance = {
+		factor = 1
+	}
+	
+	ai_will_do = {
+		factor = 0
+	}
+}  
+
+kop_reproduction_factory = {
+
+	monarch_power = DIP
+	
+	global_colonial_growth = 10
+
+	
+	skill_scaled_modifier = { meritocracy = 0.25 }
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 0
+			owner = { NOT = { num_of_colonists = 1 } }
+		}
+		modifier = {
+			factor = 1.5
+			owner = { is_colonial_nation = yes }
+		}
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+
+#####MIL
+kop_guerilla = {
+
+	monarch_power = MIL
+	
+	hostile_attrition = 1
+
+	
+	skill_scaled_modifier = { meritocracy = 0.25 }
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			is_at_war = yes
+		}
+	}
+	
+	ai_will_do = {
+		factor = 0
+		
+	}
+}
+
+kop_logistical_specialist = {
+
+	monarch_power = MIL
+	
+	movement_speed = 0.10
+
+	
+	skill_scaled_modifier = { meritocracy = 0.25 }
+	
+	chance = {
+		factor = 1
+	}
+	
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+
+
+
+
+
+
+kop_war_guru = {
+
+	monarch_power = MIL
+	
+	army_tradition = 0.5
+
+	
+	skill_scaled_modifier = { meritocracy = 0.25 }
+	
+	chance = {
+		factor = 0.5
+		modifier = {	
+		factor = 1
+		is_year = 1500
+		}	
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+#inf ca 0.1
+
+#Siege ability 0.1
+
+
+#Art ca 0.1
+
+
+
+	

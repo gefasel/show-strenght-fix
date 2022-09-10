@@ -1,0 +1,26 @@
+﻿l_english:
+  #anycountry
+  KoP_insult1:0 "Your head would look good on the end of a pole."
+  KoP_insult2:0 "Not even England is interested in a trade agreement with you"
+  KoP_insult3:0 "All your trade belongs to us"
+  KoP_insult4:0 "Afraid of players wars ? Don't be such a Chika!"
+  KoP_insult5:0 "I'm sorry I just need more PP"
+  KoP_insult6:0 "A mature Tom could manage [Root.GetName] better than you"
+  KoP_insult7:0 "Have you even won a player war before?"
+  KoP_insult8:0 "You're nearly as bad at EU4 than Beyond"
+  KoP_insult9:0 "Muerten would beat you into into space as an OPM sandwiched between Russia and the Turks"
+  KoP_insult10:0 "I wish for Ashley to rob you of all your trade"
+  KoP_insult11:0 "I hope all of your most trustworthy allies pull a Beyond on you and end your pitiful existence"
+  KoP_insult12:0 "It appears [Root.Monarch.GetName] has fallen asleep mid session, must've learnt from Panzer!"
+  #tag(s) specific
+  KoP_insult_Pope1:0 "You may think about taking the name of Pope Tom II given your States' state"  #Papal States
+  KoP_insult_France1:0 "Is Drazil playing or why do you suck so much?"  #France
+  KoP_insult_Tur1:0 "Even Konian could conquer you" #Ottomans/Rum
+  KoP_insult_English1:0 "Drunk Cam could do better than you slime"  #England/GB/Angevine Empire
+  KoP_insult_Austria1:0 "Wappla"    #Austria/AHH
+  KoP_insult_Austria2:0 "When did Australia became a European nation? Do you even exist?"    #Austria/AHH
+  #other triggers
+  KoP_insult_tax_meta:0 "Draziiil is in the hospital because of your economy!"
+  #KoP_insult_raided_coast:0 "Your coasts are just begging to be raided!" (unsure as how to write the trigger if someone sees this pls fix)
+  KoP_insult_horde:0 "Is this Ant-man's work?? Why are you collapsing this bad"
+  

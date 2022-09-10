@@ -1,0 +1,659 @@
+##BranchStart 0
+cdl_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = CDL
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	##Mission Start
+	CDL_1.3 = {
+		icon = mission_buddhist_monk_praying
+		required_missions {
+			CDL_2.2
+		}
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = red_river_delta_area
+			}
+		}
+		trigger = {
+			red_river_delta_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			vietnam_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	##Mission End
+	##Mission Start
+	CDL_1.4 = {
+		icon = mission_rice_field
+		required_missions {
+			CDL_1.3
+		}
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = vietnam_area
+			}
+		}
+		trigger = {
+			vietnam_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					NOT = { accepted_culture = vietnamese }
+					NOT = { primary_culture = vietnamese }
+				}
+				add_accepted_culture = vietnamese
+			}
+		}
+	}
+	##Mission End
+	##
+	
+}
+##BranchEnd 0
+##BranchStart 1
+cdl_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = CDL
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	##Mission Start
+	CDL_2.1 = {
+		icon = mission_non-western_soldiers
+		required_missions {
+			
+		}
+		position = 1
+		trigger = {
+			army_size_percentage = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = "thriving_arms_industry"
+				duration = 9125 #25 years
+			}
+			yun_gui_borderland_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	##Mission End
+	##Mission Start
+	CDL_2.2 = {
+		icon = mission_central_asian_city
+		required_missions {
+			CDL_2.1
+		}
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				area = yun_gui_borderland_area
+			}
+		}
+		trigger = {
+			yun_gui_borderland_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "yun_gui_kop"
+				duration = 3650
+			}
+			red_river_delta_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}			
+			kham_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	##Mission End
+	##Mission Start
+	CDL_2.3 = {
+		icon = mission_market_place_with_asian_traders
+		required_missions {
+			CDL_2.2
+		}
+		position = 3
+		provinces_to_highlight = {
+						OR = {
+				area = kham_area
+			}
+		}
+		trigger = {
+			kham_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			tibet_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	##Mission End
+	##Mission Start
+	CDL_2.4 = {
+		icon = mission_chinese_general_riding
+		required_missions {
+			CDL_2.3 
+		}
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				region = tibet_region
+			}
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				culture = tibetan
+				value = 15
+			}
+		}
+		effect = {
+				if = {
+					limit = {
+						NOT = { accepted_culture = tibetan }
+						NOT = { primary_culture = tibetan }
+					}
+					add_accepted_culture = tibetan
+				}
+				every_owned_province = {
+					limit = {
+						culture = bai
+					}
+					change_culture = tibetan
+				}
+				every_owned_province = {
+					limit = {
+						culture = yi
+					}
+					change_culture = tibetan
+				}
+		}
+	}
+	##Mission End
+	##Mission Start
+	CDL_2.5 = {
+		icon = mission_mnd_khm_restored_empire
+		required_missions {
+			CDL_1.4 CDL_2.4 CDL_3.4 CDL_4.4
+		}
+		position = 5
+		provinces_to_highlight = {
+			##PROVINCESHIGHLIGHTCODE
+		}
+		trigger = {
+		}
+		effect = {
+			country_event = {
+				id = kop_dali.2
+			}
+		}
+	}
+	##Mission End
+	##Mission Start
+	CDL_2.6 = {
+		icon = mission_mnd_dai_control_the_army
+		required_missions {
+			CDL_2.5
+		}
+		position = 6
+		provinces_to_highlight = {
+			
+		}
+		trigger = {
+			OR = {
+				religion = buddhism
+				religion = vajrayana
+				religion = mahayana
+			}
+			num_of_owned_provinces_with = {
+			is_core = ROOT
+			value = 150
+			religion = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "kop_buddhist_space_monks"
+				duration = 5475
+			}
+		}
+	}
+	##Mission End
+	##
+	
+}
+##BranchEnd 1
+##BranchStart 2
+cdl_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = CDL
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	##Mission Start
+	CDL_3.3 = {
+		icon = mission_asian_trader
+		required_missions {
+			CDL_2.2
+		}
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4213
+			}
+		}
+		trigger = {
+			4213 = {
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			add_adm_power = 100
+			add_prestige = 10
+		}
+	}
+	##Mission End
+	##Mission Start
+	CDL_3.4 = {
+		icon = mission_great_wall
+		required_missions {
+			CDL_3.3
+		}
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = sichuan_area
+				area = chuanbei_area
+			}
+		}
+		trigger = {
+			sichuan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			chuanbei_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = {
+				id = kop_dali.1
+			}
+		}
+	}
+	##Mission End
+	##
+	
+}
+##BranchEnd 2
+##BranchStart 3
+cdl_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = CDL
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	
+	##Mission End
+	##Mission Start
+	CDL_4.3 = {
+		icon = mission_colonial
+		required_missions {
+			CDL_2.2
+		}
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4199
+				province_id = 2168
+			}
+		}
+		trigger = {
+			4199 = {
+				owned_by = ROOT
+				development = 8
+			}
+			2168 = {
+				owned_by = ROOT
+				development = 8
+			}
+		}
+		effect = {
+			guangxi_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			yun_gui_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			west_guangdong_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	##Mission End
+	##Mission Start
+	CDL_4.4 = {
+		icon = mission_galleys_in_port
+		required_missions {
+			CDL_4.3
+		}
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = guangxi_area
+				area = yun_gui_area
+				area = guangdong_area
+			}
+		}
+		trigger = {
+			guangxi_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			yun_gui_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			west_guangdong_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			665 = {
+				add_unit_construction = {
+					amount = 5
+					type = light_ship
+					speed = 0.5
+					cost = 0
+				}
+			}
+			add_sailors = 500
+			taiwan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	##Mission End
+	##
+	CDL_4.5  = {
+		icon = mission_invade_island
+		required_missions = { CDL_4.4 }
+		position = 5
+		provinces_to_highlight = {
+			area = taiwan_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			2154 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			2155 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			738 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "colonial_enthusiasm"
+				duration = 7300
+			}
+		}
+	}
+	
+}
+##BranchEnd 3
+##BranchStart 4
+cdl_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = CDL
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	##Mission Start
+	CDL_5.1 = {
+		icon = mission_asian_city
+		required_missions {
+			
+		}
+		position = 1
+		provinces_to_highlight = {
+		}
+		trigger = {
+			grown_by_development = 100
+		}
+		effect = {
+			add_country_modifier = {
+						name = "kop_dali_grown"
+						duration = 3650
+			}
+		}
+	}
+	
+	##Mission Start
+	CDL_5.2 = {
+		icon = mission_conquer_50_development
+		required_missions = { CDL_5.1 }
+		position = 2
+		trigger = { grown_by_development = 150 }
+		effect = {
+			capital_scope = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+				area = {
+					limit = { owned_by = ROOT }
+					add_province_modifier = {
+						name = "growth_of_capital"
+						duration = 9125 #25 years
+					}
+				}
+			}
+		}
+	}
+	CDL_5.3 = {
+		icon = mission_cannons_firing
+		required_missions = { CDL_5.2 }
+		position = 3
+		trigger = { grown_by_states = 5 }
+		effect = {
+			add_country_modifier = {
+				name = "expansionist_country"
+				duration = 9125 #25 years
+			}
+		}
+	}
+	CDL_5.4 = {
+		icon = mission_assemble_an_army
+		required_missions = { CDL_5.3 }
+		position = 4
+		trigger = { army_size = 80 }
+		effect = {
+			add_country_modifier = {
+				name = "army_enthusiasm"
+				duration = 9125 #25 years
+			}
+		}
+	}
+	CDL_5.5 = {
+		icon = mission_unite_home_region
+		required_missions = { CDL_5.4 }
+		position = 5
+		provinces_to_highlight = {
+			region_for_scope_province = {
+				is_capital_of = ROOT
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = unite_home_region_ct
+				capital_scope = {
+					region_for_scope_province = {
+						type = all
+						owned_by = ROOT #Subjects won't count, empty provinces will need to be colonized.
+					}
+				}
+			}
+		}
+		effect = {
+			add_dip_power = 50
+			add_adm_power = 50
+			add_mil_power = 50
+			add_country_modifier = {
+				name = "hegemonic_ambition"
+				duration = 9125 #25 years
+			}
+		}
+	}
+		CDL_5.7 = {
+		icon = mission_asian_trader
+		required_missions = { }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1361
+				province_id = 1340
+				province_id = 1334
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			trading_bonus = {
+				trade_goods = spices
+				value = yes
+			}
+			OR = {
+				1361 = {
+					is_strongest_trade_power = ROOT
+				}
+				1340 = {
+					is_strongest_trade_power = ROOT
+				}
+				1334 = {
+					is_strongest_trade_power = ROOT
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "spice_trade_controlled"
+				duration = 7300
+			}
+			add_mercantilism = 2
+		}
+	}
+	CDL_5.8 = {
+		icon = mission_indian_soldier_elephant
+		required_missions = { }
+		position = 8
+		provinces_to_highlight = {
+			if = {
+				limit = {
+					ROOT = {
+						NOT = { silk = 8 }
+					}
+				}
+				trade_goods = silk
+				has_discovered = ROOT
+			}
+			else = {
+				always = no
+			}
+		}
+		trigger = {
+			production_leader = {
+				trade_goods = silk
+			}
+			silk = 8
+		}
+		effect = {
+			add_country_modifier = {
+				name = "silk_road_modifier"
+				duration = 7300
+			}
+			add_mercantilism = 2
+		}
+	}
+}
+##BranchEnd 4

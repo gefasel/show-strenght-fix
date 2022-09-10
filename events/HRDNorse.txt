@@ -1,0 +1,48 @@
+##################################################################################################
+# HRD event 
+#
+# By Muerten
+##################################################################################################
+
+namespace = hrdnorse
+
+# Greenland norse
+country_event = {
+	id = hrdnorse.1
+	title = hrdnorse.1.t
+	desc = hrdnorse.1.d
+	picture = COLONIZATION_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		1105 = {
+			owned_by = ROOT
+			is_core = ROOT
+		}
+		1104 = {
+			owned_by = ROOT
+			is_core = ROOT
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = hrdnorse.1.a
+		home_trade_node_effect_scope = {
+			random_trade_node_member_province = {
+				limit = {
+					owned_by = ROOT
+				}
+				change_religion = norse_pagan_reformed
+			}
+		}
+		1105 = {
+			change_religion = norse_pagan_reformed
+		}
+		1104 = {
+			change_religion = norse_pagan_reformed
+		}
+	}
+}

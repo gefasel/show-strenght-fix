@@ -1,0 +1,608 @@
+lesotho_missions_A = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		tag = LES
+	}
+	has_country_shield = yes
+	
+	lesothoA1 = {
+		icon = mission_west_african_ports
+		required_missions = { lesothoB1 }
+		position = 2
+		provinces_to_highlight = {
+			area = buha_area
+			area = rwanda_area
+			area = buzinza_area
+		}
+		trigger = { 
+			buha_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			rwanda_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			buzinza_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+		effect = {
+			uganda_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			bunyoro_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			define_advisor = {
+				type = theologian
+				skill = 2
+				cost_multiplier = 0.5
+			}
+		}
+	}
+	
+	lesothoA2 = {
+		icon = mission_african_soldier
+		required_missions = { lesothoA1 }
+		provinces_to_highlight = {
+			area = uganda_area
+			province_id = 4074
+		}
+		trigger = {
+			owns_core_province = 4074
+			uganda_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			4075 = {
+				create_colony = 999
+			}
+			4064 = {
+				add_center_of_trade_level = 1
+			}
+		}	
+	}
+}
+
+
+lesotho_missions_B = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		tag = LES
+	}
+	has_country_shield = yes
+	
+	lesothoB1 = {
+		icon = mission_conquer_benin
+		required_missions = {  }
+		provinces_to_highlight = {
+			region = central_africa_region
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 15
+				region = central_africa_region
+			}
+		}
+		effect= {
+			buha_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			rwanda_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			buzinza_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			katanga_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			luba_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			chokwe_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			sankuru_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	lesothoB2 = {
+		icon = mission_african_soldier
+		required_missions = { lesothoB1 }
+		provinces_to_highlight = {
+			area = katanga_area
+			area = luba_area
+			area = chokwe_area
+			area = sankuru_area
+		}
+		trigger = {
+			katanga_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			luba_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			chokwe_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			sankuru_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+		effect = {
+			kongo_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_manpower = 5
+		}
+	}
+	
+
+	lesothoB3 = {
+		icon = mission_invade_kanem
+		required_missions = { lesothoB2 }
+		provinces_to_highlight = {
+			region = kongo_region
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				is_core = ROOT
+				region = kongo_region
+				value = 20
+			}
+			1170 = {
+				development = 25
+				has_building = marketplace
+				has_building = workshop
+			}
+		}
+		effect = {
+			1167 = {
+				create_colony = 999
+			}
+			1172 = {
+				create_colony = 999
+			}
+		}
+	}
+	
+	lesothoB4 = {
+		icon = alpine_defenses
+		required_missions = { lesothoA2 lesothoB3 }
+		provinces_to_highlight = {
+			province_id = 1273
+			province_id = 4060
+		}
+		trigger = {
+			OR = {
+				1273 = {
+					owned_by = ROOT
+				}
+				4060 = {
+					owned_by = ROOT
+				}
+			}
+		}
+		effect = {
+			define_advisor = {
+				type = fortification_expert
+				skill = 1
+				cost_multiplier = 0.25
+			}
+			1273 = {
+				add_province_modifier = {
+					name = "lesotho_fort"
+					duration = -1
+				}
+			}
+			4060 = {
+				add_province_modifier = {
+					name = "lesotho_fort"
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+
+lesotho_missions_C = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		tag = LES
+	}
+	has_country_shield = yes
+	
+	lesothoC1 = {
+		icon = mission_sea_battles
+		required_missions = { lesothoD1 }
+		position = 2
+		provinces_to_highlight = {
+			area = madagascar_highlands_area
+			area = southern_madagascar
+			area = betsimasaraka_area
+			area = sakalava_area
+		}
+		trigger = {
+			madagascar_highlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			southern_madagascar = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			betsimasaraka_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			sakalava_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+		effect = {
+			1193 = {
+				add_unit_construction = {
+					type = heavy_ship
+					amount = 5
+					speed = 0.5
+					cost = 0
+				}
+			}
+		}
+	}
+	
+	lesothoC2 = {
+		icon = mission_establish_high_seas_navy
+		required_missions = { lesothoC1 }
+		provinces_to_highlight = {
+			province_id = 1193
+			province_id = 4025
+		}
+		trigger = {
+			owns_core_province = 1193 
+			owns_core_province = 4025
+			1193 = { 
+				development =20
+			}
+			4025 = {
+				development =20
+			}
+		}
+		effect = {
+			4020 = {
+				create_colony = 999
+			}
+			sakalava_area = {
+				change_trade_goods = grain
+				add_province_modifier = {
+					name = "lesotho_sakalava"
+					duration = -1
+				}
+			}
+		}
+	}		
+}
+
+
+lesotho_missions_D = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		tag = LES
+	}
+	has_country_shield = yes
+	
+	lesothoD1 = {
+		icon = mission_african_gold
+		required_missions = {  }
+		trigger = {
+			gold = 5
+		}
+		effect = {
+			madagascar_highlands_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			southern_madagascar = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			betsimasaraka_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			sakalava_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	lesothoD2 = {
+		icon = mission_claim_hispaniola
+		required_missions = { lesothoD1 }
+		provinces_to_highlight = {
+			region = south_africa_region
+		}
+		trigger = {
+			capital_scope = {
+				region_for_scope_province = {
+					type = all
+					country_or_non_sovereign_subject_holds = root
+				}
+			}
+		}
+		effect = {
+			south_african_plateau_area = {
+				add_province_modifier = {
+					name = "lesotho_saplatue"
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	lesothoD3 = {
+		icon = mission_great_trading_houses
+		required_missions = { lesothoD2 }
+		provinces_to_highlight = {
+			province_id = 1178
+		}
+		trigger = {
+			1178 = {
+				development = 20
+				NOT = { num_free_building_slots = 1 }
+			}
+		}
+		effect = {
+			2856 = { change_trade_goods = gold }
+			2880 = { change_trade_goods = grain }
+			2864 = { change_trade_goods = grain }
+			1176 = { change_trade_goods = grain }
+		}
+	}
+	
+	lesothoD4 = {
+		icon = mission_trade_company_region_abroad
+		required_missions = { lesothoC2 lesothoD3 }
+		trigger = {
+			treasury = 2000
+		}
+		effect = {
+			1174 = {
+				create_colony = 999
+			add_treasury = -50	
+			}
+		}
+	}
+	
+	lesothoD5 = {
+		icon = mission_conquer_benin
+		required_missions = { lesothoB4 lesothoD4 lesothoE3 }
+		trigger = {
+			mission_completed = lesothoB2
+			mission_completed = lesothoD4
+			mission_completed = lesothoE3
+		}
+		effect = {
+			add_stability = 1
+			add_adm_power = 100	
+			add_dip_power = 100	
+			add_mil_power = 100	
+			benin_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			central_ethiopia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	lesothoD6 = {
+		icon = mission_african_soldier
+		required_missions = { lesothoD5 }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1224
+				province_id = 1147
+			}
+		}
+		trigger = {
+			owns_core_province = 1224
+			owns_core_province = 1147
+		}
+		effect = {
+			add_country_modifier = {
+				name = "lesotho_expansion"
+				duration = -1
+			}
+		}
+	}
+}
+
+
+lesotho_missions_E = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		tag = LES
+	}
+	has_country_shield = yes
+	
+	lesothoE1 = {
+		icon = mission_war_chest
+		required_missions = {  }
+		position = 2
+		provinces_to_highlight = {
+			area = zimbabwe_area
+			area = butua_area
+			area = lower_zambezi_area
+			area = quelimane_area
+		}
+		trigger = {
+			zimbabwe_area = {
+				type = all
+				owned_by = ROOT
+				is_prosperous = yes
+			}
+			butua_area = {
+				type = all
+				owned_by = ROOT
+				is_prosperous = yes
+			}
+			lower_zambezi_area = {
+				type = all
+				owned_by = ROOT
+				is_prosperous = yes
+			}
+			quelimane_area = {
+				type = all
+				owned_by = ROOT
+				is_prosperous = yes
+			}
+		}
+		effect = {
+			define_advisor = {
+				type = master_of_mint
+				skill = 1
+				cost_multiplier = 0.5
+			}
+		}
+	}
+	
+	lesothoE2 = {
+		icon = colonize_the_cape
+		required_missions = { lesothoE1 }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1448
+				province_id = 1191
+			}
+		}
+		trigger = {
+			1448 = {
+				trade_share = {
+					country = ROOT
+					share = 80
+				}
+			}
+			1191 = {
+				trade_share = {
+					country = ROOT
+					share = 80
+				}
+			}
+		}
+		effect = {
+			1196 = {
+				add_base_production = 2
+				add_base_manpower = 2
+			}
+			central_swahili_coast_area = {
+				add_prosperity = 100
+			}
+		}
+	}
+			
+	lesothoE3 = {
+		icon = mission_portuguese_ceylon
+		required_missions = { lesothoE2 }
+		trigger = {
+			master_of_mint = 5
+			trader = 5
+			recruitmaster = 5
+			NOT = { num_of_loans = 1 }
+			years_of_income = 1.0
+		}
+		effect = {
+			add_years_of_income = 1
+	}		
+}
+
+		

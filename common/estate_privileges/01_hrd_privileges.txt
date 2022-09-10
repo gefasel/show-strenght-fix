@@ -1,0 +1,163 @@
+estate_church_piety_privilege = {
+	icon = privilege_recruit_minister
+	max_absolutism = -5
+	influence = 0.10
+	is_valid = {
+		religion_group = muslim
+	}
+	can_select = {
+		NOT = { has_estate_privilege = estate_church_clerical_ministers }
+	}
+	penalties = {
+	}
+	benefits = {
+		monthly_piety = -0.001
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0.5
+			is_absolutism_active = yes
+		}
+	}
+}
+
+estate_burghers_desert_rights = {
+	icon = privilege_dev_cost
+	max_absolutism = -10
+	influence = 0.15
+	loyalty = 0.1
+	is_valid = {
+		tag = ARB
+	}
+	can_select = {
+		any_owned_province = {
+			OR = {
+				has_terrain = desert
+				has_terrain = coastal_desert
+				has_terrain = mountain
+				has_terrain = drylands
+			}
+		}
+	}
+	on_granted = {
+		custom_tooltip = estate_burghers_enslaving_rights_gt
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					has_terrain = desert
+				}
+				add_province_modifier = {
+					name = estate_burghers_desert_rights_desert
+					duration = -1
+				}
+			}
+			every_owned_province = {
+				limit = {
+					has_terrain = coastal_desert
+				}
+				add_province_modifier = {
+					name = estate_burghers_desert_rights_coastal_desert
+					duration = -1
+				}
+			}
+			every_owned_province = {
+				limit = {
+					has_terrain = mountains
+				}
+				add_province_modifier = {
+					name = estate_burghers_desert_rights_mountain
+					duration = -1
+				}
+			}
+			every_owned_province = {
+				limit = {
+					has_terrain = drylands
+				}
+				add_province_modifier = {
+					name = estate_burghers_desert_rights_drylands
+					duration = -1
+				}
+			}			
+		}
+	}
+	on_revoked = {
+		custom_tooltip = estate_burghers_enslaving_rights_rt
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						has_province_modifier = estate_burghers_desert_rights_desert
+						has_province_modifier = estate_burghers_desert_rights_coastal_desert
+						has_province_modifier = estate_burghers_desert_rights_mountain
+						has_province_modifier = estate_burghers_desert_rights_drylands
+					}
+				}
+				remove_province_modifier = estate_burghers_desert_rights_desert
+				remove_province_modifier = estate_burghers_desert_rights_coastal_desert
+				remove_province_modifier = estate_burghers_desert_rights_mountain
+				remove_province_modifier = estate_burghers_desert_rights_drylands
+			}
+		}
+	}
+	penalties = {
+	}
+	benefits = {
+	}
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 2
+			num_of_owned_provinces_with = {
+				OR = {
+					has_terrain = desert
+					has_terrain = coastal_desert
+					has_terrain = mountain
+					has_terrain = drylands
+				}
+				value = 8
+			}
+		}
+		modifier = {
+			factor = 0
+			is_absolutism_active = yes
+		}
+	}
+}
+
+estate_cossacks_cavalry_supremacy = {
+	icon = privilege_raise_host
+	max_absolutism = -5
+	influence = 0.10
+	loyalty = 0.10
+	is_valid = {
+	}
+	can_select = {
+	}
+	penalties = {
+	}
+	benefits = {
+		cavalry_power = 0.1
+		infantry_power = -0.1
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 10
+			any_owned_province = {
+				has_terrain = steppe
+			}
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				NOT = { crown_land_share = 25 }
+				estate_influence = {
+					estate = estate_cossacks
+					influence = 75
+				}
+			}
+			NOT = { has_estate_privilege = estate_cossacks_establish_the_cossack_regiments }
+		}
+	}
+}

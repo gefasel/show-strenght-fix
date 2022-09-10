@@ -1,0 +1,651 @@
+
+namespace = kop_advisor_events_lvl3
+
+country_event = { #Splendor advisor
+    id = kop_advisor_events_lvl3.1
+    title = kop_advisor_events_lvl3.1.t
+    desc = kop_advisor_events_lvl3.1.d 
+    picture = ADVISOR_eventPicture
+
+    trigger = {
+		kop_splendor_herald = 3
+		NOT = { has_country_modifier = kop_splendor_herald_lvl3_delayed }
+		NOT = { has_country_flag = kop_splendor_herald_lvl3_flag }
+	}
+
+    mean_time_to_happen = {
+		months = 300
+		
+		
+		modifier = {
+			factor = 0.9
+			administrative_ideas = 4
+		}
+		modifier = {
+			factor = 0.9
+			administrative_ideas = 6
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { administrative_ideas = 4 }
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { administrative_ideas = 2 }
+		}
+	}
+
+    option = { # His efforts will be admired throughout the nation
+        name = kop_advisor_events_lvl3.1.a 
+        add_meritocracy_effect = yes
+		add_stability_or_adm_power = yes
+        add_country_modifier = {
+			name = "kop_splendor_herald_lvl3"
+			duration = 2190
+		}
+		
+        set_country_flag = kop_splendor_herald_lvl3_flag
+    }
+
+    option = { # His reputation will reach further than our borders
+        name = kop_advisor_events_lvl3.1.b
+        add_meritocracy_effect = yes
+		add_prestige = 50
+        add_country_modifier = {
+			name = "kop_splendor_herald_lvl3"
+			duration = 2190
+		}
+
+        set_country_flag = kop_splendor_herald_lvl3_flag
+    }
+	
+	option = { #delay advisor modifier 
+        name = kop_advisor_events_lvl3.1.c 
+        ai_chance = {
+			factor = 50
+		}
+        add_country_modifier = {
+			name = "kop_splendor_herald_lvl3_delayed"
+			duration = 18250
+		}
+    }
+}
+
+country_event = { #Government reform advisor
+    id = kop_advisor_events_lvl3.2
+    title = kop_advisor_events_lvl3.2.t
+    desc = kop_advisor_events_lvl3.2.d 
+    picture = ADVISOR_eventPicture
+
+    trigger = {
+		kop_gov_reformer = 3
+		NOT = { has_country_modifier = kop_gov_reformer_lvl3_delayed }
+		NOT = { has_country_flag = kop_gov_reformer_lvl3_flag }
+	}
+
+    mean_time_to_happen = {
+		months = 300
+		
+		
+		modifier = {
+			factor = 0.9
+			administrative_ideas = 4
+		}
+		modifier = {
+			factor = 0.9
+			administrative_ideas = 6
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { administrative_ideas = 4 }
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { administrative_ideas = 2 }
+		}
+	}
+
+    option = { # His efforts will be admired throughout the nation
+        name = kop_advisor_events_lvl3.2.a 
+        add_meritocracy_effect = yes
+		add_stability_or_adm_power = yes
+        add_country_modifier = {
+			name = "kop_gov_reformer_lvl3"
+			duration = 2190
+		}
+		
+        set_country_flag = kop_gov_reformer_lvl3_flag
+    }
+
+    option = { # His reputation will reach further than our borders
+        name = kop_advisor_events_lvl3.2.b
+        add_meritocracy_effect = yes
+		add_prestige = 50
+        add_country_modifier = {
+			name = "kop_gov_reformer_lvl3"
+			duration = 2190
+		}
+
+        set_country_flag = kop_gov_reformer_lvl3_flag
+    }
+	
+	option = { #delay advisor modifier 
+        name = kop_advisor_events_lvl3.2.c 
+        ai_chance = {
+			factor = 50
+		}
+        add_country_modifier = {
+			name = "kop_gov_reformer_lvl3_delayed"
+			duration = 18250
+		}
+    }
+}
+
+
+
+country_event = { #land_overseer advisor
+    id = kop_advisor_events_lvl3.4
+    title = kop_advisor_events_lvl3.4.t
+    desc = kop_advisor_events_lvl3.4.d 
+    picture = ADVISOR_eventPicture
+
+    trigger = {
+		kop_land_overseer = 3
+		NOT = { has_country_modifier = kop_land_overseer_lvl3_delayed }
+		NOT = { has_country_flag = kop_land_overseer_lvl3_flag }
+	}
+
+    mean_time_to_happen = {
+		months = 300
+		
+		
+		modifier = {
+			factor = 0.9
+			administrative_ideas = 4
+		}
+		modifier = {
+			factor = 0.9
+			administrative_ideas = 6
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { administrative_ideas = 4 }
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { administrative_ideas = 2 }
+		}
+	}
+
+    option = { # His efforts will be admired throughout the nation
+        name = kop_advisor_events_lvl3.4.a 
+        add_meritocracy_effect = yes
+		add_stability_or_adm_power = yes
+        add_province_modifier = {
+			name = "kop_land_overseer_lvl3"
+			duration = 2190
+		}
+		
+        set_country_flag = kop_land_overseer_lvl3_flag
+    }
+
+    option = { # His reputation will reach further than our borders
+        name = kop_province_events_lvl3.4.b
+        add_meritocracy_effect = yes
+		add_prestige = 50
+        add_country_modifier = {
+			name = "kop_land_overseer_lvl3"
+			duration = 2190
+		}
+
+        set_country_flag = kop_land_overseer_lvl3_flag
+    }
+	
+	option = { #delay advisor modifier 
+        name = kop_advisor_events_lvl3.4.c 
+        ai_chance = {
+			factor = 50
+		}
+        add_country_modifier = {
+			name = "kop_land_overseer_lvl3_delayed"
+			duration = 18250
+		}
+    }
+}
+
+####dip
+
+country_event = { #Education Enforcer advisor
+    id = kop_advisor_events_lvl3.5
+    title = kop_advisor_events_lvl3.5.t
+    desc = kop_advisor_events_lvl3.5.d 
+    picture = ADVISOR_eventPicture
+
+    trigger = {
+		kop_splendor_herald = 3
+		NOT = { has_country_modifier = kop_re_education_enforcer_lvl3_delayed }
+		NOT = { has_country_flag = kop_re_education_enforcer_lvl3_flag }
+	}
+
+    mean_time_to_happen = {
+		months = 300
+		
+		
+		modifier = {
+			factor = 0.9
+			administrative_ideas = 4
+		}
+		modifier = {
+			factor = 0.9
+			administrative_ideas = 6
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { administrative_ideas = 4 }
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { administrative_ideas = 2 }
+		}
+	}
+
+    option = { # His efforts will be admired throughout the nation
+        name = kop_advisor_events_lvl3.5.a 
+        add_meritocracy_effect = yes
+		add_stability_or_adm_power = yes
+        add_province_modifier = {
+			name = "kop_re_education_enforcer_lvl3"
+			duration = 2190
+		}
+		
+        set_country_flag = kop_re_education_enforcer_lvl3_flag
+    }
+
+    option = { # His reputation will reach further than our borders
+        name = kop_province_events_lvl3.5.b
+        add_meritocracy_effect = yes
+		add_prestige = 50
+        add_country_modifier = {
+			name = "kop_re_education_enforcer_lvl3"
+			duration = 2190
+		}
+
+        set_country_flag = kop_re_education_enforcer_lvl3_flag
+    }
+	
+	option = { #delay advisor modifier 
+        name = kop_advisor_events_lvl3.5.c 
+        ai_chance = {
+			factor = 50
+		}
+        add_country_modifier = {
+			name = "kop_re_education_enforcer_lvl3_delayed"
+			duration = 18250
+		}
+    }
+}
+
+country_event = { #workshop manager advisor
+    id = kop_advisor_events_lvl3.6
+    title = kop_advisor_events_lvl3.6.t
+    desc = kop_advisor_events_lvl3.6.d 
+    picture = ADVISOR_eventPicture
+
+    trigger = {
+		kop_workshop_manager = 3
+		NOT = { has_country_modifier = kop_workshop_manager_lvl3_delayed }
+		NOT = { has_country_flag = kop_workshop_manager_lvl3_flag }
+	}
+
+    mean_time_to_happen = {
+		months = 300
+		
+		
+		modifier = {
+			factor = 0.9
+			administrative_ideas = 4
+		}
+		modifier = {
+			factor = 0.9
+			administrative_ideas = 6
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { administrative_ideas = 4 }
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { administrative_ideas = 2 }
+		}
+	}
+
+    option = { # His efforts will be admired throughout the nation
+        name = kop_advisor_events_lvl3.6.a 
+        add_meritocracy_effect = yes
+		add_stability_or_adm_power = yes
+        add_province_modifier = {
+			name = "kop_workshop_manager_lvl3"
+			duration = 2190
+		}
+		
+        set_country_flag = kop_workshop_manager_lvl3_flag
+    }
+
+    option = { # His reputation will reach further than our borders
+        name = kop_province_events_lvl3.6.b
+        add_meritocracy_effect = yes
+		add_prestige = 50
+        add_country_modifier = {
+			name = "kop_workshop_manager_lvl3"
+			duration = 2190
+		}
+
+        set_country_flag = kop_workshop_manager_lvl3_flag
+    }
+	
+	option = { #delay advisor modifier 
+        name = kop_advisor_events_lvl3.6.c 
+        ai_chance = {
+			factor = 50
+		}
+        add_country_modifier = {
+			name = "kop_workshop_manager_lvl3_delayed"
+			duration = 18250
+		}
+    }
+}
+
+country_event = { #settler growth advisor
+    id = kop_advisor_events_lvl3.7
+    title = kop_advisor_events_lvl3.7.t
+    desc = kop_advisor_events_lvl3.7.d 
+    picture = ADVISOR_eventPicture
+
+    trigger = {
+		kop_reproduction_factory = 3
+		NOT = { has_country_modifier = kop_reproduction_factory_lvl3_delayed }
+		NOT = { has_country_flag = kop_reproduction_factory_lvl3_flag }
+	}
+
+    mean_time_to_happen = {
+		months = 300
+		
+		
+		modifier = {
+			factor = 0.9
+			administrative_ideas = 4
+		}
+		modifier = {
+			factor = 0.9
+			administrative_ideas = 6
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { administrative_ideas = 4 }
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { administrative_ideas = 2 }
+		}
+	}
+
+    option = { # His efforts will be admired throughout the nation
+        name = kop_advisor_events_lvl3.7.a 
+        add_meritocracy_effect = yes
+		add_stability_or_adm_power = yes
+        add_province_modifier = {
+			name = "kop_reproduction_factory_lvl3"
+			duration = 2190
+		}
+		
+        set_country_flag = kop_reproduction_factory_lvl3_flag
+    }
+
+    option = { # His reputation will reach further than our borders
+        name = kop_province_events_lvl3.7.b
+        add_meritocracy_effect = yes
+		add_prestige = 50
+        add_country_modifier = {
+			name = "kop_reproduction_factory_lvl3"
+			duration = 2190
+		}
+
+        set_country_flag = kop_reproduction_factory_lvl3_flag
+    }
+	
+	option = { #delay advisor modifier 
+        name = kop_advisor_events_lvl3.7.c 
+        ai_chance = {
+			factor = 50
+		}
+        add_country_modifier = {
+			name = "kop_reproduction_factory_lvl3_delayed"
+			duration = 18250
+		}
+    }
+}
+
+####MIL
+country_event = { #guerilla advisor
+    id = kop_advisor_events_lvl3.8
+    title = kop_advisor_events_lvl3.8.t
+    desc = kop_advisor_events_lvl3.8.d 
+    picture = ADVISOR_eventPicture
+
+    trigger = {
+		kop_guerilla = 3
+		NOT = { has_country_modifier = kop_kop_guerilla_lvl3_delayed }
+		NOT = { has_country_flag = kop_guerilla_lvl3_flag }
+	}
+
+    mean_time_to_happen = {
+		months = 300
+		
+		
+		modifier = {
+			factor = 0.9
+			administrative_ideas = 4
+		}
+		modifier = {
+			factor = 0.9
+			administrative_ideas = 6
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { administrative_ideas = 4 }
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { administrative_ideas = 2 }
+		}
+	}
+
+    option = { # His efforts will be admired throughout the nation
+        name = kop_advisor_events_lvl3.8.a 
+        add_meritocracy_effect = yes
+		add_stability_or_adm_power = yes
+        add_province_modifier = {
+			name = "kop_guerilla_lvl3"
+			duration = 2190
+		}
+		
+        set_country_flag = kop_guerilla_lvl3_flag
+    }
+
+    option = { # His reputation will reach further than our borders
+        name = kop_province_events_lvl3.8.b
+        add_meritocracy_effect = yes
+		add_prestige = 50
+        add_country_modifier = {
+			name = "kop_guerilla_lvl3"
+			duration = 2190
+		}
+
+        set_country_flag = kop_guerilla_lvl3_flag
+    }
+	
+	option = { #delay advisor modifier 
+        name = kop_advisor_events_lvl3.8.c 
+        ai_chance = {
+			factor = 50
+		}
+        add_country_modifier = {
+			name = "kop_guerilla_lvl3_delayed"
+			duration = 18250
+		}
+    }
+}
+
+country_event = { #logistical_specialist advisor
+    id = kop_advisor_events_lvl3.9
+    title = kop_advisor_events_lvl3.9.t
+    desc = kop_advisor_events_lvl3.9.d 
+    picture = ADVISOR_eventPicture
+
+    trigger = {
+		kop_logistical_specialist = 3
+		NOT = { has_country_modifier = kop_logistical_specialist_lvl3_delayed }
+		NOT = { has_country_flag = kop_logistical_specialist_lvl3_flag }
+	}
+
+    mean_time_to_happen = {
+		months = 300
+		
+		
+		modifier = {
+			factor = 0.9
+			administrative_ideas = 4
+		}
+		modifier = {
+			factor = 0.9
+			administrative_ideas = 6
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { administrative_ideas = 4 }
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { administrative_ideas = 2 }
+		}
+	}
+
+    option = { # His efforts will be admired throughout the nation
+        name = kop_advisor_events_lvl3.9.a 
+        add_meritocracy_effect = yes
+		add_stability_or_adm_power = yes
+        add_province_modifier = {
+			name = "kop_logistical_specialist_lvl3"
+			duration = 2190
+		}
+		
+        set_country_flag = kop_logistical_specialist_lvl3_flag
+    }
+
+    option = { # His reputation will reach further than our borders
+        name = kop_province_events_lvl3.9.b
+        add_meritocracy_effect = yes
+		add_prestige = 50
+        add_country_modifier = {
+			name = "kop_logistical_specialist_lvl3"
+			duration = 2190
+		}
+
+        set_country_flag = kop_logistical_specialist_lvl3_flag
+    }
+	
+	option = { #delay advisor modifier 
+        name = kop_advisor_events_lvl3.9.c 
+        ai_chance = {
+			factor = 50
+		}
+        add_country_modifier = {
+			name = "kop_logistical_specialist_lvl3_delayed"
+			duration = 18250
+		}
+    }
+}
+
+country_event = { #kop_war_guru advisor
+    id = kop_advisor_events_lvl3.10
+    title = kop_advisor_events_lvl3.10.t
+    desc = kop_advisor_events_lvl3.10.d 
+    picture = ADVISOR_eventPicture
+
+    trigger = {
+		kop_war_guru = 3
+		NOT = { has_country_modifier = kop_war_guru_lvl3_delayed }
+		NOT = { has_country_flag = kop_war_guru_lvl3_flag }
+	}
+
+    mean_time_to_happen = {
+		months = 300
+		
+		
+		modifier = {
+			factor = 0.9
+			administrative_ideas = 4
+		}
+		modifier = {
+			factor = 0.9
+			administrative_ideas = 6
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { administrative_ideas = 4 }
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { administrative_ideas = 2 }
+		}
+	}
+
+
+
+    option = { # His reputation will reach further than our borders
+        name = kop_province_events_lvl3.10.a
+        add_meritocracy_effect = yes
+		add_stability_or_adm_power = yes
+        add_country_modifier = {
+			name = "kop_war_guru_lvl3_1"
+			duration = 2190
+		}
+
+        set_country_flag = kop_war_guru_lvl3_flag
+    }
+	
+	option = { # His reputation will reach further than our borders
+        name = kop_province_events_lvl3.10.b
+        add_meritocracy_effect = yes
+		add_stability_or_adm_power = yes
+        add_country_modifier = {
+			name = "kop_war_guru_lvl3_2"
+			duration = 2190
+		}
+
+        set_country_flag = kop_war_guru_lvl3_flag
+    }
+	
+	option = { # His reputation will reach further than our borders
+        name = kop_province_events_lvl3.10.c
+        add_meritocracy_effect = yes
+		add_stability_or_adm_power = yes
+        add_country_modifier = {
+			name = "kop_war_guru_lvl3_3"
+			duration = 2190
+		}
+
+        set_country_flag = kop_war_guru_lvl3_flag
+    }
+	
+	option = { #delay advisor modifier 
+        name = kop_advisor_events_lvl3.10.d 
+        ai_chance = {
+			factor = 50
+		}
+        add_country_modifier = {
+			name = "kop_war_guru_lvl3_delayed"
+			duration = 18250
+		}
+    }
+}

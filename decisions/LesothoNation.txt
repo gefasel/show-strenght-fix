@@ -1,0 +1,100 @@
+country_decisions = {
+
+    form_lesotho_nation = {
+        major = yes
+        potential = {
+            normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+            NOT = { has_country_flag = formed_lesotho_flag }
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			NOT = { exists = LES }
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 15
+					adm_tech = 10
+				}
+			}
+			OR = {
+				culture_group = southern_african
+				primary_culture = swahili
+			}
+        }
+        provinces_to_highlight = {
+            OR = {
+                province_id = 4783 #Swazi
+				province_id = 1183 #Inhamabane
+                province_id = 1185 #Butua
+				province_id = 1184 #Zimbabwe
+				province_id = 4781 #Transvaal
+				province_id = 1186 #Sofala
+				province_id = 1191 #Tete
+				province_id = 1195 #Mozambique
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+        }
+        allow = {
+			NOT = { exists = LES }
+            is_at_war = no
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+
+			adm_tech = 10
+
+            owns_core_province = 4783 #Swazi
+            owns_core_province = 1183 #Inhamabane
+            owns_core_province = 1185 #Butua
+			owns_core_province = 1184 #Zimbabwe
+            owns_core_province = 4781 #Transvaal
+			owns_core_province = 1186 #Sofala
+			owns_core_province = 1191 #Tete
+			owns_core_province = 1195 #Mozambique
+			
+			num_of_owned_provinces_with = {
+				is_core = ROOT
+				region = south_africa_region
+				value = 15
+			}
+        }
+        effect = {
+			change_tag = LES
+			swap_non_generic_missions = yes
+			remove_non_electors_emperors_from_empire_effect = yes
+			if = {
+				limit = {
+					NOT = { government_rank = 3 }
+				}
+				set_government_rank = 3
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+            south_africa_region = {
+				limit = {
+					NOT = { owned_by = LES }
+				}
+				add_permanent_claim = LES
+			}
+			set_country_flag = formed_lesotho_flag
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+            add_prestige = 20
+        }
+        ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400 #High Priority
+    }
+}

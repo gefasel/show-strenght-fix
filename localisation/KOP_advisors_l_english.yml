@@ -1,0 +1,242 @@
+﻿l_english:
+ #Advisor types
+ kop_splendor_herald:0 "Splendor deez..."
+ kop_splendor_herald_desc:0 "A great person aimed at getting those splendor stuff"
+ kop_gov_reformer:0 "The Greatest bureaucrat"
+ kop_gov_reformer_desc:0 "Lets cut through that red tape"
+ kop_spin_doctor:0 "Spin Doctor"
+ kop_spin_doctor_desc:0 "can come up with all types of bullcrap,  I come out shining brighter than moonshine"
+ kop_land_overseer:0 "Autonomy guy"
+ kop_land_overseer_desc:0 "yeah lets make this land even more autonomy stuff"
+ kop_re_education_enforcer:0 "Re-Education Attache"
+ kop_re_education_enforcer_desc:0 "This person knows how to re-educate,  don't get in their way or off to the camps"
+ kop_workshop_manager:0 "Workshop Manager"
+ kop_workshop_manager_desc:0 "Need more cheaply made goods, flood the markets with our jockstraps and clogs"
+ kop_reproduction_factory:0 "Relationship Guru"
+ kop_reproduction_factory_desc:0 "Our population is stagnating due to the worry of high cost of living... bringing in a specialist to allow relationships to flourish means ignoring the cost of living and just baby make away. Need those troops"
+ kop_guerilla:0 "Attrition Specialist"
+ kop_guerilla_desc:0 "+1 attrition,  bleed them dry"
+ kop_logistical_specialist:0 "Logistical Forager"
+ kop_logistical_specialist_desc:0 "More supply limit"
+ kop_war_guru_title:0 "Chuck"
+ kop_war_guru_desc:0 "Attent hut"
+ 
+ 
+ 
+ 
+ #Advisor modifiers
+ 
+ 
+ 
+ #default advisors
+ #Advisor events and associated modifiers
+ 
+ kop_advisor_philosopher:0 "Delay for 50 years"
+ kop_advisor_philosopher_tooltip:0 "Delay for 50 years"
+ kop_advisor_philosopher_delayed:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_philosopher_delayed_tooltip:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_n_scientist:0 "Delay for 50 years"
+ kop_advisor_n_scientist_tooltip:0 "Delay for 50 years"
+ kop_advisor_n_scientist_delayed:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_n_scientist_delayed_tooltip:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_army_reformer:0 "Delay for 50 years"
+ kop_advisor_army_reformer_tooltip:0 "Delay for 50 years"
+ kop_advisor_army_reformer_delayed:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_army_reformer_delayed_tooltip:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_naval_reformer:0 "Delay for 50 years"
+ kop_advisor_naval_reformer_tooltip:0 "Delay for 50 years"
+ kop_advisor_naval_reformer_delayed:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_naval_reformer_delayed_tooltip:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_artist:0 "Delay for 50 years"
+ kop_advisor_artist_tooltip:0 "Delay for 50 years"
+ kop_advisor_artist_delayed:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_artist_delayed_tooltip:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_treasurer:0 "Delay for 50 years"
+ kop_advisor_treasurer_tooltip:0 "Delay for 50 years"
+ kop_advisor_treasurer_delayed:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_treasurer_delayed_tooltip:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_theologian:0 "Delay for 50 years"
+ kop_advisor_theologian_tooltip:0 "Delay for 50 years"
+ kop_advisor_theologian_delayed:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_theologian_delayed_tooltip:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_statesman:0 "Delay for 50 years"
+ kop_advisor_statesman_tooltip:0 "Delay for 50 years"
+ kop_advisor_statesman_delayed:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_statesman_delayed_tooltip:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_colonial_governor:0 "Delay for 50 years"
+ kop_advisor_colonial_governor_tooltip:0 "Delay for 50 years"
+ kop_advisor_colonial_governor_delayed:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_colonial_governor_delayed_tooltip:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_spymaster:0 "Delay for 50 years"
+ kop_advisor_spymaster_tooltip:0 "Delay for 50 years"
+ kop_advisor_spymaster_delayed:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_spymaster_delayed_tooltip:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_diplomat:0 "Delay for 50 years"
+ kop_advisor_diplomat_tooltip:0 "Delay for 50 years"
+ kop_advisor_diplomat_delayed:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_diplomat_delayed_tooltip:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_trader:0 "Delay for 50 years"
+ kop_advisor_trader_tooltip:0 "Delay for 50 years"
+ kop_advisor_trader_delayed:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_trader_delayed_tooltip:0 ""
+ kop_advisor_master_of_mint:0 "Delay for 50 years"
+ kop_advisor_master_of_mint_tooltip:0 "Delay for 50 years"
+ kop_advisor_master_of_mint_delayed:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_master_of_mint_delayed_tooltip:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_navigator:0 "Delay for 50 years"
+ kop_advisor_navigator_tooltip:0 "Delay for 50 years"
+ kop_advisor_navigator_delayed:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_navigator_delayed_tooltip:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_grand_captain:0 "Delay for 50 years"
+ kop_advisor_grand_captain_tooltip:0 "Delay for 50 years, don't pick this...just int"
+ kop_advisor_grand_captain_delayed:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_grand_captain_delayed_tooltip:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_army_organiser:0 "Delay for 50 years"
+ kop_advisor_army_organiser_tooltip:0 "Delay for 50 years"
+ kop_advisor_army_organiser_delayed:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_army_organiser_delayed_tooltip:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_commandant:0 "Delay for 50 years"
+ kop_advisor_commandant_tooltip:0 "Delay for 50 years, don't pick this...just int"
+ kop_advisor_commandant_delayed_:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_commandant_delayed_tooltip:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_quartermaster:0 "Delay for 50 years"
+ kop_advisor_quartermaster_tooltip:0 "Delay for 50 years"
+ kop_advisor_quartermaster_delayed:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_quartermaster_delayed_tooltip:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_recruitmaster:0 "Delay for 50 years"
+ kop_advisor_recruitmaster_tooltip:0 "Delay for 50 years"
+ kop_advisor_recruitmaster_delayed:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_recruitmaster_delayed_tooltip:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_fortification_expert:0 "Delay for 50 years"
+ kop_advisor_fortification_expert_tooltip:0 "Delay for 50 years"
+ kop_advisor_fortification_expert_delayed:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_fortification_expert_delayed_tooltip:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_inquisitor:0 "Delay for 50 years"
+ kop_advisor_inquisitor_tooltip:0 "Delay for 50 years"
+ kop_advisor_inquisitor_delayed:0 "This has been delayed you can't get this again until this ends"
+ kop_advisor_inquisitor_delayed_tooltip:0 "This has been delayed you can't get this again until this ends"
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ #splendor
+ kop_advisor_events_lvl3.1.t:0 "Yes we do great things"
+ kop_advisor_events_lvl3.1.d:0 "give me more splendor"
+ kop_advisor_events_lvl3.1.a:0 "These balls are spectacular"
+ kop_advisor_events_lvl3.1.b:0 "I do love me some nuggets"
+ kop_advisor_events_lvl3.1.c:0 "Delay for 50 years"
+ 
+ kop_splendor_herald_lvl3:0 "Touch me"
+ kop_splendor_herald_lvl3_flag:0 "it hurts"
+ kop_splendor_herald_lvl3_delayed:0 "Delay for 50 years"
+ 
+ kop_splendor_herald_lvl3_tooltip:0 "Delay for 50 years"
+ kop_splendor_herald_lvl3_delayed_tooltip:0 "This has been delayed you can't get this again until this ends"
+ 
+ #gov reformer
+ kop_advisor_events_lvl3.2.t:0 "Greatest Person ever Known for stuff"
+ kop_advisor_events_lvl3.2.d:0 "Better gov reform per month not based on autonomy"
+ kop_advisor_events_lvl3.2.a:0 "0.8 government reform per month and stability"
+ kop_advisor_events_lvl3.2.b:0 "0.8 government reform per month and prestige"
+ kop_advisor_events_lvl3.2.c:0 "Delay for 50 years"
+ 
+ kop_gov_reformer_lvl3:0 "Gov reform bonus"
+ kop_gov_reformer_lvl3_flag:0 "poopy"
+ kop_gov_reformer_lvl3_delayed:0 "This has been delayed you can't get this again until this ends"
+ #legitmacy
+# kop_advisor_events_lvl3.3.t:0 ""
+# kop_advisor_events_lvl3.3.d:0 ""
+ #kop_advisor_events_lvl3.3.a:0 ""
+ #kop_advisor_events_lvl3.3.b:0 ""
+# kop_advisor_events_lvl3.3.c:0 "Delay for 50 years"
+ 
+# kop_spin_doctor_lvl3
+# kop_spin_doctor_lvl3_flag
+# kop_spin_doctor_lvl3_delayed
+ 
+ #autonomy
+ kop_advisor_events_lvl3.4.t:0 "Greater autonomy reduction"
+ kop_advisor_events_lvl3.4.d:0 ""
+ kop_advisor_events_lvl3.4.a:0 ""
+ kop_advisor_events_lvl3.4.b:0 ""
+ kop_advisor_events_lvl3.4.c:0 "Delay for 50 years" 
+ 
+ kop_land_overseer_lvl3:0 "Autonomy"
+ kop_land_overseer_lvl3_flag:0 ""
+ kop_land_overseer_lvl3_delayed:0 "This has been delayed you can't get this again until this ends"
+ 
+ #cultureconverter
+ kop_advisor_events_lvl3.5.t:0 "Mass Re- Education Campaign"
+ kop_advisor_events_lvl3.5.d:0 "Our efforts have born fruit.  Destroy all the cultures"
+ kop_advisor_events_lvl3.5.a:0 "More culture convert and stab"
+ kop_advisor_events_lvl3.5.b:0 "More culture convert and prestige"
+ kop_advisor_events_lvl3.5.c:0 "Delay for 50 years" 
+ 
+ kop_re_education_enforcer_lvl3:0 "Evil guy"
+ kop_re_education_enforcer_lvl3_flag:0 "Evil girl"
+ kop_re_education_enforcer_lvl3_delayed:0 "This has been delayed you can't get this again until this ends"
+ 
+ #goods manager
+ kop_advisor_events_lvl3.6.t:0 "more goods"
+ kop_advisor_events_lvl3.6.d:0 "Thats right, work those slave children"
+ kop_advisor_events_lvl3.6.a:0 "10% good production plus stab"
+ kop_advisor_events_lvl3.6.b:0 "plus 50 prestige and 10% good produced"
+ kop_advisor_events_lvl3.6.c:0 "Delay for 50 years"
+ 
+ kop_workshop_manager_lvl3:0 "Goods produced bonus"
+ kop_workshop_manager_lvl3_flag:0 "goods produced bonus"
+ kop_workshop_manager_lvl3_delayed:0 "This has been delayed you can't get this again until this ends"
+ 
+ 
+ #settler growth
+ kop_advisor_events_lvl3.7.t:0 "More Settlers"
+ kop_advisor_events_lvl3.7.d:0 "Greater settler growth and chance"
+ kop_advisor_events_lvl3.7.a:0 "Baby boomers plus stab"
+ kop_advisor_events_lvl3.7.b:0 "Baby boomers plus 50 prestige"
+ kop_advisor_events_lvl3.7.c:0 "Delay for 50 years"
+ 
+ kop_reproduction_factory_lvl3:0 "Settler boom"
+ kop_reproduction_factory_lvl3_flag:0 "Settler boom"
+ kop_reproduction_factory_lvl3_delayed:0 "This has been delayed you can't get this again until this ends"
+ 
+ 
+ #guerilla attrition
+ kop_advisor_events_lvl3.8.t:0 "Guerilla Warfare"
+ kop_advisor_events_lvl3.8.d:0 "You weren't there man, you weren't there!"
+ kop_advisor_events_lvl3.8.a:0 "+1 attrition to enemies and stab"
+ kop_advisor_events_lvl3.8.b:0 "+1 attrition to enemies and prestige"
+ kop_advisor_events_lvl3.8.c:0 "Delay for 50 years"
+ 
+ kop_guerilla_lvl3:0 "Nam"
+ kop_guerilla_lvl3_flag:0 "Nam"
+ kop_guerilla_lvl3_delayed:0 "This has been delayed you can't get this again until this ends"
+ 
+ 
+ #movement speed
+ kop_advisor_events_lvl3.9.t:0 "Get Some Speed"
+ kop_advisor_events_lvl3.9.d:0 "This will help the be speedy and eat less"
+ kop_advisor_events_lvl3.9.a:0 "Less attrition and stabby stab"
+ kop_advisor_events_lvl3.9.b:0 "Less attrition and prestige"
+ kop_advisor_events_lvl3.9.c:0 "Delay for 50 years"
+ 
+ kop_logistical_specialist_lvl3:0 "Speeeeed"
+ kop_logistical_specialist_lvl3_flag:0 "Acid"
+ kop_logistical_specialist_lvl3_delayed:0 "This has been delayed you can't get this again until this ends"
+ 
+ # army trad
+ kop_advisor_events_lvl3.10.t:0 "Pinnacle of Army Reputation"
+ kop_advisor_events_lvl3.10.d:0 "Army tradition is so good we get combat ability bonuses."
+ kop_advisor_events_lvl3.10.a:0 "infantry"
+ kop_advisor_events_lvl3.10.b:0 "cavalry"
+ kop_advisor_events_lvl3.10.c:0 "artillery"
+ kop_advisor_events_lvl3.10.d:0 "Delay for 50 years"
+ 
+ 
+ kop_war_guru_lvl3:0 "Combat ability"
+ kop_war_guru_lvl3_flag:0 "combat ability"
+ kop_war_guru_lvl3_delayed:0 "This has been delayed you can't get this again until this ends"
+ 

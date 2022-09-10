@@ -1,0 +1,409 @@
+kongo_missions_A = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		tag = KON
+	}
+	has_country_shield = yes
+	
+	kongoA1 = {
+		icon = mission_invade_kanem
+		required_missions = {  }
+		provinces_to_highlight = {
+			province_id = 1169 
+		}
+		trigger = {
+			owns_core_province = 1169
+		}
+		effect = {
+			kongo_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	kongoA2 = {
+		icon = mission_conquer_benin
+		required_missions = { kongoA1 }
+		provinces_to_highlight = {
+			region = kongo_region
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 22
+				region = kongo_region
+				
+			}
+		}
+		effect = {
+			define_advisor = {
+				type = theologian
+				skill = 2
+				cost_multiplier = 0.5
+			}
+		add_manpower = 5	
+		}
+	}
+	
+	kongoA3 = {
+		icon = toulon_dockyards
+		required_missions = { kongoA1 }
+		provinces_to_highlight = {
+			region = central_africa_region
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				region = central_africa_region
+			}
+		}
+		effect = {
+			central_africa_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}	
+	
+	kongoA4 = {
+		icon = mission_establish_high_seas_navy
+		required_missions = { kongoB3 }
+		position = 7
+		provinces_to_highlight = {	
+			area = madagascar_highlands_area
+			area = southern_madagascar
+			area = betsimasaraka_area
+			area = sakalava_area
+		}
+		trigger = {
+			madagascar_highlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			southern_madagascar = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			betsimasaraka_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			sakalava_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "kongo_manpower"
+				duration = -1
+			}
+		}
+	}
+}
+
+kongo_missions_B = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		tag = KON
+	}
+	has_country_shield = yes
+	
+	kongoB1 = {
+		icon = mission_arabian_fort
+		required_missions = { kongoA3 kongoC1 }
+		position = 4
+		trigger = {
+			mission_completed = kongoA3
+			mission_completed = kongoC1
+		}
+		effect= {
+			4076 = {
+				create_colony = 999
+			}
+			4077 = {
+				create_colony = 999
+			}
+		}
+	}
+	
+	kongoB2 = {
+		icon = mission_invade_kanem
+		required_missions = { kongoB1 }
+		provinces_to_highlight = {
+			province_id = 4040
+		}
+		trigger = {
+			owns_core_province = 4040
+		}
+		effect = {
+			custom_tooltip = hrd_south_african_claims
+			hidden_effect = {
+				south_africa_region = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+						owned_by = ZAN
+					}
+					add_permanent_claim = ROOT
+				}
+				south_africa_region = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+						owned_by = RZW
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	
+	kongoB3 = {
+		icon = mission_great_trading_houses
+		required_missions = { kongoB2 }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1184
+				province_id = 1186
+				province_id = 1183
+			}
+		}
+		trigger = {
+			owns_core_province = 1184
+			owns_core_province = 1186
+			owns_core_province = 1183
+		}
+		effect = {
+			madagascar_highlands_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			southern_madagascar = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			betsimasaraka_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			sakalava_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	kongoB4 = {
+		icon = mission_african_gold
+		required_missions = { kongoB3 }
+		provinces_to_highlight = {
+			area = butua_area
+		}
+		trigger = {
+			butua_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			butua_area = {
+				add_prosperity = 100
+			}
+			1189 = {
+				change_trade_goods = gems
+			}
+		}
+	}
+}		
+
+kongo_missions_C = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		tag = KON
+	}
+	has_country_shield = yes
+	
+	kongoC1 = {
+		icon = mission_monarch_in_throne_room
+		required_missions = {  }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4078
+				province_id = 1166
+				province_id = 2948
+				province_id = 1171
+			}
+		}
+		trigger = {
+			owns_core_province = 4078
+			owns_core_province = 1166
+			owns_core_province = 2948
+			owns_core_province = 1171
+		}
+		effect = {
+			add_dip_power = 75
+		}
+	}
+	
+	kongoC2 = {
+		icon = prosperity_for_all
+		required_missions = { kongoC1 }
+		trigger = {
+			has_estate_privilege = estate_nobles_strong_duchies
+		}
+		effect = {
+			add_country_modifier = {
+				name = "kongo_diprep"
+				duration = -1
+			}
+			add_years_of_income = 0.5
+		}
+	}
+	
+	kongoC3 = {
+		icon = mission_colonial
+		required_missions = { kongoC2 }
+		provinces_to_highlight = {
+			province_id = 1170
+		}
+		trigger	= {
+			1170 = {
+				development = 25
+				num_of_buildings_in_province = 4
+			}
+		}
+		effect = {
+			kongo_area = {
+				add_province_modifier = {
+					name = "kongo_capital"
+					duration = -1
+				}
+			}
+		}
+	}
+}
+			
+kongo_missions_D = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		tag = KON
+	}
+	has_country_shield = yes
+	
+	kongoD1 = {
+		icon = mission_into_africa
+		required_missions = {  }
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 5
+				development = 15
+			}
+		}
+		effect = {
+			kongo_region = {
+				add_province_modifier = {
+					name = "kongo_goods"
+					duration = 5475
+				}
+			}
+		}
+	}
+	
+	kongoD2 = {
+		icon = mission_west_african_ports
+		required_missions = { kongoD1 }
+		provinces_to_highlight = {
+			province_id = 4064
+		}
+		trigger = {
+			4064 = {
+				trade_share = {
+					country = ROOT
+					share = 70
+				}
+			}
+		}
+		effect = {
+			add_treasury = 100
+			4064 = {
+				add_center_of_trade_level = 1
+			}
+		}
+	}
+	
+	kongoD3 = {
+		icon = mission_conquer_benin
+		required_missions = { kongoD2 }
+		trigger = {
+			barracks = 10
+		}
+		effect= {
+			4089 = {
+				change_trade_goods = grain
+			}
+			4096 = {
+				change_trade_goods = grain
+			}
+			4105 = {
+				change_trade_goods = grain
+			}
+			1170 = {
+				add_base_manpower = 3
+			}
+		}
+	}
+	
+	kongoD4 = {
+		icon = mission_zanzibari_trade
+		required_missions = { kongoD3 }
+		trigger = {
+			calc_true_if = {
+				all_owned_province = {
+					OR = {
+						province_has_center_of_trade_of_level = 1
+						province_has_center_of_trade_of_level = 2
+						province_has_center_of_trade_of_level = 3
+					}
+					controlled_by = owner
+					is_core = ROOT
+					}
+				amount = 12
+			}
+		}
+		effect = {
+			add_dip_power = 100
+		}
+	}
+}
